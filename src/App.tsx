@@ -365,7 +365,9 @@ const CareerMappingSection: React.FC = () => {
 
       <div className="relative px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-20 lg:pb-28">
         <div className="mx-auto max-w-[90rem]">
-          <StickyScroll content={careerContent} />
+          <div className="rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl">
+            <StickyScroll content={careerContent} />
+          </div>
         </div>
       </div>
     </section>
