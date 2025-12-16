@@ -11,12 +11,12 @@ import { EtheralShadow } from '@/components/ui/etheral-shadow';
 
 const sections = [
   { id: "hero", label: "Home" },
-  { id: "teachers", label: "Career Mapping" },
-  { id: "schools", label: "Hire Teachers" },
+  { id: "teachers", label: "For Teachers" },
+  { id: "schools", label: "For Schools" },
   { id: "programs", label: "Programs" },
-  { id: "internships", label: "Internships" },
-  { id: "stories", label: "Success Stories" },
-  { id: "about", label: "About" },
+  { id: "readiness", label: "Readiness System" },
+  { id: "micro-courses", label: "Micro-Courses" },
+  { id: "stories", label: "Stories & Insights" },
 ];
 
 const NavBar: React.FC = () => {
@@ -99,325 +99,123 @@ const NavBar: React.FC = () => {
   );
 };
 
-const HeroSection: React.FC = () => {
-  return (
-    <section id="hero">
-      <HeroGeometric
-        badge="Career Mapping for Teachers"
-        title1="Building a complete"
-        title2="career mapping ecosystem"
-        description="Teacheristic trains fresh graduates, maps their careers from foundation to GCC opportunities, and connects schools across India & GCC with classroom-ready teachers."
-      />
-    </section>
-  );
-};
-
-interface TwoColumnEcosystemProps {
+interface HeroSectionProps {
   onTeacherClick: () => void;
   onSchoolClick: () => void;
 }
 
-const TwoColumnEcosystem: React.FC<TwoColumnEcosystemProps> = ({ onTeacherClick, onSchoolClick }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ onTeacherClick, onSchoolClick }) => {
   return (
-    <section id="ecosystem" className="border-b border-slate-100 bg-gradient-to-b from-white to-slate-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="mb-12 max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
-            <Users size={16} />
-            The Teacheristic Ecosystem
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
-            One platform. Two journeys. A shared goal.
-          </h2>
-          <p className="text-lg text-slate-600">
-            Connecting future-ready teachers with schools across India & GCC through intensive training, internships, and AI-powered hiring.
+    <section id="hero" className="relative bg-gradient-to-b from-white to-slate-50 pt-20 pb-16 sm:pt-24 sm:pb-20 md:pt-28 md:pb-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-4xl mx-auto space-y-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-navy-800 leading-[1.1]">
+            Where Global-Ready Teachers and Future-Ready Schools Meet.
+          </h1>
+          <p className="text-xl sm:text-2xl md:text-3xl text-slate-700 font-medium">
+            Training. Growth. Intelligent Matching.
           </p>
-        </div>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
+            A complete career mapping ecosystem where teachers grow, schools hire better, and learning improves everywhere
+          </p>
 
-        <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
-          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-lavender-400 bg-gradient-to-br from-lavender-100 to-white p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-lavender-500">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lavender-400/30 to-transparent rounded-full blur-3xl -z-0"></div>
-            <div className="relative">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lavender-700 to-lavender-800 px-4 py-2 text-sm font-bold text-white shadow-lg">
-                <GraduationCap size={18} />
-                For Teachers
-              </div>
-              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
-                Career mapping from student to global educator
-              </h3>
-              <p className="text-slate-700 text-base mb-6">
-                Achieve professional and financial growth in teaching.
-              </p>
-              <button onClick={onTeacherClick} className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-lavender-700 to-lavender-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
-                Start Your Journey
-                <ArrowRight size={18} />
-              </button>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            <button
+              onClick={onTeacherClick}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
+            >
+              I'm a Teacher
+              <ArrowRight size={20} />
+            </button>
+            <button
+              onClick={onSchoolClick}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border-2 border-navy-800 bg-navy-800 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-navy-900 hover:border-navy-900 hover:scale-105"
+            >
+              I'm a School
+              <ArrowRight size={20} />
+            </button>
           </div>
 
-          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-navy-400 bg-gradient-to-br from-navy-100 to-white p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-navy-500">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-navy-400/30 to-transparent rounded-full blur-3xl -z-0"></div>
-            <div className="relative">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-navy-800 px-4 py-2 text-sm font-bold text-white shadow-lg">
-                <Building2 size={18} />
-                For Schools
-              </div>
-              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
-                Hire trained, culture-ready teachers with AI matching
-              </h3>
-              <p className="text-slate-700 text-base mb-6">
-                Find and hire skill-verified teachers from Teacheristic.
-              </p>
-              <button onClick={onSchoolClick} className="mt-6 inline-flex items-center gap-2 rounded-lg bg-navy-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:bg-navy-900 hover:shadow-xl hover:scale-105">
-                Partner With Us
-                <ArrowRight size={18} />
-              </button>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-slate-600 pt-4">
+            <div className="flex items-center gap-2">
+              <Globe size={16} className="text-lavender-700" />
+              <span>Global growth</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle size={16} className="text-lavender-700" />
+              <span>Verified readiness</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Sparkles size={16} className="text-lavender-700" />
+              <span>Smarter opportunities</span>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="mt-16 space-y-6 w-full">
-        <MarqueeAnimation
-          direction="left"
-          baseVelocity={-2}
-          className="bg-gradient-to-r from-lavender-700 to-lavender-800 text-white py-4 text-3xl sm:text-4xl md:text-5xl"
-        >
-          Career Mapping • Foundation to GCC • Teacher Excellence • AI-Powered Hiring
-        </MarqueeAnimation>
-        <MarqueeAnimation
-          direction="right"
-          baseVelocity={-2}
-          className="bg-navy-800 text-white py-4 text-3xl sm:text-4xl md:text-5xl"
-        >
-          India & GCC Schools • Classroom-Ready Teachers • Professional Growth • Global Opportunities
-        </MarqueeAnimation>
       </div>
     </section>
   );
 };
 
-interface TeacherJourneySectionProps {
+interface ForTeachersSectionProps {
   onTeacherClick: () => void;
 }
 
-const TeacherJourneySection: React.FC<TeacherJourneySectionProps> = ({ onTeacherClick }) => {
-  const steps = [
-    {
-      icon: BookOpen,
-      title: "Foundation Program",
-      subtitle: "4-month hybrid training",
-      body: "Comprehensive pedagogy, classroom management, language, tech, and AI tools for modern teaching.",
-      color: "from-lavender-600 to-lavender-700"
-    },
-    {
-      icon: GraduationCap,
-      title: "India Internship",
-      subtitle: "Real classrooms, real mentoring",
-      body: "Guided internships in partner schools to build confidence and professional teaching habits.",
-      color: "from-lavender-700 to-lavender-800"
-    },
-    {
-      icon: Building2,
-      title: "Indian Experience",
-      subtitle: "Professional grounding",
-      body: "Work in Indian schools to refine practice, understand culture, and grow as an educator.",
-      color: "from-navy-700 to-navy-800"
-    },
-    {
-      icon: Globe,
-      title: "GCC Career Path",
-      subtitle: "Global opportunities",
-      body: "Placement support, interview prep, and orientation for prestigious GCC schools.",
-      color: "from-navy-800 to-navy-900"
-    },
-  ];
-
+const ForTeachersSection: React.FC<ForTeachersSectionProps> = ({ onTeacherClick }) => {
   return (
-    <section id="teachers" className="border-b border-slate-100 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
-              <Rocket size={16} />
-              Career Mapping for Teachers
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
-              A mapped journey, not a random career
-            </h2>
-            <p className="text-lg text-slate-600">
-              From your first foundation course to long-term progression into GCC roles, we help you design a clear, aspirational career path.
+    <section id="teachers" className="border-b border-slate-100 bg-white py-16 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center space-y-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-navy-800">
+            Your Teaching Career Deserves Clarity.
+          </h2>
+          <div className="max-w-2xl mx-auto space-y-4 text-lg text-slate-600 leading-relaxed">
+            <p>
+              If your teaching career feels uncertain or stuck, you're not alone.
+            </p>
+            <p>
+              We help you build confidence, learn modern skills, and follow a mapped path to global opportunities — step by step, with guidance at every stage.
             </p>
           </div>
-          <button onClick={onTeacherClick} className="inline-flex items-center gap-2 self-start rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
-            Start My Career Map
-            <ArrowRight size={18} />
+          <button
+            onClick={onTeacherClick}
+            className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
+          >
+            Start My Journey
+            <ArrowRight size={20} />
           </button>
         </div>
-
-        <ul className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
-          {steps.map((step, idx) => (
-            <li key={idx} className="min-h-[20rem] list-none">
-              <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-slate-200 p-2 md:rounded-[1.5rem] md:p-3">
-                <GlowingEffect
-                  spread={40}
-                  glow={true}
-                  disabled={false}
-                  proximity={64}
-                  inactiveZone={0.01}
-                  borderWidth={3}
-                />
-                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-slate-100 bg-white p-6 shadow-sm">
-                  <div className="relative flex flex-1 flex-col justify-between gap-4">
-                    <div className={`w-fit rounded-lg border-[0.75px] border-slate-200 bg-gradient-to-br ${step.color} p-3 shadow-lg`}>
-                      <step.icon className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="space-y-3">
-                      <div className="text-xs font-bold text-lavender-800 uppercase tracking-wider">
-                        Step {idx + 1}
-                      </div>
-                      <h3 className="text-xl leading-tight font-bold font-sans tracking-tight text-navy-800">
-                        {step.title}
-                      </h3>
-                      <p className={`text-sm font-semibold bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
-                        {step.subtitle}
-                      </p>
-                      <p className="font-sans text-sm leading-relaxed text-slate-600">
-                        {step.body}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );
 };
 
-interface SchoolSectionProps {
+interface ForSchoolsSectionProps {
   onSchoolClick: () => void;
 }
 
-const SchoolSection: React.FC<SchoolSectionProps> = ({ onSchoolClick }) => {
+const ForSchoolsSection: React.FC<ForSchoolsSectionProps> = ({ onSchoolClick }) => {
   return (
-    <section id="schools" className="relative bg-white py-6 sm:py-8 md:py-10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-900">
-          <EtheralShadow
-            color="rgba(59, 130, 246, 0.4)"
-            animation={{ scale: 100, speed: 70 }}
-            noise={{ opacity: 1, scale: 1.5 }}
-            sizing="fill"
-          />
-
-          <div className="relative z-10 p-6 sm:p-8 lg:p-10">
-            <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-              <div className="max-w-2xl space-y-3">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-xs font-medium text-white">
-                  <Building2 size={14} />
-                  For Schools
-                </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white leading-[1.1]">
-                  Hire the right teachers with AI-powered matching
-                </h2>
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
-                </p>
-              </div>
-              <button
-                onClick={onSchoolClick}
-                className="inline-flex items-center gap-2 self-start rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl lg:self-start flex-shrink-0"
-              >
-                Become a Partner
-                <ArrowRight size={16} />
-              </button>
-            </div>
-
-            <div className="grid gap-3 grid-cols-1 lg:grid-cols-2">
-              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20">
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/20 flex-shrink-0">
-                    <Search className="w-5 h-5 text-blue-400" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1">
-                      AI-Powered Matching
-                    </h3>
-                    <p className="text-slate-300 text-xs leading-snug">
-                      Access candidates suited for CBSE, ICSE, and international schools with intelligent recommendations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20">
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-teal-500/20 flex-shrink-0">
-                    <UserCheck className="w-5 h-5 text-teal-400" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1">
-                      Pre-trained & Classroom-Ready Teachers
-                    </h3>
-                    <p className="text-slate-300 text-xs leading-snug">
-                      Every teacher has completed our mapped training, internships, and real classroom evaluations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20">
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500/20 flex-shrink-0">
-                    <TrendingUp className="w-5 h-5 text-amber-400" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1">
-                      Lower Hiring Risk
-                    </h3>
-                    <p className="text-slate-300 text-xs leading-snug">
-                      We focus on culture fit, classroom readiness, and long-term growth potential to reduce teacher churn.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20">
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/20 flex-shrink-0">
-                    <Globe className="w-5 h-5 text-blue-400" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1">
-                      India & GCC Expertise
-                    </h3>
-                    <p className="text-slate-300 text-xs leading-snug">
-                      Access verified teacher profiles from across India and GCC countries with cultural readiness training.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20 lg:col-span-2">
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-purple-500/20 flex-shrink-0">
-                    <Target className="w-5 h-5 text-purple-400" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1">
-                      Custom In-House Programs
-                    </h3>
-                    <p className="text-slate-300 text-xs leading-snug">
-                      Design faculty development programs and long-term hiring pipelines tailored to your school's unique culture.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <section id="schools" className="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center space-y-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-navy-800">
+            Hire Teachers Who Are Truly Ready.
+          </h2>
+          <div className="max-w-2xl mx-auto space-y-4 text-lg text-slate-600 leading-relaxed">
+            <p>
+              Finding skilled, dependable teachers shouldn't be difficult.
+            </p>
+            <p>
+              We prepare and assess educators through a structured readiness system — giving you candidates who are confident, trained, and aligned with your school's values.
+            </p>
           </div>
+          <button
+            onClick={onSchoolClick}
+            className="inline-flex items-center gap-2 rounded-lg bg-navy-800 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-navy-900 hover:shadow-xl hover:scale-105"
+          >
+            Partner With Teacheristic
+            <ArrowRight size={20} />
+          </button>
         </div>
       </div>
     </section>
@@ -427,160 +225,178 @@ const SchoolSection: React.FC<SchoolSectionProps> = ({ onSchoolClick }) => {
 const ProgramsSection: React.FC = () => {
   const programs = [
     {
-      tag: "FLAGSHIP",
-      name: "4-Month Teacher Foundation Program",
-      desc: "Learn from international experts in our 10-12 month training programs to stand out in diverse environments.",
-      audience: "Fresh graduates & early-career teachers",
-      icons: [BookOpen, Users, Sparkles],
-      bgColor: "from-blue-50 to-blue-100/50"
+      name: "Global Teacher Foundation Program (GTFP)",
+      impact: "Become a confident, creative, global-ready educator.",
+      icon: GraduationCap,
+      color: "from-lavender-600 to-lavender-700"
     },
     {
-      tag: "INTERNSHIP",
-      name: "India School Internship Track",
-      desc: "Upgrade your skills with short, self-paced courses designed to strengthen your expertise.",
-      audience: "Foundation program graduates",
-      icons: [GraduationCap, Target, CheckCircle],
-      bgColor: "from-purple-50 to-purple-100/50"
+      name: "AI Classroom Mastery",
+      impact: "Teach smarter with modern AI-powered tools.",
+      icon: Sparkles,
+      color: "from-blue-600 to-blue-700"
     },
     {
-      tag: "UPSKILLING",
-      name: "AI & Tech for Teachers",
-      desc: "Get access and apply to exclusive job opportunities at leading international schools.",
-      audience: "Practicing teachers seeking modern tools",
-      icons: [Sparkles, Rocket, TrendingUp],
-      bgColor: "from-green-50 to-green-100/50"
+      name: "International School Leadership Program (ISLP)",
+      impact: "Grow into leadership roles beyond borders.",
+      icon: Building2,
+      color: "from-navy-600 to-navy-700"
     },
     {
-      tag: "PROFESSIONAL",
-      name: "Career Readiness & Portfolio Lab",
-      desc: "Explore 150+ free resources, including webinars, masterclasses, and AI-powered teaching tools.",
-      audience: "Teachers preparing for new roles",
-      icons: [Star, Globe, Building2],
-      bgColor: "from-amber-50 to-amber-100/50"
+      name: "English Proficiency for Teachers (EPT)",
+      impact: "Communicate clearly and professionally in global classrooms.",
+      icon: Globe,
+      color: "from-teal-600 to-teal-700"
     },
   ];
 
   return (
-    <section id="programs" className="border-b border-slate-100 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="mb-16 space-y-5">
-          <div className="text-xs font-semibold tracking-widest text-slate-500 uppercase">
-            FOR TEACHERS
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 max-w-3xl">
-            Core programs that anchor the ecosystem
+    <section id="programs" className="border-b border-slate-100 bg-white py-16 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-navy-800">
+            Our Global Programs
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-            Take these programs individually or combine them into a complete career mapping journey.
-          </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          {programs.map((program) => {
-            const [Icon1, Icon2, Icon3] = program.icons;
-            return (
-              <div
-                key={program.name}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-white p-8 transition-all hover:shadow-xl"
-              >
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
-                    {program.name}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed mb-4">
-                    {program.desc}
-                  </p>
-                </div>
-
-                <div className={`relative rounded-xl bg-gradient-to-br ${program.bgColor} p-8 min-h-[240px] flex items-center justify-center`}>
-                  <div className="grid grid-cols-3 gap-6 w-full max-w-sm">
-                    <div className="flex flex-col items-center gap-4">
-                      <div className="rounded-2xl bg-white shadow-lg p-6 w-full aspect-square flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform">
-                        <Icon1 className="w-10 h-10 text-slate-700" />
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center gap-4">
-                      <div className="rounded-2xl bg-white shadow-lg p-6 w-full aspect-square flex items-center justify-center transform rotate-2 group-hover:rotate-0 transition-transform">
-                        <Icon2 className="w-10 h-10 text-slate-700" />
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center gap-4">
-                      <div className="rounded-2xl bg-white shadow-lg p-6 w-full aspect-square flex items-center justify-center transform -rotate-1 group-hover:rotate-0 transition-transform">
-                        <Icon3 className="w-10 h-10 text-slate-700" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex items-center gap-2 text-sm text-slate-500">
-                  <Users size={16} />
-                  {program.audience}
-                </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          {programs.map((program) => (
+            <div
+              key={program.name}
+              className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 transition-all hover:shadow-xl hover:scale-105"
+            >
+              <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${program.color} flex items-center justify-center mb-4`}>
+                <program.icon className="w-6 h-6 text-white" />
               </div>
-            );
-          })}
+              <h3 className="text-lg font-bold text-navy-800 mb-2">
+                {program.name}
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {program.impact}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <button className="inline-flex items-center gap-2 rounded-lg border-2 border-lavender-700 px-6 py-3 text-sm font-semibold text-lavender-700 transition-all hover:bg-lavender-50">
+            View All Programs
+            <ArrowRight size={16} />
+          </button>
         </div>
       </div>
     </section>
   );
 };
 
-const InternshipsSection: React.FC = () => {
-  return (
-    <section id="internships" className="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="grid gap-8 md:gap-10 lg:gap-12 lg:grid-cols-[1.5fr,1fr] lg:items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
-              <GraduationCap size={16} />
-              Internships & Work Experience
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
-              India internships bridge training and real classrooms
-            </h2>
-            <p className="text-lg leading-relaxed text-slate-600">
-              Before moving into full-time roles or GCC schools, teachers gain hands-on experience through structured internships in India-based partner schools, focusing on classroom management, lesson execution, and professional development.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-slate-700">
-                <CheckCircle size={20} className="text-lavender-800" />
-                <span>1-2 months duration</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-700">
-                <CheckCircle size={20} className="text-lavender-800" />
-                <span>Mentored teaching</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-700">
-                <CheckCircle size={20} className="text-lavender-800" />
-                <span>Portfolio building</span>
-              </div>
-            </div>
-          </div>
+const TeacherReadinessSection: React.FC = () => {
+  const readinessCards = [
+    {
+      name: "Professional Readiness Lab",
+      description: "Build your portfolio, demo lesson, and teaching identity.",
+      icon: Target,
+      color: "from-lavender-600 to-lavender-700"
+    },
+    {
+      name: "Creative Classroom Skills",
+      description: "Learn modern, engaging teaching approaches.",
+      icon: Sparkles,
+      color: "from-blue-600 to-blue-700"
+    },
+    {
+      name: "Teacher Levels (A/B/C/D)",
+      description: "A clear, transparent measure of readiness and capability.",
+      icon: TrendingUp,
+      color: "from-teal-600 to-teal-700"
+    },
+    {
+      name: "Intelligent Matching",
+      description: "Schools find teachers who fit — not just apply.",
+      icon: Search,
+      color: "from-navy-600 to-navy-700"
+    },
+  ];
 
-          <div className="rounded-2xl md:rounded-3xl border-2 border-lavender-400 bg-gradient-to-br from-lavender-100 to-white p-6 sm:p-8 shadow-xl">
-            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-bold text-navy-800">
-              Internship Highlights
-            </h3>
-            <ul className="space-y-4">
-              {[
-                { label: "Duration", value: "1-2 months configurable" },
-                { label: "Location", value: "Partner schools in India" },
-                { label: "Support", value: "Mentoring & feedback loops" },
-                { label: "Output", value: "Portfolio & reflections" },
-                { label: "Pathway", value: "Indian or GCC roles" }
-              ].map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-lavender-800 text-xs font-bold text-white">
-                    {idx + 1}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-900">{item.label}</div>
-                    <div className="text-sm text-slate-600">{item.value}</div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+  return (
+    <section id="readiness" className="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-navy-800">
+            A System That Builds and Reveals True Readiness.
+          </h2>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          {readinessCards.map((card) => (
+            <div
+              key={card.name}
+              className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 transition-all hover:shadow-xl hover:scale-105"
+            >
+              <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${card.color} flex items-center justify-center mb-4`}>
+                <card.icon className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-navy-800 mb-2">
+                {card.name}
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {card.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <button className="inline-flex items-center gap-2 rounded-lg border-2 border-lavender-700 px-6 py-3 text-sm font-semibold text-lavender-700 transition-all hover:bg-lavender-50">
+            See How It Works
+            <ArrowRight size={16} />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const MicroCoursesSection: React.FC = () => {
+  const skills = [
+    "Story-based teaching",
+    "Creative lesson design",
+    "Student engagement",
+    "Classroom management",
+    "Digital teaching essentials",
+    "Assessment techniques"
+  ];
+
+  return (
+    <section id="micro-courses" className="border-b border-slate-100 bg-white py-16 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-navy-800">
+            Skills That Make You Stand Out
+          </h2>
+          <p className="text-lg text-slate-600">
+            In just minutes, learn:
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+          {skills.map((skill, idx) => (
+            <div
+              key={idx}
+              className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-4 transition-all hover:shadow-lg hover:border-lavender-300"
+            >
+              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-lavender-100 flex-shrink-0">
+                <CheckCircle className="w-5 h-5 text-lavender-700" />
+              </div>
+              <span className="text-sm font-medium text-slate-800">{skill}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <button className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+            Browse Micro Courses
+            <ArrowRight size={20} />
+          </button>
         </div>
       </div>
     </section>
@@ -588,123 +404,72 @@ const InternshipsSection: React.FC = () => {
 };
 
 const StoriesSection: React.FC = () => {
-  const stories = [
-    {
-      title: "What is Career Mapping for Teachers?",
-      excerpt: "An explainer on how a mapped journey from foundation to GCC roles can transform a teacher's career path.",
-      category: "Guide"
-    },
-    {
-      title: "From India Internship to GCC Classroom",
-      excerpt: "A pathway showing how internships, Indian experience, and mentoring prepare teachers for international schools.",
-      category: "Case Study"
-    },
-    {
-      title: "AI Matchmaking for Better Hiring",
-      excerpt: "How intelligent teacher recruitment and matching helps schools reduce hiring risk and improve outcomes.",
-      category: "Technology"
-    },
-  ];
-
   return (
-    <section id="stories" className="border-b border-slate-100 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="mb-12 max-w-2xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
-            <Star size={16} />
-            Success Stories & Insights
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
-            Stories from teachers & schools growing with us
+    <section id="stories" className="border-b border-slate-100 bg-white py-16 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-navy-800">
+            Growth That Speaks for Itself.
           </h2>
-          <p className="text-lg text-slate-600">
-            Real journeys, measurable outcomes, and transformative career growth through the Teacheristic ecosystem.
-          </p>
         </div>
 
-        <div className="grid gap-5 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          {stories.map((story, idx) => (
-            <div
-              key={idx}
-              className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-lg transition-all hover:shadow-2xl hover:scale-105"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-lavender-400/30 to-transparent rounded-full blur-2xl opacity-0 transition-opacity group-hover:opacity-100"></div>
-              <div className="relative">
-                <div className="mb-4 inline-flex items-center rounded-full bg-navy-900 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-                  {story.category}
-                </div>
-                <h3 className="mb-3 text-lg font-bold text-navy-800">
-                  {story.title}
-                </h3>
-                <p className="mb-4 text-sm leading-relaxed text-slate-600">
-                  {story.excerpt}
-                </p>
-                <button className="inline-flex items-center gap-2 text-sm font-semibold text-lavender-800 transition-all hover:gap-3">
-                  Read more
-                  <ArrowRight size={16} />
-                </button>
-              </div>
+        <div className="grid gap-8 md:gap-10 lg:grid-cols-2 max-w-5xl mx-auto mb-16">
+          <div className="rounded-xl border-2 border-lavender-300 bg-gradient-to-br from-lavender-50 to-white p-8">
+            <div className="mb-4">
+              <Star className="w-8 h-8 text-lavender-700" />
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const AboutSection: React.FC = () => {
-  return (
-    <section id="about" className="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="grid gap-8 md:gap-10 lg:gap-12 lg:grid-cols-[1.3fr,1fr] lg:items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
-              <Building2 size={16} />
-              About Teacheristic
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
-              A teacher-first ecosystem built from India for India & GCC
-            </h2>
-            <p className="text-lg leading-relaxed text-slate-600">
-              Founded with a vision to transform teacher careers, Teacheristic connects academic training, real-world internships, and international placements under one comprehensive platform, part of Progress Education.
+            <p className="text-lg text-slate-700 italic mb-4">
+              "Teacheristic helped me understand my strengths and gave me a clear path to grow."
             </p>
-            <div className="grid gap-3 sm:gap-4 grid-cols-2">
-              <div className="rounded-xl border border-slate-200 bg-white p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-lavender-800">500+</div>
-                <div className="text-sm text-slate-600">Teachers Trained</div>
-              </div>
-              <div className="rounded-xl border border-slate-200 bg-white p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-navy-800">50+</div>
-                <div className="text-sm text-slate-600">Partner Schools</div>
-              </div>
-              <div className="rounded-xl border border-slate-200 bg-white p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-lavender-800">95%</div>
-                <div className="text-sm text-slate-600">Placement Rate</div>
-              </div>
-              <div className="rounded-xl border border-slate-200 bg-white p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-navy-800">10+</div>
-                <div className="text-sm text-slate-600">GCC Countries</div>
-              </div>
-            </div>
+            <div className="text-sm font-semibold text-slate-600">— Teacher</div>
           </div>
 
-          <div className="rounded-2xl md:rounded-3xl border-2 border-slate-200 bg-white p-6 sm:p-8 shadow-xl">
-            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-bold text-navy-800">
-              Our Mission & Vision
-            </h3>
-            <ul className="space-y-4">
-              {[
-                "Origin story rooted in India's educational heritage",
-                "Focus on women, fresh graduates, and teacher employability",
-                "Building bridges between Indian and GCC school systems",
-                "Long-term vision of a comprehensive teacher growth ecosystem"
-              ].map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-lavender-800" />
-                  <span className="text-slate-700">{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="rounded-xl border-2 border-navy-300 bg-gradient-to-br from-navy-50 to-white p-8">
+            <div className="mb-4">
+              <Building2 className="w-8 h-8 text-navy-700" />
+            </div>
+            <p className="text-lg text-slate-700 italic mb-4">
+              "Every teacher we met was prepared, confident, and ready for the classroom."
+            </p>
+            <div className="text-sm font-semibold text-slate-600">— School</div>
+          </div>
+        </div>
+
+        <div className="mb-6 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-navy-800 mb-8">
+            Insights & Articles
+          </h3>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+          <div className="rounded-lg border border-slate-200 bg-white p-6 transition-all hover:shadow-lg hover:border-lavender-300">
+            <h4 className="text-base font-bold text-navy-800 mb-2">
+              The Future of Teaching Careers
+            </h4>
+            <button className="inline-flex items-center gap-2 text-sm font-semibold text-lavender-700 transition-all hover:gap-3 mt-2">
+              Read more
+              <ArrowRight size={14} />
+            </button>
+          </div>
+
+          <div className="rounded-lg border border-slate-200 bg-white p-6 transition-all hover:shadow-lg hover:border-lavender-300">
+            <h4 className="text-base font-bold text-navy-800 mb-2">
+              Smarter Matching for Schools
+            </h4>
+            <button className="inline-flex items-center gap-2 text-sm font-semibold text-lavender-700 transition-all hover:gap-3 mt-2">
+              Read more
+              <ArrowRight size={14} />
+            </button>
+          </div>
+
+          <div className="rounded-lg border border-slate-200 bg-white p-6 transition-all hover:shadow-lg hover:border-lavender-300">
+            <h4 className="text-base font-bold text-navy-800 mb-2">
+              Creative Teaching for Today
+            </h4>
+            <button className="inline-flex items-center gap-2 text-sm font-semibold text-lavender-700 transition-all hover:gap-3 mt-2">
+              Read more
+              <ArrowRight size={14} />
+            </button>
           </div>
         </div>
       </div>
@@ -719,57 +484,52 @@ interface CTASectionProps {
 
 const CTASection: React.FC<CTASectionProps> = ({ onTeacherClick, onSchoolClick }) => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-navy-950 via-navy-800 to-navy-950">
+    <section className="relative overflow-hidden bg-gradient-to-br from-navy-950 via-navy-800 to-navy-950 py-20 sm:py-24 md:py-28">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8c7ebb12_1px,transparent_1px),linear-gradient(to_bottom,#8c7ebb12_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lavender-700/5 to-transparent"></div>
 
-      <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <div className="mb-12 max-w-2xl space-y-4 text-center mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-lavender-600/30 bg-lavender-700/10 px-4 py-2 text-sm font-semibold text-lavender-500">
-            <Sparkles size={16} />
-            Join the Ecosystem
-          </div>
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
-            Ready to transform your teaching career or school hiring?
-          </h2>
-          <p className="text-lg text-slate-300">
-            Connect with the Teacheristic ecosystem today and start your journey toward excellence.
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto">
-          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-lavender-600/30 bg-gradient-to-br from-navy-900/90 to-navy-950/90 p-6 sm:p-8 backdrop-blur-xl shadow-2xl transition-all hover:border-lavender-600/50 hover:scale-105">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-8 md:gap-10 lg:grid-cols-2">
+          <div className="group relative overflow-hidden rounded-2xl border-2 border-lavender-600/30 bg-gradient-to-br from-navy-900/90 to-navy-950/90 p-8 sm:p-10 backdrop-blur-xl shadow-2xl transition-all hover:border-lavender-600/50 hover:scale-105">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lavender-700/20 to-transparent rounded-full blur-3xl"></div>
             <div className="relative">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-lavender-600 to-lavender-700 shadow-lg">
-                <GraduationCap size={24} className="text-white" />
+              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-lavender-600 to-lavender-700 shadow-lg">
+                <GraduationCap size={28} className="text-white" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-white">
-                For Teachers
+              <h3 className="mb-3 text-2xl font-bold text-white">
+                Teachers
               </h3>
-              <p className="mb-6 text-slate-300">
-                Start your mapped journey with our foundation program, internships, and global placement support.
+              <p className="mb-6 text-lg text-slate-300">
+                Start your journey toward global opportunities.
               </p>
-              <button onClick={onTeacherClick} className="w-full rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
-                Register as a Teacher
+              <button
+                onClick={onTeacherClick}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
+              >
+                Become a Global Teacher
+                <ArrowRight size={20} />
               </button>
             </div>
           </div>
 
-          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-lavender-600/30 bg-gradient-to-br from-navy-900/90 to-navy-950/90 p-6 sm:p-8 backdrop-blur-xl shadow-2xl transition-all hover:border-lavender-600/50 hover:scale-105">
+          <div className="group relative overflow-hidden rounded-2xl border-2 border-lavender-600/30 bg-gradient-to-br from-navy-900/90 to-navy-950/90 p-8 sm:p-10 backdrop-blur-xl shadow-2xl transition-all hover:border-lavender-600/50 hover:scale-105">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lavender-700/20 to-transparent rounded-full blur-3xl"></div>
             <div className="relative">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 shadow-lg">
-                <Building2 size={24} className="text-white" />
+              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-navy-800 shadow-lg">
+                <Building2 size={28} className="text-white" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-white">
-                For Schools
+              <h3 className="mb-3 text-2xl font-bold text-white">
+                Schools
               </h3>
-              <p className="mb-6 text-slate-300">
-                Partner with us to access our curated database, AI-powered matching, and custom training programs.
+              <p className="mb-6 text-lg text-slate-300">
+                Build a reliable, classroom-ready teacher pipeline.
               </p>
-              <button onClick={onSchoolClick} className="w-full rounded-lg border-2 border-lavender-600/30 bg-navy-900/50 px-6 py-3 font-semibold text-lavender-400 transition-all hover:border-lavender-600/50 hover:bg-navy-900/70 hover:scale-105">
-                Register as a School
+              <button
+                onClick={onSchoolClick}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-lg border-2 border-lavender-600/50 bg-navy-900/50 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-navy-900/70 hover:border-lavender-600/70 hover:scale-105"
+              >
+                Partner With Teacheristic
+                <ArrowRight size={20} />
               </button>
             </div>
           </div>
@@ -802,10 +562,10 @@ const Footer: React.FC = () => {
               Platform
             </div>
             <ul className="space-y-2 text-sm">
-              <li><a href="#teachers" className="hover:text-lavender-600 transition-colors">Career Mapping</a></li>
-              <li><a href="#schools" className="hover:text-lavender-600 transition-colors">Hire Teachers</a></li>
+              <li><a href="#teachers" className="hover:text-lavender-600 transition-colors">For Teachers</a></li>
+              <li><a href="#schools" className="hover:text-lavender-600 transition-colors">For Schools</a></li>
               <li><a href="#programs" className="hover:text-lavender-600 transition-colors">Programs</a></li>
-              <li><a href="#internships" className="hover:text-lavender-600 transition-colors">Internships</a></li>
+              <li><a href="#readiness" className="hover:text-lavender-600 transition-colors">Readiness System</a></li>
             </ul>
           </div>
 
@@ -814,8 +574,8 @@ const Footer: React.FC = () => {
               Resources
             </div>
             <ul className="space-y-2 text-sm">
-              <li><a href="#stories" className="hover:text-lavender-600 transition-colors">Success Stories</a></li>
-              <li><a href="#about" className="hover:text-lavender-600 transition-colors">About Us</a></li>
+              <li><a href="#micro-courses" className="hover:text-lavender-600 transition-colors">Micro-Courses</a></li>
+              <li><a href="#stories" className="hover:text-lavender-600 transition-colors">Stories & Insights</a></li>
               <li><a href="#" className="hover:text-lavender-600 transition-colors">Blog</a></li>
               <li><a href="#" className="hover:text-lavender-600 transition-colors">AI Tools</a></li>
             </ul>
@@ -866,14 +626,13 @@ function App() {
     <div className="min-h-screen bg-white text-slate-900">
       <NavBar />
       <main>
-        <HeroSection />
-        <TwoColumnEcosystem onTeacherClick={() => setShowTeacherForm(true)} onSchoolClick={() => setShowSchoolForm(true)} />
-        <TeacherJourneySection onTeacherClick={() => setShowTeacherForm(true)} />
-        <SchoolSection onSchoolClick={() => setShowSchoolForm(true)} />
+        <HeroSection onTeacherClick={() => setShowTeacherForm(true)} onSchoolClick={() => setShowSchoolForm(true)} />
+        <ForTeachersSection onTeacherClick={() => setShowTeacherForm(true)} />
+        <ForSchoolsSection onSchoolClick={() => setShowSchoolForm(true)} />
         <ProgramsSection />
-        <InternshipsSection />
+        <TeacherReadinessSection />
+        <MicroCoursesSection />
         <StoriesSection />
-        <AboutSection />
         <CTASection onTeacherClick={() => setShowTeacherForm(true)} onSchoolClick={() => setShowSchoolForm(true)} />
       </main>
       <Footer />
