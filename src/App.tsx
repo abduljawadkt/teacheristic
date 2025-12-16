@@ -5,6 +5,8 @@ import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
 import { GradientDots } from '@/components/ui/gradient-dots';
 import { MarqueeAnimation } from '@/components/ui/marquee-effect';
+import { TeacherRegistrationForm } from '@/components/TeacherRegistrationForm';
+import { SchoolRegistrationForm } from '@/components/SchoolRegistrationForm';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -109,7 +111,12 @@ const HeroSection: React.FC = () => {
   );
 };
 
-const TwoColumnEcosystem: React.FC = () => {
+interface TwoColumnEcosystemProps {
+  onTeacherClick: () => void;
+  onSchoolClick: () => void;
+}
+
+const TwoColumnEcosystem: React.FC<TwoColumnEcosystemProps> = ({ onTeacherClick, onSchoolClick }) => {
   return (
     <section id="ecosystem" className="border-b border-slate-100 bg-gradient-to-b from-white to-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
@@ -140,7 +147,7 @@ const TwoColumnEcosystem: React.FC = () => {
               <p className="text-slate-700 text-base mb-6">
                 Achieve professional and financial growth in teaching.
               </p>
-              <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-lavender-700 to-lavender-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+              <button onClick={onTeacherClick} className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-lavender-700 to-lavender-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
                 Start Your Journey
                 <ArrowRight size={18} />
               </button>
@@ -160,7 +167,7 @@ const TwoColumnEcosystem: React.FC = () => {
               <p className="text-slate-700 text-base mb-6">
                 Find and hire skill-verified teachers from Teacheristic.
               </p>
-              <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-navy-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:bg-navy-900 hover:shadow-xl hover:scale-105">
+              <button onClick={onSchoolClick} className="mt-6 inline-flex items-center gap-2 rounded-lg bg-navy-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:bg-navy-900 hover:shadow-xl hover:scale-105">
                 Partner With Us
                 <ArrowRight size={18} />
               </button>
@@ -189,7 +196,11 @@ const TwoColumnEcosystem: React.FC = () => {
   );
 };
 
-const TeacherJourneySection: React.FC = () => {
+interface TeacherJourneySectionProps {
+  onTeacherClick: () => void;
+}
+
+const TeacherJourneySection: React.FC<TeacherJourneySectionProps> = ({ onTeacherClick }) => {
   const steps = [
     {
       icon: BookOpen,
@@ -237,7 +248,7 @@ const TeacherJourneySection: React.FC = () => {
               From your first foundation course to long-term progression into GCC roles, we help you design a clear, aspirational career path.
             </p>
           </div>
-          <button className="inline-flex items-center gap-2 self-start rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+          <button onClick={onTeacherClick} className="inline-flex items-center gap-2 self-start rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
             Start My Career Map
             <ArrowRight size={18} />
           </button>
@@ -285,7 +296,11 @@ const TeacherJourneySection: React.FC = () => {
   );
 };
 
-const SchoolSection: React.FC = () => {
+interface SchoolSectionProps {
+  onSchoolClick: () => void;
+}
+
+const SchoolSection: React.FC<SchoolSectionProps> = ({ onSchoolClick }) => {
   const features = [
     {
       Icon: Search,
@@ -360,7 +375,7 @@ const SchoolSection: React.FC = () => {
                 Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
               </p>
             </div>
-            <button className="inline-flex items-center gap-2 self-start rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-4 font-bold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105 lg:self-center border border-blue-500/50">
+            <button onClick={onSchoolClick} className="inline-flex items-center gap-2 self-start rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-4 font-bold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105 lg:self-center border border-blue-500/50">
               Become a Partner
               <ArrowRight size={20} />
             </button>
@@ -685,7 +700,12 @@ const AboutSection: React.FC = () => {
   );
 };
 
-const CTASection: React.FC = () => {
+interface CTASectionProps {
+  onTeacherClick: () => void;
+  onSchoolClick: () => void;
+}
+
+const CTASection: React.FC<CTASectionProps> = ({ onTeacherClick, onSchoolClick }) => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-navy-950 via-navy-800 to-navy-950">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8c7ebb12_1px,transparent_1px),linear-gradient(to_bottom,#8c7ebb12_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -718,7 +738,7 @@ const CTASection: React.FC = () => {
               <p className="mb-6 text-slate-300">
                 Start your mapped journey with our foundation program, internships, and global placement support.
               </p>
-              <button className="w-full rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+              <button onClick={onTeacherClick} className="w-full rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
                 Register as a Teacher
               </button>
             </div>
@@ -736,7 +756,7 @@ const CTASection: React.FC = () => {
               <p className="mb-6 text-slate-300">
                 Partner with us to access our curated database, AI-powered matching, and custom training programs.
               </p>
-              <button className="w-full rounded-lg border-2 border-lavender-600/30 bg-navy-900/50 px-6 py-3 font-semibold text-lavender-400 transition-all hover:border-lavender-600/50 hover:bg-navy-900/70 hover:scale-105">
+              <button onClick={onSchoolClick} className="w-full rounded-lg border-2 border-lavender-600/30 bg-navy-900/50 px-6 py-3 font-semibold text-lavender-400 transition-all hover:border-lavender-600/50 hover:bg-navy-900/70 hover:scale-105">
                 Register as a School
               </button>
             </div>
@@ -814,21 +834,67 @@ const Footer: React.FC = () => {
 };
 
 function App() {
+  const [showTeacherForm, setShowTeacherForm] = useState(false);
+  const [showSchoolForm, setShowSchoolForm] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState<string | null>(null);
+
+  const handleTeacherSuccess = () => {
+    setShowTeacherForm(false);
+    setShowSuccessMessage('teacher');
+    setTimeout(() => setShowSuccessMessage(null), 5000);
+  };
+
+  const handleSchoolSuccess = () => {
+    setShowSchoolForm(false);
+    setShowSuccessMessage('school');
+    setTimeout(() => setShowSuccessMessage(null), 5000);
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <NavBar />
       <main>
         <HeroSection />
-        <TwoColumnEcosystem />
-        <TeacherJourneySection />
-        <SchoolSection />
+        <TwoColumnEcosystem onTeacherClick={() => setShowTeacherForm(true)} onSchoolClick={() => setShowSchoolForm(true)} />
+        <TeacherJourneySection onTeacherClick={() => setShowTeacherForm(true)} />
+        <SchoolSection onSchoolClick={() => setShowSchoolForm(true)} />
         <ProgramsSection />
         <InternshipsSection />
         <StoriesSection />
         <AboutSection />
-        <CTASection />
+        <CTASection onTeacherClick={() => setShowTeacherForm(true)} onSchoolClick={() => setShowSchoolForm(true)} />
       </main>
       <Footer />
+
+      {showTeacherForm && (
+        <TeacherRegistrationForm
+          onClose={() => setShowTeacherForm(false)}
+          onSuccess={handleTeacherSuccess}
+        />
+      )}
+
+      {showSchoolForm && (
+        <SchoolRegistrationForm
+          onClose={() => setShowSchoolForm(false)}
+          onSuccess={handleSchoolSuccess}
+        />
+      )}
+
+      {showSuccessMessage && (
+        <div className="fixed bottom-6 right-6 z-50 bg-green-600 text-white px-6 py-4 rounded-lg shadow-2xl animate-in fade-in slide-in-from-bottom-5">
+          <div className="flex items-center gap-3">
+            <CheckCircle size={24} />
+            <div>
+              <div className="font-bold">Registration Successful!</div>
+              <div className="text-sm">
+                {showSuccessMessage === 'teacher'
+                  ? 'Thank you for registering. We will contact you soon!'
+                  : 'Thank you for your interest. Our team will reach out shortly!'}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
