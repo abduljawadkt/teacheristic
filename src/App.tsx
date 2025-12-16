@@ -7,6 +7,7 @@ import { GradientDots } from '@/components/ui/gradient-dots';
 import { MarqueeAnimation } from '@/components/ui/marquee-effect';
 import { TeacherRegistrationForm } from '@/components/TeacherRegistrationForm';
 import { SchoolRegistrationForm } from '@/components/SchoolRegistrationForm';
+import { EtheralShadow } from '@/components/ui/etheral-shadow';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -303,7 +304,13 @@ interface SchoolSectionProps {
 const SchoolSection: React.FC<SchoolSectionProps> = ({ onSchoolClick }) => {
   return (
     <section id="schools" className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <EtheralShadow
+        color="rgba(30, 58, 138, 0.3)"
+        animation={{ scale: 100, speed: 90 }}
+        noise={{ opacity: 0.8, scale: 1.2 }}
+        sizing="fill"
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-2xl space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-xs font-medium text-white">
