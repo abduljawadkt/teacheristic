@@ -289,89 +289,93 @@ const TeacherJourneySection: React.FC = () => {
 const SchoolSection: React.FC = () => {
   const features = [
     {
-      Icon: UserCheck,
-      name: "Pre-trained & Classroom-Ready Teachers",
-      description: "Every teacher has completed our mapped training, internships, and real classroom evaluations before joining your school.",
-      href: "#",
-      cta: "Learn more",
-      background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-200 via-navy-100 to-white opacity-50" />
-      ),
-      className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
-    },
-    {
       Icon: Search,
       name: "AI-Powered Matching",
       description: "Access candidates suited for CBSE, ICSE, and international schools with intelligent recommendations based on your specific requirements.",
-      href: "#",
-      cta: "Explore",
-      background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-blue-50 to-white opacity-50" />
-      ),
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+      bgColor: "bg-slate-700/50",
+      className: "lg:col-span-1 lg:row-span-2",
     },
     {
-      Icon: Target,
-      name: "Custom In-House Programs",
-      description: "Design faculty development programs and long-term hiring pipelines tailored to your school's unique culture and needs.",
-      href: "#",
-      cta: "Get Started",
-      background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 via-emerald-50 to-white opacity-50" />
-      ),
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+      Icon: UserCheck,
+      name: "Pre-trained & Classroom-Ready Teachers",
+      description: "Every teacher has completed our mapped training, internships, and real classroom evaluations before joining your school.",
+      bgColor: "bg-slate-600/50",
+      className: "lg:col-span-1 lg:row-span-3",
     },
     {
       Icon: TrendingUp,
       name: "Lower Hiring Risk",
       description: "We focus on culture fit, classroom readiness, and long-term growth potential to dramatically reduce teacher churn.",
-      href: "#",
-      cta: "See Results",
-      background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-amber-50 to-white opacity-50" />
-      ),
-      className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+      bgColor: "bg-amber-900/40",
+      className: "lg:col-span-1 lg:row-span-1",
+    },
+    {
+      Icon: Target,
+      name: "Custom In-House Programs",
+      description: "Design faculty development programs and long-term hiring pipelines tailored to your school's unique culture and needs.",
+      bgColor: "bg-emerald-900/40",
+      className: "lg:col-span-1 lg:row-span-1",
     },
     {
       Icon: Globe,
       name: "India & GCC Expertise",
       description: "Access verified teacher profiles from across India and GCC countries, with cultural readiness training for international placements.",
-      href: "#",
-      cta: "View Database",
-      background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-white opacity-50" />
-      ),
-      className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
+      bgColor: "bg-slate-600/50",
+      className: "lg:col-span-1 lg:row-span-2",
     },
   ];
 
   return (
-    <section id="schools" className="border-b border-slate-100 bg-gradient-to-b from-white to-slate-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
-        <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full bg-navy-200 border border-navy-400 px-5 py-2.5 text-sm font-semibold text-navy-900">
-              <Building2 size={16} />
-              For Schools
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-navy-800 leading-tight">
-              Hire the right teachers with AI-powered matching
-            </h2>
-            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed">
-              Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
-            </p>
-          </div>
-          <button className="inline-flex items-center gap-2 self-start rounded-xl bg-navy-800 px-8 py-4 font-bold text-white shadow-xl transition-all hover:bg-navy-900 hover:shadow-2xl hover:scale-105 lg:self-center">
-            Become a Partner
-            <ArrowRight size={20} />
-          </button>
-        </div>
+    <section id="schools" className="relative overflow-hidden bg-slate-950">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b14_1px,transparent_1px),linear-gradient(to_bottom,#1e293b14_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-navy-900/10 to-transparent"></div>
 
-        <BentoGrid className="lg:grid-rows-3">
-          {features.map((feature) => (
-            <BentoCard key={feature.name} {...feature} />
-          ))}
-        </BentoGrid>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-navy-800/30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-lavender-900/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+      <div className="relative rounded-t-[4rem] bg-gradient-to-b from-slate-900 to-slate-950 border-t-4 border-slate-800/50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
+          <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl space-y-5">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-800/80 border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-200">
+                <Building2 size={16} />
+                For Schools
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-100 leading-tight">
+                Hire the right teachers with AI-powered matching
+              </h2>
+              <p className="text-lg sm:text-xl text-slate-400 leading-relaxed">
+                Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
+              </p>
+            </div>
+            <button className="inline-flex items-center gap-2 self-start rounded-2xl bg-navy-700 px-8 py-4 font-bold text-white shadow-xl transition-all hover:bg-navy-600 hover:shadow-2xl hover:scale-105 lg:self-center border border-navy-600/50">
+              Become a Partner
+              <ArrowRight size={20} />
+            </button>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3 lg:grid-rows-3">
+            {features.map((feature, idx) => (
+              <div
+                key={feature.name}
+                className={`group relative overflow-hidden rounded-3xl ${feature.bgColor} backdrop-blur-sm p-8 transition-all hover:scale-105 border border-slate-700/50 ${feature.className}`}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative space-y-4">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-slate-800/80 border border-slate-700/50">
+                    <feature.Icon className="w-7 h-7 text-slate-300" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-100">
+                    {feature.name}
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
