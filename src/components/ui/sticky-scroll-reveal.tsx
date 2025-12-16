@@ -38,12 +38,12 @@ export const StickyScroll = ({
   });
 
   const backgroundColors = [
-    "rgb(15 23 42)",
-    "rgb(30 41 59)",
+    "rgb(30 58 138)",
+    "rgb(29 78 216)",
+    "rgb(37 99 235)",
+    "rgb(30 58 138)",
     "rgb(17 24 39)",
-    "rgb(31 41 55)",
-    "rgb(23 23 23)",
-    "rgb(30 27 75)",
+    "rgb(0 0 0)",
   ];
 
   const linearGradients = [
@@ -88,9 +88,6 @@ export const StickyScroll = ({
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 text-xs font-semibold text-white/80">
-                  Step {index + 1} of {content.length}
-                </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
                   {item.title}
                 </h2>

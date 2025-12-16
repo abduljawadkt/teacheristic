@@ -195,119 +195,143 @@ const CareerMappingSection: React.FC = () => {
     {
       title: "Foundation Program",
       description:
-        "For Teachers: Begin with comprehensive 4-month hybrid training in pedagogy, classroom management, language proficiency, technology integration, and AI tools. Build a strong foundation for modern teaching excellence.",
+        "Begin with comprehensive 4-month hybrid training in pedagogy, classroom management, language proficiency, technology integration, and AI tools. Build a strong foundation for modern teaching excellence.",
       content: (
         <div className="h-full w-full relative overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
+            src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
             className="h-full w-full object-cover"
             alt="Teacher training and professional development"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/90 via-cyan-800/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/50 to-transparent"></div>
           <div className="absolute inset-0 flex items-end p-8">
             <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/30 backdrop-blur-sm border border-blue-400/40 px-3 py-1 text-xs font-bold">
                 FOR TEACHERS
               </div>
               <div className="font-bold text-2xl">Professional Training</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Building teaching excellence from day one with comprehensive pedagogy training</div>
+              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Comprehensive pedagogy, classroom management & modern teaching tools</div>
             </div>
           </div>
         </div>
       ),
     },
     {
-      title: "Real Classroom Experience",
+      title: "Kerala Internship Program",
       description:
-        "For Teachers: Gain hands-on experience through guided internships in Kerala partner schools. Work with real students under expert mentorship to build confidence, refine your teaching style, and develop professional habits that last a lifetime.",
+        "Gain hands-on experience through guided internships in Kerala partner schools. Work with real students under expert mentorship to build confidence, refine your teaching style, and develop professional habits that last a lifetime.",
       content: (
         <div className="h-full w-full relative overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80"
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80"
             className="h-full w-full object-cover"
             alt="Teachers working in classrooms with students"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-pink-900/90 via-pink-800/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/50 to-transparent"></div>
           <div className="absolute inset-0 flex items-end p-8">
             <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/30 backdrop-blur-sm border border-blue-400/40 px-3 py-1 text-xs font-bold">
                 FOR TEACHERS
               </div>
-              <div className="font-bold text-2xl">Mentored Teaching</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Practice with expert guidance in real classrooms with live students</div>
+              <div className="font-bold text-2xl">Mentored Internships</div>
+              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Practice teaching with expert guidance in real Kerala classrooms</div>
             </div>
           </div>
         </div>
       ),
     },
     {
-      title: "Professional Growth Path",
+      title: "Indian School Experience",
       description:
-        "For Teachers: Work in Indian schools to refine your practice, understand diverse educational cultures, and grow as an educator. Build a strong portfolio while gaining the experience needed for international opportunities.",
+        "Work in Indian schools to refine your teaching practice, understand diverse educational cultures, and grow as an educator. Build a strong professional portfolio while gaining the experience needed for international opportunities.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-orange-500 via-orange-600 to-yellow-500 flex items-center justify-center text-white p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]"></div>
-          <div className="relative text-center space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
-              FOR TEACHERS
+        <div className="h-full w-full relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80"
+            className="h-full w-full object-cover"
+            alt="Teacher teaching in Indian classroom"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/50 to-transparent"></div>
+          <div className="absolute inset-0 flex items-end p-8">
+            <div className="text-white space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/30 backdrop-blur-sm border border-blue-400/40 px-3 py-1 text-xs font-bold">
+                FOR TEACHERS
+              </div>
+              <div className="font-bold text-2xl">Professional Growth</div>
+              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Build experience and portfolio in diverse Indian school environments</div>
             </div>
-            <GraduationCap className="w-20 h-20 mx-auto mb-4" />
-            <div className="font-bold text-2xl">Career Development</div>
-            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">Continuous professional growth through Indian school experience</div>
           </div>
         </div>
       ),
     },
     {
-      title: "Global Opportunities",
+      title: "GCC Career Opportunities",
       description:
-        "For Teachers: Progress to prestigious GCC schools with our comprehensive placement support, interview preparation, and cultural orientation. We help you make the leap to international teaching roles with confidence.",
+        "Progress to prestigious GCC schools with our comprehensive placement support, interview preparation, and cultural orientation. We help you make the leap to international teaching roles with confidence.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-cyan-500 via-teal-500 to-emerald-500 flex items-center justify-center text-white p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.15),transparent)]"></div>
-          <div className="relative text-center space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
-              FOR TEACHERS
+        <div className="h-full w-full relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80"
+            className="h-full w-full object-cover"
+            alt="International teaching opportunities"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/50 to-transparent"></div>
+          <div className="absolute inset-0 flex items-end p-8">
+            <div className="text-white space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/30 backdrop-blur-sm border border-blue-400/40 px-3 py-1 text-xs font-bold">
+                FOR TEACHERS
+              </div>
+              <div className="font-bold text-2xl">GCC Placements</div>
+              <div className="text-sm opacity-90 max-w-sm leading-relaxed">International teaching careers in prestigious Gulf schools</div>
             </div>
-            <Globe className="w-20 h-20 mx-auto mb-4" />
-            <div className="font-bold text-2xl">GCC Placements</div>
-            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">International teaching careers in prestigious Gulf schools</div>
           </div>
         </div>
       ),
     },
     {
-      title: "AI-Powered Hiring",
+      title: "AI-Powered Teacher Matching",
       description:
-        "For Schools: Access our curated database of trained, verified teachers with intelligent AI matching. Find classroom-ready educators who fit your school's culture, curriculum needs, and long-term vision with unprecedented accuracy.",
+        "Access our curated database of trained, verified teachers with intelligent AI matching. Find classroom-ready educators who fit your school's culture, curriculum needs, and long-term vision with unprecedented accuracy.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-600 flex items-center justify-center text-white p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)]"></div>
-          <div className="relative text-center space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
-              FOR SCHOOLS
+        <div className="h-full w-full relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+            className="h-full w-full object-cover"
+            alt="School administration and hiring"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-gray-900/60 to-transparent"></div>
+          <div className="absolute inset-0 flex items-end p-8">
+            <div className="text-white space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-500/30 backdrop-blur-sm border border-slate-400/40 px-3 py-1 text-xs font-bold">
+                FOR SCHOOLS
+              </div>
+              <div className="font-bold text-2xl">Smart Matching</div>
+              <div className="text-sm opacity-90 max-w-sm leading-relaxed">AI-powered system to find the perfect teacher fit for your institution</div>
             </div>
-            <Search className="w-20 h-20 mx-auto mb-4" />
-            <div className="font-bold text-2xl">Smart Matching</div>
-            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">AI-powered matching to find the perfect teacher fit for your school</div>
           </div>
         </div>
       ),
     },
     {
-      title: "Reduced Hiring Risk",
+      title: "Verified Teacher Network",
       description:
-        "For Schools: Every teacher in our network has completed intensive training, internships, and real classroom evaluations. We focus on culture fit and long-term growth potential to dramatically reduce teacher turnover and hiring challenges.",
+        "Every teacher in our network has completed intensive training, internships, and real classroom evaluations. We focus on culture fit and long-term growth potential to dramatically reduce teacher turnover and hiring challenges.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-600 flex items-center justify-center text-white p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.12),transparent)]"></div>
-          <div className="relative text-center space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
-              FOR SCHOOLS
+        <div className="h-full w-full relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=80"
+            className="h-full w-full object-cover"
+            alt="Verified teachers and quality education"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-gray-900/60 to-transparent"></div>
+          <div className="absolute inset-0 flex items-end p-8">
+            <div className="text-white space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-500/30 backdrop-blur-sm border border-slate-400/40 px-3 py-1 text-xs font-bold">
+                FOR SCHOOLS
+              </div>
+              <div className="font-bold text-2xl">Verified Excellence</div>
+              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Classroom-ready teachers with proven capabilities and training</div>
             </div>
-            <UserCheck className="w-20 h-20 mx-auto mb-4" />
-            <div className="font-bold text-2xl">Verified Excellence</div>
-            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">Pre-trained, classroom-ready teachers with proven capabilities</div>
           </div>
         </div>
       ),
