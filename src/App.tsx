@@ -697,35 +697,30 @@ const CounterStat: React.FC<{ value: number; suffix: string; label: string }> = 
   }, [isVisible, value]);
 
   return (
-    <div ref={ref} className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 sm:p-6">
-      <div className="text-3xl sm:text-4xl font-bold text-white mb-1">
+    <div ref={ref} className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm transition-all hover:shadow-md">
+      <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-1">
         {count}{suffix}
       </div>
-      <div className="text-sm text-slate-400">{label}</div>
+      <div className="text-sm text-slate-600">{label}</div>
     </div>
   );
 };
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="relative overflow-hidden bg-black">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
+    <section id="about" className="border-b border-slate-100 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="grid gap-10 md:gap-12 lg:gap-16 lg:grid-cols-[1.4fr,1fr] lg:items-start">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2.5 text-sm font-medium text-white">
-              <Building2 size={16} />
+            <div className="text-xs font-semibold tracking-widest text-slate-500 uppercase">
               About Teacheristic
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600 bg-clip-text text-transparent">
-                A teacher-first ecosystem built from India for India & GCC
-              </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1] max-w-2xl">
+              A teacher-first ecosystem built from India for India & GCC
             </h2>
 
-            <p className="text-base sm:text-lg leading-relaxed text-slate-400 max-w-2xl">
+            <p className="text-lg leading-relaxed text-slate-600 max-w-2xl">
               Founded with a vision to transform teacher careers, Teacheristic connects academic training, real-world internships, and international placements under one comprehensive platform, part of Progress Education.
             </p>
 
@@ -737,7 +732,7 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="rounded-2xl md:rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-2xl lg:sticky lg:top-8">
+          <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 sm:p-8 shadow-sm">
             <h3 className="mb-5 sm:mb-6 text-lg sm:text-xl font-bold text-slate-900">
               Our Mission & Vision
             </h3>
