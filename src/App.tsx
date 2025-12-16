@@ -5,7 +5,6 @@ import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
 import { GradientDots } from '@/components/ui/gradient-dots';
 import { MarqueeAnimation } from '@/components/ui/marquee-effect';
-import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -190,159 +189,97 @@ const TwoColumnEcosystem: React.FC = () => {
   );
 };
 
-const CareerMappingSection: React.FC = () => {
-  const careerContent = [
+const TeacherJourneySection: React.FC = () => {
+  const steps = [
     {
+      icon: BookOpen,
       title: "Foundation Program",
-      description:
-        "For Teachers: Begin with comprehensive 4-month hybrid training in pedagogy, classroom management, language proficiency, technology integration, and AI tools. Build a strong foundation for modern teaching excellence.",
-      content: (
-        <div className="h-full w-full relative overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
-            className="h-full w-full object-cover"
-            alt="Teacher training and professional development"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/90 via-cyan-800/40 to-transparent"></div>
-          <div className="absolute inset-0 flex items-end p-8">
-            <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold">
-                FOR TEACHERS
-              </div>
-              <div className="font-bold text-2xl">Professional Training</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Building teaching excellence from day one with comprehensive pedagogy training</div>
-            </div>
-          </div>
-        </div>
-      ),
+      subtitle: "4-month hybrid training",
+      body: "Comprehensive pedagogy, classroom management, language, tech, and AI tools for modern teaching.",
+      color: "from-lavender-600 to-lavender-700"
     },
     {
-      title: "Real Classroom Experience",
-      description:
-        "For Teachers: Gain hands-on experience through guided internships in Kerala partner schools. Work with real students under expert mentorship to build confidence, refine your teaching style, and develop professional habits that last a lifetime.",
-      content: (
-        <div className="h-full w-full relative overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80"
-            className="h-full w-full object-cover"
-            alt="Teachers working in classrooms with students"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-pink-900/90 via-pink-800/40 to-transparent"></div>
-          <div className="absolute inset-0 flex items-end p-8">
-            <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold">
-                FOR TEACHERS
-              </div>
-              <div className="font-bold text-2xl">Mentored Teaching</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Practice with expert guidance in real classrooms with live students</div>
-            </div>
-          </div>
-        </div>
-      ),
+      icon: GraduationCap,
+      title: "Kerala Internship",
+      subtitle: "Real classrooms, real mentoring",
+      body: "Guided internships in partner schools to build confidence and professional teaching habits.",
+      color: "from-lavender-700 to-lavender-800"
     },
     {
-      title: "Professional Growth Path",
-      description:
-        "For Teachers: Work in Indian schools to refine your practice, understand diverse educational cultures, and grow as an educator. Build a strong portfolio while gaining the experience needed for international opportunities.",
-      content: (
-        <div className="h-full w-full bg-gradient-to-br from-orange-500 via-orange-600 to-yellow-500 flex items-center justify-center text-white p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]"></div>
-          <div className="relative text-center space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
-              FOR TEACHERS
-            </div>
-            <GraduationCap className="w-20 h-20 mx-auto mb-4" />
-            <div className="font-bold text-2xl">Career Development</div>
-            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">Continuous professional growth through Indian school experience</div>
-          </div>
-        </div>
-      ),
+      icon: Building2,
+      title: "Indian Experience",
+      subtitle: "Professional grounding",
+      body: "Work in Indian schools to refine practice, understand culture, and grow as an educator.",
+      color: "from-navy-700 to-navy-800"
     },
     {
-      title: "Global Opportunities",
-      description:
-        "For Teachers: Progress to prestigious GCC schools with our comprehensive placement support, interview preparation, and cultural orientation. We help you make the leap to international teaching roles with confidence.",
-      content: (
-        <div className="h-full w-full bg-gradient-to-br from-cyan-500 via-teal-500 to-emerald-500 flex items-center justify-center text-white p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.15),transparent)]"></div>
-          <div className="relative text-center space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
-              FOR TEACHERS
-            </div>
-            <Globe className="w-20 h-20 mx-auto mb-4" />
-            <div className="font-bold text-2xl">GCC Placements</div>
-            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">International teaching careers in prestigious Gulf schools</div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "AI-Powered Hiring",
-      description:
-        "For Schools: Access our curated database of trained, verified teachers with intelligent AI matching. Find classroom-ready educators who fit your school's culture, curriculum needs, and long-term vision with unprecedented accuracy.",
-      content: (
-        <div className="h-full w-full bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-600 flex items-center justify-center text-white p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)]"></div>
-          <div className="relative text-center space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
-              FOR SCHOOLS
-            </div>
-            <Search className="w-20 h-20 mx-auto mb-4" />
-            <div className="font-bold text-2xl">Smart Matching</div>
-            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">AI-powered matching to find the perfect teacher fit for your school</div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Reduced Hiring Risk",
-      description:
-        "For Schools: Every teacher in our network has completed intensive training, internships, and real classroom evaluations. We focus on culture fit and long-term growth potential to dramatically reduce teacher turnover and hiring challenges.",
-      content: (
-        <div className="h-full w-full bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-600 flex items-center justify-center text-white p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.12),transparent)]"></div>
-          <div className="relative text-center space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
-              FOR SCHOOLS
-            </div>
-            <UserCheck className="w-20 h-20 mx-auto mb-4" />
-            <div className="font-bold text-2xl">Verified Excellence</div>
-            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">Pre-trained, classroom-ready teachers with proven capabilities</div>
-          </div>
-        </div>
-      ),
+      icon: Globe,
+      title: "GCC Career Path",
+      subtitle: "Global opportunities",
+      body: "Placement support, interview prep, and orientation for prestigious GCC schools.",
+      color: "from-navy-800 to-navy-900"
     },
   ];
 
   return (
-    <section id="teachers" className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8c7ebb08_1px,transparent_1px),linear-gradient(to_bottom,#8c7ebb08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 md:pt-20 lg:pt-28 pb-8">
+    <section id="teachers" className="border-b border-slate-100 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lavender-600 to-lavender-700 px-5 py-2.5 text-sm font-semibold text-white shadow-lg">
+            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
               <Rocket size={16} />
-              Career Mapping for Teachers & Schools
+              Career Mapping for Teachers
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
               A mapped journey, not a random career
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              From your first foundation course to long-term progression into GCC roles, we help you design a clear, aspirational career path. Schools gain access to trained, verified teachers through intelligent matching.
+            <p className="text-lg text-slate-600">
+              From your first foundation course to long-term progression into GCC roles, we help you design a clear, aspirational career path.
             </p>
           </div>
-          <button className="inline-flex items-center gap-2 self-start rounded-xl bg-gradient-to-r from-lavender-600 to-lavender-700 px-8 py-4 font-bold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105 border border-lavender-500/50">
+          <button className="inline-flex items-center gap-2 self-start rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
             Start My Career Map
-            <ArrowRight size={20} />
+            <ArrowRight size={18} />
           </button>
         </div>
-      </div>
 
-      <div className="relative px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-20 lg:pb-28">
-        <div className="mx-auto max-w-[90rem]">
-          <StickyScroll content={careerContent} />
-        </div>
+        <ul className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+          {steps.map((step, idx) => (
+            <li key={idx} className="min-h-[20rem] list-none">
+              <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-slate-200 p-2 md:rounded-[1.5rem] md:p-3">
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={3}
+                />
+                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-slate-100 bg-white p-6 shadow-sm">
+                  <div className="relative flex flex-1 flex-col justify-between gap-4">
+                    <div className={`w-fit rounded-lg border-[0.75px] border-slate-200 bg-gradient-to-br ${step.color} p-3 shadow-lg`}>
+                      <step.icon className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="space-y-3">
+                      <div className="text-xs font-bold text-lavender-800 uppercase tracking-wider">
+                        Step {idx + 1}
+                      </div>
+                      <h3 className="text-xl leading-tight font-bold font-sans tracking-tight text-navy-800">
+                        {step.title}
+                      </h3>
+                      <p className={`text-sm font-semibold bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
+                        {step.subtitle}
+                      </p>
+                      <p className="font-sans text-sm leading-relaxed text-slate-600">
+                        {step.body}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -883,7 +820,7 @@ function App() {
       <main>
         <HeroSection />
         <TwoColumnEcosystem />
-        <CareerMappingSection />
+        <TeacherJourneySection />
         <SchoolSection />
         <ProgramsSection />
         <InternshipsSection />
