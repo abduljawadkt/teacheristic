@@ -37,13 +37,22 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
+  const backgroundColors = [
+    "rgb(15 23 42)",
+    "rgb(30 41 59)",
+    "rgb(17 24 39)",
+    "rgb(31 41 55)",
+    "rgb(23 23 23)",
+    "rgb(30 27 75)",
+  ];
+
   const linearGradients = [
-    "linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(37, 99, 235, 0.3) 100%)",
-    "linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(37, 99, 235, 0.3) 100%)",
-    "linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(37, 99, 235, 0.3) 100%)",
-    "linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(37, 99, 235, 0.3) 100%)",
-    "linear-gradient(135deg, rgba(71, 85, 105, 0.3) 0%, rgba(51, 65, 85, 0.3) 100%)",
-    "linear-gradient(135deg, rgba(71, 85, 105, 0.3) 0%, rgba(51, 65, 85, 0.3) 100%)",
+    "linear-gradient(135deg, rgb(6 182 212) 0%, rgb(16 185 129) 100%)",
+    "linear-gradient(135deg, rgb(236 72 153) 0%, rgb(168 85 247) 100%)",
+    "linear-gradient(135deg, rgb(249 115 22) 0%, rgb(234 179 8) 100%)",
+    "linear-gradient(135deg, rgb(6 182 212) 0%, rgb(59 130 246) 100%)",
+    "linear-gradient(135deg, rgb(16 185 129) 0%, rgb(5 150 105) 100%)",
+    "linear-gradient(135deg, rgb(99 102 241) 0%, rgb(139 92 246) 100%)",
   ];
 
   const [backgroundGradient, setBackgroundGradient] = useState(
@@ -56,7 +65,11 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-      className="h-[42rem] overflow-y-auto flex justify-center relative gap-10 md:gap-16 lg:gap-20 p-6 md:p-10 lg:p-16"
+      animate={{
+        backgroundColor: backgroundColors[activeCard % backgroundColors.length],
+      }}
+      transition={{ duration: 0.5 }}
+      className="h-[42rem] overflow-y-auto flex justify-center relative gap-10 md:gap-16 lg:gap-20 rounded-3xl p-6 md:p-10 lg:p-16 shadow-2xl"
       ref={ref}
     >
       <div className="relative flex items-start w-full max-w-7xl mx-auto">
@@ -75,10 +88,13 @@ export const StickyScroll = ({
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight drop-shadow-sm">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 text-xs font-semibold text-white/80">
+                  Step {index + 1} of {content.length}
+                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
                   {item.title}
                 </h2>
-                <p className="text-base md:text-lg lg:text-xl text-slate-700 max-w-xl leading-relaxed drop-shadow-sm">
+                <p className="text-base md:text-lg lg:text-xl text-slate-200 max-w-xl leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>
@@ -90,11 +106,13 @@ export const StickyScroll = ({
         <motion.div
           style={{ background: backgroundGradient }}
           animate={{
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.3)",
+            boxShadow: activeCard % 2 === 0
+              ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+              : "0 25px 50px -12px rgba(139, 92, 246, 0.5)",
           }}
           transition={{ duration: 0.5 }}
           className={cn(
-            "hidden lg:flex h-[28rem] w-[32rem] rounded-2xl backdrop-blur-xl overflow-hidden border-2 border-white/20 shadow-2xl sticky top-20",
+            "hidden lg:flex h-[28rem] w-[32rem] rounded-2xl bg-white sticky top-20 overflow-hidden border-4 border-white/20 shadow-2xl",
             contentClassName
           )}
         >
