@@ -203,14 +203,14 @@ const CareerMappingSection: React.FC = () => {
             className="h-full w-full object-cover"
             alt="Teacher training and professional development"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-900/60 to-transparent"></div>
           <div className="absolute inset-0 flex items-end p-8">
             <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/30 backdrop-blur-sm border border-blue-400/40 px-3 py-1 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/40 backdrop-blur-md border border-blue-400/50 px-3 py-1 text-xs font-bold">
                 FOR TEACHERS
               </div>
-              <div className="font-bold text-2xl">Professional Training</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Comprehensive pedagogy, classroom management & modern teaching tools</div>
+              <div className="font-bold text-2xl drop-shadow-lg">Professional Training</div>
+              <div className="text-sm opacity-95 max-w-sm leading-relaxed drop-shadow-md">Comprehensive pedagogy, classroom management & modern teaching tools</div>
             </div>
           </div>
         </div>
@@ -227,14 +227,14 @@ const CareerMappingSection: React.FC = () => {
             className="h-full w-full object-cover"
             alt="Teachers working in classrooms with students"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-900/60 to-transparent"></div>
           <div className="absolute inset-0 flex items-end p-8">
             <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/30 backdrop-blur-sm border border-blue-400/40 px-3 py-1 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/40 backdrop-blur-md border border-blue-400/50 px-3 py-1 text-xs font-bold">
                 FOR TEACHERS
               </div>
-              <div className="font-bold text-2xl">Mentored Internships</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Practice teaching with expert guidance in real Kerala classrooms</div>
+              <div className="font-bold text-2xl drop-shadow-lg">Mentored Internships</div>
+              <div className="text-sm opacity-95 max-w-sm leading-relaxed drop-shadow-md">Practice teaching with expert guidance in real Kerala classrooms</div>
             </div>
           </div>
         </div>
@@ -251,14 +251,14 @@ const CareerMappingSection: React.FC = () => {
             className="h-full w-full object-cover"
             alt="Teacher teaching in Indian classroom"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-900/60 to-transparent"></div>
           <div className="absolute inset-0 flex items-end p-8">
             <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/30 backdrop-blur-sm border border-blue-400/40 px-3 py-1 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/40 backdrop-blur-md border border-blue-400/50 px-3 py-1 text-xs font-bold">
                 FOR TEACHERS
               </div>
-              <div className="font-bold text-2xl">Professional Growth</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Build experience and portfolio in diverse Indian school environments</div>
+              <div className="font-bold text-2xl drop-shadow-lg">Professional Growth</div>
+              <div className="text-sm opacity-95 max-w-sm leading-relaxed drop-shadow-md">Build experience and portfolio in diverse Indian school environments</div>
             </div>
           </div>
         </div>
@@ -275,14 +275,14 @@ const CareerMappingSection: React.FC = () => {
             className="h-full w-full object-cover"
             alt="International teaching opportunities"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-blue-900/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-900/60 to-transparent"></div>
           <div className="absolute inset-0 flex items-end p-8">
             <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/30 backdrop-blur-sm border border-blue-400/40 px-3 py-1 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/40 backdrop-blur-md border border-blue-400/50 px-3 py-1 text-xs font-bold">
                 FOR TEACHERS
               </div>
-              <div className="font-bold text-2xl">GCC Placements</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">International teaching careers in prestigious Gulf schools</div>
+              <div className="font-bold text-2xl drop-shadow-lg">GCC Placements</div>
+              <div className="text-sm opacity-95 max-w-sm leading-relaxed drop-shadow-md">International teaching careers in prestigious Gulf schools</div>
             </div>
           </div>
         </div>
@@ -302,11 +302,11 @@ const CareerMappingSection: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-gray-900/60 to-transparent"></div>
           <div className="absolute inset-0 flex items-end p-8">
             <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-slate-500/30 backdrop-blur-sm border border-slate-400/40 px-3 py-1 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-500/40 backdrop-blur-md border border-slate-400/50 px-3 py-1 text-xs font-bold">
                 FOR SCHOOLS
               </div>
-              <div className="font-bold text-2xl">Smart Matching</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">AI-powered system to find the perfect teacher fit for your institution</div>
+              <div className="font-bold text-2xl drop-shadow-lg">Smart Matching</div>
+              <div className="text-sm opacity-95 max-w-sm leading-relaxed drop-shadow-md">AI-powered system to find the perfect teacher fit for your institution</div>
             </div>
           </div>
         </div>
@@ -326,11 +326,11 @@ const CareerMappingSection: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-gray-900/60 to-transparent"></div>
           <div className="absolute inset-0 flex items-end p-8">
             <div className="text-white space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-slate-500/30 backdrop-blur-sm border border-slate-400/40 px-3 py-1 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 rounded-full bg-slate-500/40 backdrop-blur-md border border-slate-400/50 px-3 py-1 text-xs font-bold">
                 FOR SCHOOLS
               </div>
-              <div className="font-bold text-2xl">Verified Excellence</div>
-              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Classroom-ready teachers with proven capabilities and training</div>
+              <div className="font-bold text-2xl drop-shadow-lg">Verified Excellence</div>
+              <div className="text-sm opacity-95 max-w-sm leading-relaxed drop-shadow-md">Classroom-ready teachers with proven capabilities and training</div>
             </div>
           </div>
         </div>
