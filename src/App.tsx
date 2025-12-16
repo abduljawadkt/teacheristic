@@ -109,6 +109,86 @@ const HeroSection: React.FC = () => {
   );
 };
 
+const TwoColumnEcosystem: React.FC = () => {
+  return (
+    <section id="ecosystem" className="border-b border-slate-100 bg-gradient-to-b from-white to-slate-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
+        <div className="mb-12 max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
+            <Users size={16} />
+            The Teacheristic Ecosystem
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
+            One platform. Two journeys. A shared goal.
+          </h2>
+          <p className="text-lg text-slate-600">
+            Connecting future-ready teachers with schools across India & GCC through intensive training, internships, and AI-powered hiring.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
+          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-lavender-400 bg-gradient-to-br from-lavender-100 to-white p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-lavender-500">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lavender-400/30 to-transparent rounded-full blur-3xl -z-0"></div>
+            <div className="relative">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lavender-700 to-lavender-800 px-4 py-2 text-sm font-bold text-white shadow-lg">
+                <GraduationCap size={18} />
+                For Teachers
+              </div>
+              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
+                Career mapping from student to global educator
+              </h3>
+              <p className="text-slate-700 text-base mb-6">
+                Achieve professional and financial growth in teaching.
+              </p>
+              <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-lavender-700 to-lavender-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+                Start Your Journey
+                <ArrowRight size={18} />
+              </button>
+            </div>
+          </div>
+
+          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-navy-400 bg-gradient-to-br from-navy-100 to-white p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-navy-500">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-navy-400/30 to-transparent rounded-full blur-3xl -z-0"></div>
+            <div className="relative">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-navy-800 px-4 py-2 text-sm font-bold text-white shadow-lg">
+                <Building2 size={18} />
+                For Schools
+              </div>
+              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
+                Hire trained, culture-ready teachers with AI matching
+              </h3>
+              <p className="text-slate-700 text-base mb-6">
+                Find and hire skill-verified teachers from Teacheristic.
+              </p>
+              <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-navy-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:bg-navy-900 hover:shadow-xl hover:scale-105">
+                Partner With Us
+                <ArrowRight size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-16 space-y-6 w-full">
+        <MarqueeAnimation
+          direction="left"
+          baseVelocity={-2}
+          className="bg-gradient-to-r from-lavender-700 to-lavender-800 text-white py-4 text-3xl sm:text-4xl md:text-5xl"
+        >
+          Career Mapping • Foundation to GCC • Teacher Excellence • AI-Powered Hiring
+        </MarqueeAnimation>
+        <MarqueeAnimation
+          direction="right"
+          baseVelocity={-2}
+          className="bg-navy-800 text-white py-4 text-3xl sm:text-4xl md:text-5xl"
+        >
+          India & GCC Schools • Classroom-Ready Teachers • Professional Growth • Global Opportunities
+        </MarqueeAnimation>
+      </div>
+    </section>
+  );
+};
+
 const TeacherJourneySection: React.FC = () => {
   const steps = [
     {
@@ -739,6 +819,7 @@ function App() {
       <NavBar />
       <main>
         <HeroSection />
+        <TwoColumnEcosystem />
         <TeacherJourneySection />
         <SchoolSection />
         <ProgramsSection />
