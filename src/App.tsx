@@ -200,7 +200,7 @@ const TeacherJourneySection: React.FC = () => {
     },
     {
       icon: GraduationCap,
-      title: "Kerala Internship",
+      title: "India Internship",
       subtitle: "Real classrooms, real mentoring",
       body: "Guided internships in partner schools to build confidence and professional teaching habits.",
       color: "from-lavender-700 to-lavender-800"
@@ -409,7 +409,7 @@ const ProgramsSection: React.FC = () => {
     },
     {
       tag: "INTERNSHIP",
-      name: "Kerala School Internship Track",
+      name: "India School Internship Track",
       desc: "Upgrade your skills with short, self-paced courses designed to strengthen your expertise.",
       audience: "Foundation program graduates",
       icons: [GraduationCap, Target, CheckCircle],
@@ -509,10 +509,10 @@ const InternshipsSection: React.FC = () => {
               Internships & Work Experience
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
-              Kerala internships bridge training and real classrooms
+              India internships bridge training and real classrooms
             </h2>
             <p className="text-lg leading-relaxed text-slate-600">
-              Before moving into full-time roles or GCC schools, teachers gain hands-on experience through structured internships in Kerala-based partner schools, focusing on classroom management, lesson execution, and professional development.
+              Before moving into full-time roles or GCC schools, teachers gain hands-on experience through structured internships in India-based partner schools, focusing on classroom management, lesson execution, and professional development.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 text-slate-700">
@@ -537,7 +537,7 @@ const InternshipsSection: React.FC = () => {
             <ul className="space-y-4">
               {[
                 { label: "Duration", value: "1-2 months configurable" },
-                { label: "Location", value: "Partner schools in Kerala" },
+                { label: "Location", value: "Partner schools in India" },
                 { label: "Support", value: "Mentoring & feedback loops" },
                 { label: "Output", value: "Portfolio & reflections" },
                 { label: "Pathway", value: "Indian or GCC roles" }
@@ -568,7 +568,7 @@ const StoriesSection: React.FC = () => {
       category: "Guide"
     },
     {
-      title: "From Kerala Internship to GCC Classroom",
+      title: "From India Internship to GCC Classroom",
       excerpt: "A pathway showing how internships, Indian experience, and mentoring prepare teachers for international schools.",
       category: "Case Study"
     },
@@ -636,7 +636,7 @@ const AboutSection: React.FC = () => {
               About Teacheristic
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
-              A teacher-first ecosystem built from Kerala for India & GCC
+              A teacher-first ecosystem built from India for India & GCC
             </h2>
             <p className="text-lg leading-relaxed text-slate-600">
               Founded with a vision to transform teacher careers, Teacheristic connects academic training, real-world internships, and international placements under one comprehensive platform, part of Progress Education.
@@ -667,7 +667,7 @@ const AboutSection: React.FC = () => {
             </h3>
             <ul className="space-y-4">
               {[
-                "Origin story rooted in Kerala's educational heritage",
+                "Origin story rooted in India's educational heritage",
                 "Focus on women, fresh graduates, and teacher employability",
                 "Building bridges between Indian and GCC school systems",
                 "Long-term vision of a comprehensive teacher growth ecosystem"
@@ -794,7 +794,7 @@ const Footer: React.FC = () => {
               Contact
             </div>
             <ul className="space-y-2 text-sm">
-              <li>Kerala, India</li>
+              <li>India</li>
               <li>GCC Partnerships</li>
               <li><a href="mailto:hello@teacheristic.com" className="hover:text-lavender-600 transition-colors">hello@teacheristic.com</a></li>
             </ul>
