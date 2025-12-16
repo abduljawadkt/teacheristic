@@ -212,7 +212,7 @@ const TeacherJourneySection: React.FC<TeacherJourneySectionProps> = ({ onTeacher
     },
     {
       icon: GraduationCap,
-      title: "India Internship",
+      title: "Internship",
       subtitle: "Real classrooms, real mentoring",
       body: "Guided internships in partner schools to build confidence and professional teaching habits.",
       color: "from-lavender-700 to-lavender-800"
@@ -536,7 +536,7 @@ const InternshipsSection: React.FC = () => {
               Internships & Work Experience
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
-              India internships bridge training and real classrooms
+              Internships bridge training and real classrooms
             </h2>
             <p className="text-lg leading-relaxed text-slate-600">
               Before moving into full-time roles or GCC schools, teachers gain hands-on experience through structured internships in India-based partner schools, focusing on classroom management, lesson execution, and professional development.
@@ -595,7 +595,7 @@ const StoriesSection: React.FC = () => {
       category: "Guide"
     },
     {
-      title: "From India Internship to GCC Classroom",
+      title: "From Internship to GCC Classroom",
       excerpt: "A pathway showing how internships, Indian experience, and mentoring prepare teachers for international schools.",
       category: "Case Study"
     },
