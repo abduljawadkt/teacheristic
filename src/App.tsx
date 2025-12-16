@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, BookOpen, Users, Award, Globe, Sparkles, CheckCircle, GraduationCap, Building2, Rocket, Star } from 'lucide-react';
+import { Menu, X, ArrowRight, BookOpen, Users, Globe, Sparkles, CheckCircle, GraduationCap, Building2, Rocket, Star, UserCheck, Search, Target, TrendingUp } from 'lucide-react';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -286,76 +287,111 @@ const TeacherJourneySection: React.FC = () => {
 };
 
 const SchoolSection: React.FC = () => {
-  const benefits = [
+  const features = [
     {
-      icon: Award,
-      title: "Pre-trained & classroom-ready",
-      body: "Every teacher has completed our mapped training, internships, and evaluations.",
-      gradient: "from-navy-600 to-navy-700"
+      Icon: UserCheck,
+      name: "Pre-trained & Classroom-Ready Teachers",
+      description: "Every teacher has completed our mapped training, internships, and real classroom evaluations before joining your school.",
+      href: "#",
+      cta: "Learn more",
+      background: (
+        <img
+          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          src="https://images.pexels.com/photos/8422088/pexels-photo-8422088.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Teacher in classroom"
+        />
+      ),
+      className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
     },
     {
-      icon: Sparkles,
-      title: "AI-powered matching",
-      body: "Access candidates suited for CBSE, ICSE, and international schools with intelligent recommendations.",
-      gradient: "from-lavender-400 to-lavender-500"
+      Icon: Search,
+      name: "AI-Powered Matching",
+      description: "Access candidates suited for CBSE, ICSE, and international schools with intelligent recommendations based on your specific requirements.",
+      href: "#",
+      cta: "Explore",
+      background: (
+        <img
+          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          src="https://images.pexels.com/photos/8867434/pexels-photo-8867434.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="AI matching"
+        />
+      ),
+      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
     },
     {
-      icon: Users,
-      title: "Custom in-house programs",
-      body: "Design faculty development programs and long-term hiring pipelines tailored to your school.",
-      gradient: "from-lavender-500 to-lavender-600"
+      Icon: Target,
+      name: "Custom In-House Programs",
+      description: "Design faculty development programs and long-term hiring pipelines tailored to your school's unique culture and needs.",
+      href: "#",
+      cta: "Get Started",
+      background: (
+        <img
+          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Training program"
+        />
+      ),
+      className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
     },
     {
-      icon: Star,
-      title: "Lower hiring risk",
-      body: "We focus on culture fit, readiness, and long-term growth to reduce teacher churn.",
-      gradient: "from-navy-700 to-navy-800"
+      Icon: TrendingUp,
+      name: "Lower Hiring Risk",
+      description: "We focus on culture fit, classroom readiness, and long-term growth potential to dramatically reduce teacher churn.",
+      href: "#",
+      cta: "See Results",
+      background: (
+        <img
+          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          src="https://images.pexels.com/photos/8423024/pexels-photo-8423024.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Success metrics"
+        />
+      ),
+      className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+    },
+    {
+      Icon: Globe,
+      name: "India & GCC Expertise",
+      description: "Access verified teacher profiles from across India and GCC countries, with cultural readiness training for international placements.",
+      href: "#",
+      cta: "View Database",
+      background: (
+        <img
+          className="absolute inset-0 h-full w-full object-cover opacity-60"
+          src="https://images.pexels.com/photos/8363030/pexels-photo-8363030.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Global network"
+        />
+      ),
+      className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
     },
   ];
 
   return (
-    <section id="schools" className="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-navy-100 px-4 py-2 text-sm font-semibold text-navy-700">
+    <section id="schools" className="border-b border-slate-100 bg-gradient-to-b from-white to-slate-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
+        <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl space-y-5">
+            <div className="inline-flex items-center gap-2 rounded-full bg-navy-100 border border-navy-200 px-5 py-2.5 text-sm font-semibold text-navy-700">
               <Building2 size={16} />
               For Schools
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-navy-900 leading-tight">
               Hire the right teachers with AI-powered matching
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed">
               Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
             </p>
           </div>
-          <button className="inline-flex items-center gap-2 self-start rounded-lg bg-navy-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:bg-navy-800 hover:shadow-xl hover:scale-105">
+          <button className="inline-flex items-center gap-2 self-start rounded-xl bg-navy-700 px-8 py-4 font-bold text-white shadow-xl transition-all hover:bg-navy-800 hover:shadow-2xl hover:scale-105 lg:self-center">
             Become a Partner
-            <ArrowRight size={18} />
+            <ArrowRight size={20} />
           </button>
         </div>
 
-        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((item, idx) => (
-            <div
-              key={idx}
-              className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-lg transition-all hover:shadow-2xl hover:scale-105"
-            >
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${item.gradient} opacity-10 rounded-full blur-2xl transition-opacity group-hover:opacity-20`}></div>
-              <div className="relative">
-                <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg`}>
-                  <item.icon size={24} className="text-white" />
-                </div>
-                <div className="mb-3 text-lg font-bold text-slate-900">
-                  {item.title}
-                </div>
-                <p className="text-sm leading-relaxed text-slate-600">
-                  {item.body}
-                </p>
-              </div>
-            </div>
+        <BentoGrid className="lg:grid-rows-3">
+          {features.map((feature) => (
+            <BentoCard key={feature.name} {...feature} />
           ))}
-        </div>
+        </BentoGrid>
       </div>
     </section>
   );
