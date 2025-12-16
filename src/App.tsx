@@ -428,34 +428,34 @@ const ProgramsSection: React.FC = () => {
   const programs = [
     {
       tag: "FLAGSHIP",
-      name: "4-Month Teacher Foundation Program",
-      desc: "Learn from international experts in our 10-12 month training programs to stand out in diverse environments.",
-      audience: "Fresh graduates & early-career teachers",
+      name: "Global Teacher Foundation Program (GTFP)",
+      desc: "A comprehensive 3-month program designed to equip aspiring teachers with essential pedagogical skills, classroom management techniques, and international teaching standards.",
+      audience: "Fresh graduates & aspiring educators",
       icons: [BookOpen, Users, Sparkles],
       bgColor: "from-blue-50 to-blue-100/50"
     },
     {
-      tag: "INTERNSHIP",
-      name: "India School Internship Track",
-      desc: "Upgrade your skills with short, self-paced courses designed to strengthen your expertise.",
-      audience: "Foundation program graduates",
-      icons: [GraduationCap, Target, CheckCircle],
+      tag: "UPSKILLING",
+      name: "AI Classroom Mastery",
+      desc: "Master cutting-edge AI tools and technologies for modern teaching. Learn to integrate artificial intelligence into lesson planning, student assessment, and classroom engagement.",
+      audience: "Teachers embracing educational technology",
+      icons: [Sparkles, Rocket, TrendingUp],
       bgColor: "from-purple-50 to-purple-100/50"
     },
     {
-      tag: "UPSKILLING",
-      name: "AI & Tech for Teachers",
-      desc: "Get access and apply to exclusive job opportunities at leading international schools.",
-      audience: "Practicing teachers seeking modern tools",
-      icons: [Sparkles, Rocket, TrendingUp],
+      tag: "PROFESSIONAL",
+      name: "International School Leadership Program (ISLP)",
+      desc: "A focused 2-month program developing leadership competencies, strategic thinking, and management skills for educators aspiring to lead in international school environments.",
+      audience: "Experienced teachers seeking leadership roles",
+      icons: [Star, Globe, Building2],
       bgColor: "from-green-50 to-green-100/50"
     },
     {
-      tag: "PROFESSIONAL",
-      name: "Career Readiness & Portfolio Lab",
-      desc: "Explore 150+ free resources, including webinars, masterclasses, and AI-powered teaching tools.",
-      audience: "Teachers preparing for new roles",
-      icons: [Star, Globe, Building2],
+      tag: "LANGUAGE",
+      name: "English Proficiency for Teachers (EPT)",
+      desc: "Enhance your English language proficiency with specialized training for educators. Develop confident communication skills essential for teaching in international schools.",
+      audience: "Teachers improving language competency",
+      icons: [GraduationCap, Target, CheckCircle],
       bgColor: "from-amber-50 to-amber-100/50"
     },
   ];
