@@ -7,6 +7,7 @@ import { GradientDots } from '@/components/ui/gradient-dots';
 import { MarqueeAnimation } from '@/components/ui/marquee-effect';
 import { TeacherRegistrationForm } from '@/components/TeacherRegistrationForm';
 import { SchoolRegistrationForm } from '@/components/SchoolRegistrationForm';
+import { LoginForm } from '@/components/LoginForm';
 import { EtheralShadow } from '@/components/ui/etheral-shadow';
 
 const sections = [
@@ -19,7 +20,11 @@ const sections = [
   { id: "about", label: "About" },
 ];
 
-const NavBar: React.FC = () => {
+interface NavBarProps {
+  onLoginClick: () => void;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -55,7 +60,7 @@ const NavBar: React.FC = () => {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <button className="rounded-lg border-2 border-lavender-600/30 px-5 py-2 text-sm font-semibold text-lavender-400 transition-all hover:border-lavender-600/50 hover:bg-lavender-700/10">
+          <button onClick={onLoginClick} className="rounded-lg border-2 border-lavender-600/30 px-5 py-2 text-sm font-semibold text-lavender-400 transition-all hover:border-lavender-600/50 hover:bg-lavender-700/10">
             Login
           </button>
           <button className="rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-lavender-700/30 transition-all hover:shadow-xl hover:shadow-lavender-700/40 hover:scale-105">
@@ -85,7 +90,7 @@ const NavBar: React.FC = () => {
               </a>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-lavender-600/20">
-              <button className="rounded-lg border-2 border-lavender-600/30 px-4 py-3 text-sm font-semibold text-lavender-400">
+              <button onClick={() => { onLoginClick(); setIsMobileMenuOpen(false); }} className="rounded-lg border-2 border-lavender-600/30 px-4 py-3 text-sm font-semibold text-lavender-400">
                 Login
               </button>
               <button className="rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-4 py-3 text-sm font-semibold text-white shadow-lg">
@@ -892,6 +897,7 @@ const Footer: React.FC = () => {
 function App() {
   const [showTeacherForm, setShowTeacherForm] = useState(false);
   const [showSchoolForm, setShowSchoolForm] = useState(false);
+  const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState<string | null>(null);
 
   const handleTeacherSuccess = () => {
@@ -908,7 +914,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <NavBar />
+      <NavBar onLoginClick={() => setShowLoginForm(true)} />
       <main>
         <HeroSection />
         <TwoColumnEcosystem onTeacherClick={() => setShowTeacherForm(true)} onSchoolClick={() => setShowSchoolForm(true)} />
@@ -934,6 +940,10 @@ function App() {
           onClose={() => setShowSchoolForm(false)}
           onSuccess={handleSchoolSuccess}
         />
+      )}
+
+      {showLoginForm && (
+        <LoginForm onClose={() => setShowLoginForm(false)} />
       )}
 
       {showSuccessMessage && (
