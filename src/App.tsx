@@ -380,81 +380,94 @@ const SchoolSection: React.FC = () => {
 const ProgramsSection: React.FC = () => {
   const programs = [
     {
-      tag: "Flagship",
+      tag: "FLAGSHIP",
       name: "4-Month Teacher Foundation Program",
-      desc: "Hybrid learning with live sessions, self-paced modules, and practical tasks covering pedagogy, tech, and AI tools.",
+      desc: "Learn from international experts in our 10-12 month training programs to stand out in diverse environments.",
       audience: "Fresh graduates & early-career teachers",
-      color: "emerald"
+      icons: [BookOpen, Users, Sparkles],
+      bgColor: "from-blue-50 to-blue-100/50"
     },
     {
-      tag: "Internship",
+      tag: "INTERNSHIP",
       name: "Kerala School Internship Track",
-      desc: "Guided teaching internships in partner schools with observation, mentoring, and real-time feedback.",
+      desc: "Upgrade your skills with short, self-paced courses designed to strengthen your expertise.",
       audience: "Foundation program graduates",
-      color: "blue"
+      icons: [GraduationCap, Target, CheckCircle],
+      bgColor: "from-purple-50 to-purple-100/50"
     },
     {
-      tag: "Upskilling",
+      tag: "UPSKILLING",
       name: "AI & Tech for Teachers",
-      desc: "Short modules on AI tools, digital classrooms, and tech-enabled pedagogy for modern educators.",
+      desc: "Get access and apply to exclusive job opportunities at leading international schools.",
       audience: "Practicing teachers seeking modern tools",
-      color: "purple"
+      icons: [Sparkles, Rocket, TrendingUp],
+      bgColor: "from-green-50 to-green-100/50"
     },
     {
-      tag: "Professional",
+      tag: "PROFESSIONAL",
       name: "Career Readiness & Portfolio Lab",
-      desc: "CV, resume, LinkedIn, demo lessons, and interview coaching for Indian & GCC opportunities.",
+      desc: "Explore 150+ free resources, including webinars, masterclasses, and AI-powered teaching tools.",
       audience: "Teachers preparing for new roles",
-      color: "orange"
+      icons: [Star, Globe, Building2],
+      bgColor: "from-amber-50 to-amber-100/50"
     },
   ];
-
-  const colorClasses: Record<string, any> = {
-    emerald: { bg: "bg-lavender-800", border: "border-lavender-400", text: "text-lavender-900", gradient: "from-lavender-600 to-lavender-700" },
-    blue: { bg: "bg-navy-800", border: "border-navy-400", text: "text-navy-900", gradient: "from-navy-700 to-navy-800" },
-    purple: { bg: "bg-lavender-800", border: "border-lavender-400", text: "text-lavender-900", gradient: "from-lavender-700 to-lavender-800" },
-    orange: { bg: "bg-navy-800", border: "border-navy-400", text: "text-navy-900", gradient: "from-navy-800 to-navy-900" }
-  };
 
   return (
     <section id="programs" className="border-b border-slate-100 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="mb-12 max-w-2xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
-            <BookOpen size={16} />
-            Programs & Projects
+        <div className="mb-16 space-y-5">
+          <div className="text-xs font-semibold tracking-widest text-slate-500 uppercase">
+            FOR TEACHERS
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 max-w-3xl">
             Core programs that anchor the ecosystem
           </h2>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
             Take these programs individually or combine them into a complete career mapping journey.
           </p>
         </div>
 
-        <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           {programs.map((program) => {
-            const colors = colorClasses[program.color];
+            const [Icon1, Icon2, Icon3] = program.icons;
             return (
               <div
                 key={program.name}
-                className={`group relative overflow-hidden rounded-xl sm:rounded-2xl border-2 ${colors.border} bg-white p-6 sm:p-8 shadow-lg transition-all hover:shadow-2xl hover:scale-105`}
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 to-white p-8 transition-all hover:shadow-xl"
               >
-                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${colors.gradient} opacity-5 rounded-full blur-3xl transition-opacity group-hover:opacity-10`}></div>
-                <div className="relative">
-                  <div className={`mb-4 inline-flex items-center rounded-full ${colors.bg} px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-lg`}>
-                    {program.tag}
-                  </div>
-                  <h3 className="mb-3 text-lg sm:text-xl font-bold text-slate-900">
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
                     {program.name}
                   </h3>
-                  <p className="mb-4 leading-relaxed text-slate-600">
+                  <p className="text-slate-600 leading-relaxed mb-4">
                     {program.desc}
                   </p>
-                  <div className={`inline-flex items-center gap-2 text-sm font-semibold ${colors.text}`}>
-                    <Users size={16} />
-                    {program.audience}
+                </div>
+
+                <div className={`relative rounded-xl bg-gradient-to-br ${program.bgColor} p-8 min-h-[240px] flex items-center justify-center`}>
+                  <div className="grid grid-cols-3 gap-6 w-full max-w-sm">
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="rounded-2xl bg-white shadow-lg p-6 w-full aspect-square flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform">
+                        <Icon1 className="w-10 h-10 text-slate-700" />
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="rounded-2xl bg-white shadow-lg p-6 w-full aspect-square flex items-center justify-center transform rotate-2 group-hover:rotate-0 transition-transform">
+                        <Icon2 className="w-10 h-10 text-slate-700" />
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="rounded-2xl bg-white shadow-lg p-6 w-full aspect-square flex items-center justify-center transform -rotate-1 group-hover:rotate-0 transition-transform">
+                        <Icon3 className="w-10 h-10 text-slate-700" />
+                      </div>
+                    </div>
                   </div>
+                </div>
+
+                <div className="mt-6 flex items-center gap-2 text-sm text-slate-500">
+                  <Users size={16} />
+                  {program.audience}
                 </div>
               </div>
             );
