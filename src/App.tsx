@@ -652,44 +652,93 @@ const StoriesSection: React.FC = () => {
   );
 };
 
+const CounterStat: React.FC<{ value: number; suffix: string; label: string }> = ({ value, suffix, label }) => {
+  const [count, setCount] = React.useState(0);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  React.useEffect(() => {
+    if (!isVisible) return;
+
+    const duration = 2000;
+    const steps = 60;
+    const increment = value / steps;
+    const stepDuration = duration / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= value) {
+        setCount(value);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, stepDuration);
+
+    return () => clearInterval(timer);
+  }, [isVisible, value]);
+
+  return (
+    <div ref={ref} className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 sm:p-6">
+      <div className="text-3xl sm:text-4xl font-bold text-white mb-1">
+        {count}{suffix}
+      </div>
+      <div className="text-sm text-slate-400">{label}</div>
+    </div>
+  );
+};
+
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="grid gap-8 md:gap-10 lg:gap-12 lg:grid-cols-[1.3fr,1fr] lg:items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
+    <section id="about" className="relative overflow-hidden bg-black">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
+        <div className="grid gap-10 md:gap-12 lg:gap-16 lg:grid-cols-[1.4fr,1fr] lg:items-start">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2.5 text-sm font-medium text-white">
               <Building2 size={16} />
               About Teacheristic
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
-              A teacher-first ecosystem built from India for India & GCC
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600 bg-clip-text text-transparent">
+                A teacher-first ecosystem built from India for India & GCC
+              </span>
             </h2>
-            <p className="text-lg leading-relaxed text-slate-600">
+
+            <p className="text-base sm:text-lg leading-relaxed text-slate-400 max-w-2xl">
               Founded with a vision to transform teacher careers, Teacheristic connects academic training, real-world internships, and international placements under one comprehensive platform, part of Progress Education.
             </p>
-            <div className="grid gap-3 sm:gap-4 grid-cols-2">
-              <div className="rounded-xl border border-slate-200 bg-white p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-lavender-800">500+</div>
-                <div className="text-sm text-slate-600">Teachers Trained</div>
-              </div>
-              <div className="rounded-xl border border-slate-200 bg-white p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-navy-800">50+</div>
-                <div className="text-sm text-slate-600">Partner Schools</div>
-              </div>
-              <div className="rounded-xl border border-slate-200 bg-white p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-lavender-800">95%</div>
-                <div className="text-sm text-slate-600">Placement Rate</div>
-              </div>
-              <div className="rounded-xl border border-slate-200 bg-white p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-navy-800">10+</div>
-                <div className="text-sm text-slate-600">GCC Countries</div>
-              </div>
+
+            <div className="grid gap-4 grid-cols-2 pt-4">
+              <CounterStat value={500} suffix="+" label="Teachers Trained" />
+              <CounterStat value={50} suffix="+" label="Partner Schools" />
+              <CounterStat value={95} suffix="%" label="Placement Rate" />
+              <CounterStat value={10} suffix="+" label="GCC Countries" />
             </div>
           </div>
 
-          <div className="rounded-2xl md:rounded-3xl border-2 border-slate-200 bg-white p-6 sm:p-8 shadow-xl">
-            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-bold text-navy-800">
+          <div className="rounded-2xl md:rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-2xl lg:sticky lg:top-8">
+            <h3 className="mb-5 sm:mb-6 text-lg sm:text-xl font-bold text-slate-900">
               Our Mission & Vision
             </h3>
             <ul className="space-y-4">
@@ -700,8 +749,8 @@ const AboutSection: React.FC = () => {
                 "Long-term vision of a comprehensive teacher growth ecosystem"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-lavender-800" />
-                  <span className="text-slate-700">{item}</span>
+                  <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-green-600" />
+                  <span className="text-slate-700 leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
