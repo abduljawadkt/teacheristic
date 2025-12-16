@@ -19,7 +19,6 @@ export const SchoolRegistrationForm: React.FC<SchoolRegistrationFormProps> = ({ 
     location: '',
     city: '',
     state: '',
-    board: '',
     total_students: '',
     hiring_needs: '',
     positions_needed: '',
@@ -40,7 +39,6 @@ export const SchoolRegistrationForm: React.FC<SchoolRegistrationFormProps> = ({ 
         location: formData.location,
         city: formData.city,
         state: formData.state,
-        board: formData.board || undefined,
         total_students: parseInt(formData.total_students) || undefined,
         hiring_needs: formData.hiring_needs || undefined,
         positions_needed: parseInt(formData.positions_needed) || 1,
@@ -105,19 +103,6 @@ export const SchoolRegistrationForm: React.FC<SchoolRegistrationFormProps> = ({ 
                 <option value="International">International</option>
                 <option value="Other">Other</option>
               </select>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
-                Board/Curriculum
-              </label>
-              <input
-                type="text"
-                value={formData.board}
-                onChange={(e) => setFormData({ ...formData, board: e.target.value })}
-                placeholder="e.g., IB, Cambridge"
-                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-navy-600 focus:border-transparent"
-              />
             </div>
 
             <div>
