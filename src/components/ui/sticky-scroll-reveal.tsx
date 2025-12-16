@@ -109,7 +109,7 @@ export const StickyScroll = ({
           }}
           transition={{ duration: 0.5 }}
           className={cn(
-            "hidden lg:flex h-[28rem] w-[32rem] rounded-2xl bg-white sticky top-20 overflow-hidden border-4 border-white/20 shadow-2xl",
+            "hidden lg:flex h-[28rem] w-[32rem] rounded-2xl bg-white overflow-hidden border-4 border-white/20 shadow-2xl flex-shrink-0",
             contentClassName
           )}
         >
