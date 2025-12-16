@@ -197,16 +197,20 @@ const CareerMappingSection: React.FC = () => {
       description:
         "For Teachers: Begin with comprehensive 4-month hybrid training in pedagogy, classroom management, language proficiency, technology integration, and AI tools. Build a strong foundation for modern teaching excellence.",
       content: (
-        <div className="h-full w-full relative overflow-hidden rounded-md">
+        <div className="h-full w-full relative overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
             className="h-full w-full object-cover"
             alt="Teacher training and professional development"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/80 to-transparent flex items-end p-6">
-            <div className="text-white">
-              <div className="font-bold text-lg mb-2">Professional Training</div>
-              <div className="text-sm opacity-90">Building teaching excellence from day one</div>
+          <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/90 via-cyan-800/40 to-transparent"></div>
+          <div className="absolute inset-0 flex items-end p-8">
+            <div className="text-white space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold">
+                FOR TEACHERS
+              </div>
+              <div className="font-bold text-2xl">Professional Training</div>
+              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Building teaching excellence from day one with comprehensive pedagogy training</div>
             </div>
           </div>
         </div>
@@ -217,16 +221,20 @@ const CareerMappingSection: React.FC = () => {
       description:
         "For Teachers: Gain hands-on experience through guided internships in Kerala partner schools. Work with real students under expert mentorship to build confidence, refine your teaching style, and develop professional habits that last a lifetime.",
       content: (
-        <div className="h-full w-full relative overflow-hidden rounded-md">
+        <div className="h-full w-full relative overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80"
             className="h-full w-full object-cover"
             alt="Teachers working in classrooms with students"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-pink-900/80 to-transparent flex items-end p-6">
-            <div className="text-white">
-              <div className="font-bold text-lg mb-2">Mentored Teaching</div>
-              <div className="text-sm opacity-90">Practice with guidance in real classrooms</div>
+          <div className="absolute inset-0 bg-gradient-to-t from-pink-900/90 via-pink-800/40 to-transparent"></div>
+          <div className="absolute inset-0 flex items-end p-8">
+            <div className="text-white space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold">
+                FOR TEACHERS
+              </div>
+              <div className="font-bold text-2xl">Mentored Teaching</div>
+              <div className="text-sm opacity-90 max-w-sm leading-relaxed">Practice with expert guidance in real classrooms with live students</div>
             </div>
           </div>
         </div>
@@ -237,11 +245,15 @@ const CareerMappingSection: React.FC = () => {
       description:
         "For Teachers: Work in Indian schools to refine your practice, understand diverse educational cultures, and grow as an educator. Build a strong portfolio while gaining the experience needed for international opportunities.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center text-white p-8">
-          <div className="text-center">
-            <GraduationCap className="w-16 h-16 mx-auto mb-4" />
-            <div className="font-bold text-xl mb-2">Career Development</div>
-            <div className="text-sm opacity-90">Continuous professional growth</div>
+        <div className="h-full w-full bg-gradient-to-br from-orange-500 via-orange-600 to-yellow-500 flex items-center justify-center text-white p-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]"></div>
+          <div className="relative text-center space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
+              FOR TEACHERS
+            </div>
+            <GraduationCap className="w-20 h-20 mx-auto mb-4" />
+            <div className="font-bold text-2xl">Career Development</div>
+            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">Continuous professional growth through Indian school experience</div>
           </div>
         </div>
       ),
@@ -251,11 +263,15 @@ const CareerMappingSection: React.FC = () => {
       description:
         "For Teachers: Progress to prestigious GCC schools with our comprehensive placement support, interview preparation, and cultural orientation. We help you make the leap to international teaching roles with confidence.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center text-white p-8">
-          <div className="text-center">
-            <Globe className="w-16 h-16 mx-auto mb-4" />
-            <div className="font-bold text-xl mb-2">GCC Placements</div>
-            <div className="text-sm opacity-90">International teaching careers</div>
+        <div className="h-full w-full bg-gradient-to-br from-cyan-500 via-teal-500 to-emerald-500 flex items-center justify-center text-white p-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.15),transparent)]"></div>
+          <div className="relative text-center space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
+              FOR TEACHERS
+            </div>
+            <Globe className="w-20 h-20 mx-auto mb-4" />
+            <div className="font-bold text-2xl">GCC Placements</div>
+            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">International teaching careers in prestigious Gulf schools</div>
           </div>
         </div>
       ),
@@ -265,11 +281,15 @@ const CareerMappingSection: React.FC = () => {
       description:
         "For Schools: Access our curated database of trained, verified teachers with intelligent AI matching. Find classroom-ready educators who fit your school's culture, curriculum needs, and long-term vision with unprecedented accuracy.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white p-8">
-          <div className="text-center">
-            <Search className="w-16 h-16 mx-auto mb-4" />
-            <div className="font-bold text-xl mb-2">Smart Matching</div>
-            <div className="text-sm opacity-90">Find the perfect teacher fit</div>
+        <div className="h-full w-full bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-600 flex items-center justify-center text-white p-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)]"></div>
+          <div className="relative text-center space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
+              FOR SCHOOLS
+            </div>
+            <Search className="w-20 h-20 mx-auto mb-4" />
+            <div className="font-bold text-2xl">Smart Matching</div>
+            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">AI-powered matching to find the perfect teacher fit for your school</div>
           </div>
         </div>
       ),
@@ -279,11 +299,15 @@ const CareerMappingSection: React.FC = () => {
       description:
         "For Schools: Every teacher in our network has completed intensive training, internships, and real classroom evaluations. We focus on culture fit and long-term growth potential to dramatically reduce teacher turnover and hiring challenges.",
       content: (
-        <div className="h-full w-full bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center text-white p-8">
-          <div className="text-center">
-            <UserCheck className="w-16 h-16 mx-auto mb-4" />
-            <div className="font-bold text-xl mb-2">Verified Excellence</div>
-            <div className="text-sm opacity-90">Pre-trained, classroom-ready teachers</div>
+        <div className="h-full w-full bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-600 flex items-center justify-center text-white p-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.12),transparent)]"></div>
+          <div className="relative text-center space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 text-xs font-bold mb-2">
+              FOR SCHOOLS
+            </div>
+            <UserCheck className="w-20 h-20 mx-auto mb-4" />
+            <div className="font-bold text-2xl">Verified Excellence</div>
+            <div className="text-sm opacity-90 max-w-xs mx-auto leading-relaxed">Pre-trained, classroom-ready teachers with proven capabilities</div>
           </div>
         </div>
       ),
@@ -291,28 +315,34 @@ const CareerMappingSection: React.FC = () => {
   ];
 
   return (
-    <section id="teachers" className="border-b border-slate-100 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
+    <section id="teachers" className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8c7ebb08_1px,transparent_1px),linear-gradient(to_bottom,#8c7ebb08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 md:pt-20 lg:pt-28 pb-8">
         <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lavender-600 to-lavender-700 px-5 py-2.5 text-sm font-semibold text-white shadow-lg">
               <Rocket size={16} />
               Career Mapping for Teachers & Schools
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800 leading-tight">
               A mapped journey, not a random career
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-slate-600 leading-relaxed">
               From your first foundation course to long-term progression into GCC roles, we help you design a clear, aspirational career path. Schools gain access to trained, verified teachers through intelligent matching.
             </p>
           </div>
-          <button className="inline-flex items-center gap-2 self-start rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+          <button className="inline-flex items-center gap-2 self-start rounded-xl bg-gradient-to-r from-lavender-600 to-lavender-700 px-8 py-4 font-bold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105 border border-lavender-500/50">
             Start My Career Map
-            <ArrowRight size={18} />
+            <ArrowRight size={20} />
           </button>
         </div>
+      </div>
 
-        <StickyScroll content={careerContent} />
+      <div className="relative px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-20 lg:pb-28">
+        <div className="mx-auto max-w-[90rem]">
+          <StickyScroll content={careerContent} />
+        </div>
       </div>
     </section>
   );
