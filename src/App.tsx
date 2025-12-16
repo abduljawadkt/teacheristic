@@ -3,6 +3,7 @@ import { Menu, X, ArrowRight, BookOpen, Users, Globe, Sparkles, CheckCircle, Gra
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
+import { GradientDots } from '@/components/ui/gradient-dots';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -336,16 +337,17 @@ const SchoolSection: React.FC = () => {
   ];
 
   return (
-    <section id="schools" className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8b5cf620_1px,transparent_1px),linear-gradient(to_bottom,#8b5cf620_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)]"></div>
+    <section id="schools" className="relative overflow-hidden bg-slate-950">
+      <GradientDots
+        dotSize={2}
+        spacing={20}
+        duration={40}
+        colorCycleDuration={8}
+        backgroundColor="#020617"
+        className="opacity-60"
+      />
 
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-r from-violet-600/15 to-purple-600/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '4s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-[450px] h-[450px] bg-gradient-to-r from-emerald-600/15 to-teal-600/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s', animationDuration: '5s' }}></div>
-      </div>
-
-      <div className="relative rounded-t-[4rem] bg-gradient-to-b from-slate-900/80 to-slate-950/80 border-t-4 border-slate-700/50 backdrop-blur-sm">
+      <div className="relative rounded-t-[4rem] bg-gradient-to-b from-slate-900/60 to-slate-950/60 border-t-4 border-slate-700/50 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
           <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl space-y-5">
