@@ -303,9 +303,9 @@ interface SchoolSectionProps {
 
 const SchoolSection: React.FC<SchoolSectionProps> = ({ onSchoolClick }) => {
   return (
-    <section id="schools" className="relative bg-black py-6 sm:py-8 md:py-10">
+    <section id="schools" className="relative bg-white py-6 sm:py-8 md:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10">
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-900">
           <EtheralShadow
             color="rgba(59, 130, 246, 0.4)"
             animation={{ scale: 100, speed: 70 }}
