@@ -301,110 +301,100 @@ interface SchoolSectionProps {
 }
 
 const SchoolSection: React.FC<SchoolSectionProps> = ({ onSchoolClick }) => {
-  const features = [
-    {
-      Icon: Search,
-      name: "AI-Powered Matching",
-      description: "Access candidates suited for CBSE, ICSE, and international schools with intelligent recommendations based on your specific requirements.",
-      accentColor: "from-blue-500/20 to-cyan-500/20",
-      borderColor: "border-blue-500/30",
-      iconBg: "from-blue-600/20 to-cyan-600/20",
-      className: "lg:col-span-1 lg:row-span-2",
-    },
-    {
-      Icon: UserCheck,
-      name: "Pre-trained & Classroom-Ready Teachers",
-      description: "Every teacher has completed our mapped training, internships, and real classroom evaluations before joining your school.",
-      accentColor: "from-emerald-500/20 to-teal-500/20",
-      borderColor: "border-emerald-500/30",
-      iconBg: "from-emerald-600/20 to-teal-600/20",
-      className: "lg:col-span-1 lg:row-span-3",
-    },
-    {
-      Icon: TrendingUp,
-      name: "Lower Hiring Risk",
-      description: "We focus on culture fit, classroom readiness, and long-term growth potential to dramatically reduce teacher churn.",
-      accentColor: "from-amber-500/20 to-orange-500/20",
-      borderColor: "border-amber-500/30",
-      iconBg: "from-amber-600/20 to-orange-600/20",
-      className: "lg:col-span-1 lg:row-span-1",
-    },
-    {
-      Icon: Target,
-      name: "Custom In-House Programs",
-      description: "Design faculty development programs and long-term hiring pipelines tailored to your school's unique culture and needs.",
-      accentColor: "from-violet-500/20 to-purple-500/20",
-      borderColor: "border-violet-500/30",
-      iconBg: "from-violet-600/20 to-purple-600/20",
-      className: "lg:col-span-1 lg:row-span-1",
-    },
-    {
-      Icon: Globe,
-      name: "India & GCC Expertise",
-      description: "Access verified teacher profiles from across India and GCC countries, with cultural readiness training for international placements.",
-      accentColor: "from-sky-500/20 to-indigo-500/20",
-      borderColor: "border-sky-500/30",
-      iconBg: "from-sky-600/20 to-indigo-600/20",
-      className: "lg:col-span-1 lg:row-span-2",
-    },
-  ];
-
   return (
-    <section id="schools" className="relative overflow-hidden bg-slate-950">
-      <GradientDots
-        dotSize={2}
-        spacing={20}
-        duration={40}
-        colorCycleDuration={8}
-        backgroundColor="#020617"
-        className="opacity-60"
-      />
+    <section id="schools" className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-2xl space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-xs font-medium text-white">
+              <Building2 size={14} />
+              For Schools
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
+              Hire the right teachers with AI-powered matching
+            </h2>
+            <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
+              Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
+            </p>
+          </div>
+          <button
+            onClick={onSchoolClick}
+            className="inline-flex items-center gap-2 self-start rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl lg:self-start"
+          >
+            Become a Partner
+            <ArrowRight size={16} />
+          </button>
+        </div>
 
-      <div className="relative rounded-t-[4rem] bg-gradient-to-b from-slate-900/60 to-slate-950/60 border-t-4 border-slate-700/50 backdrop-blur-sm">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
-          <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 px-5 py-2.5 text-sm font-semibold text-slate-200 shadow-lg">
-                <Building2 size={16} />
-                For Schools
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-12 lg:grid-rows-6">
+          <div className="lg:col-span-4 lg:row-span-4 rounded-2xl bg-white/5 border border-white/10 p-8 transition-all hover:bg-white/[0.07] hover:border-white/20">
+            <div className="flex flex-col h-full">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-500/20 mb-6">
+                <Search className="w-6 h-6 text-blue-400" />
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
-                Hire the right teachers with AI-powered matching
-              </h2>
-              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
-                Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
+              <h3 className="text-xl font-bold text-white mb-3">
+                AI-Powered Matching
+              </h3>
+              <p className="text-slate-400 leading-relaxed text-sm">
+                Access candidates suited for CBSE, ICSE, and international schools with intelligent recommendations based on your specific requirements.
               </p>
             </div>
-            <button onClick={onSchoolClick} className="inline-flex items-center gap-2 self-start rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-4 font-bold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105 lg:self-center border border-blue-500/50">
-              Become a Partner
-              <ArrowRight size={20} />
-            </button>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3 lg:grid-rows-3">
-            {features.map((feature) => (
-              <div
-                key={feature.name}
-                className={`group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl p-8 transition-all duration-500 hover:scale-[1.02] hover:bg-white/10 border ${feature.borderColor} hover:border-opacity-60 shadow-2xl ${feature.className}`}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${feature.accentColor} rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
-
-                <div className="relative space-y-4 z-10">
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.iconBg} backdrop-blur-sm border ${feature.borderColor} shadow-lg`}>
-                    <feature.Icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors">
-                    {feature.name}
-                  </h3>
-                  <p className="text-slate-300 leading-relaxed group-hover:text-slate-200 transition-colors">
-                    {feature.description}
-                  </p>
-                </div>
-
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="lg:col-span-4 lg:row-span-6 rounded-2xl bg-white/5 border border-white/10 p-8 transition-all hover:bg-white/[0.07] hover:border-white/20">
+            <div className="flex flex-col h-full">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-teal-500/20 mb-6">
+                <UserCheck className="w-6 h-6 text-teal-400" />
               </div>
-            ))}
+              <h3 className="text-xl font-bold text-white mb-3">
+                Pre-trained & Classroom-Ready Teachers
+              </h3>
+              <p className="text-slate-400 leading-relaxed text-sm">
+                Every teacher has completed our mapped training, internships, and real classroom evaluations before joining your school.
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:col-span-4 lg:row-span-3 rounded-2xl bg-white/5 border border-white/10 p-8 transition-all hover:bg-white/[0.07] hover:border-white/20">
+            <div className="flex flex-col h-full">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-500/20 mb-6">
+                <TrendingUp className="w-6 h-6 text-amber-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Lower Hiring Risk
+              </h3>
+              <p className="text-slate-400 leading-relaxed text-sm">
+                We focus on culture fit, classroom readiness, and long-term growth potential to dramatically reduce teacher churn.
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:col-span-4 lg:row-span-2 rounded-2xl bg-white/5 border border-white/10 p-8 transition-all hover:bg-white/[0.07] hover:border-white/20">
+            <div className="flex flex-col h-full">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-500/20 mb-6">
+                <Globe className="w-6 h-6 text-blue-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                India & GCC Expertise
+              </h3>
+              <p className="text-slate-400 leading-relaxed text-sm">
+                Access verified teacher profiles from across India and GCC countries, with cultural readiness training for international placements.
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:col-span-4 lg:row-span-3 rounded-2xl bg-white/5 border border-white/10 p-8 transition-all hover:bg-white/[0.07] hover:border-white/20">
+            <div className="flex flex-col h-full">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-purple-500/20 mb-6">
+                <Target className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Custom In-House Programs
+              </h3>
+              <p className="text-slate-400 leading-relaxed text-sm">
+                Design faculty development programs and long-term hiring pipelines tailored to your school's unique culture and needs.
+              </p>
+            </div>
           </div>
         </div>
       </div>
