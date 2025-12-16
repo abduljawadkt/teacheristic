@@ -303,7 +303,7 @@ interface SchoolSectionProps {
 
 const SchoolSection: React.FC<SchoolSectionProps> = ({ onSchoolClick }) => {
   return (
-    <section id="schools" className="relative bg-black py-8 sm:py-12 md:py-16">
+    <section id="schools" className="relative bg-black py-6 sm:py-8 md:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl border border-white/10">
           <EtheralShadow
@@ -313,17 +313,17 @@ const SchoolSection: React.FC<SchoolSectionProps> = ({ onSchoolClick }) => {
             sizing="fill"
           />
 
-          <div className="relative z-10 p-6 sm:p-8 md:p-10 lg:p-12">
-            <div className="mb-8 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-              <div className="max-w-2xl space-y-4">
+          <div className="relative z-10 p-6 sm:p-8 lg:p-10">
+            <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+              <div className="max-w-2xl space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-xs font-medium text-white">
                   <Building2 size={14} />
                   For Schools
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white leading-[1.1]">
                   Hire the right teachers with AI-powered matching
                 </h2>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                <p className="text-sm text-slate-300 leading-relaxed">
                   Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
                 </p>
               </div>
@@ -336,74 +336,84 @@ const SchoolSection: React.FC<SchoolSectionProps> = ({ onSchoolClick }) => {
               </button>
             </div>
 
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-12 lg:grid-rows-6">
-              <div className="lg:col-span-4 lg:row-span-4 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 p-6 transition-all hover:bg-black/30 hover:border-white/20">
-                <div className="flex flex-col h-full">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-500/20 mb-4">
-                    <Search className="w-6 h-6 text-blue-400" />
+            <div className="grid gap-3 grid-cols-1 lg:grid-cols-2">
+              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/20 flex-shrink-0">
+                    <Search className="w-5 h-5 text-blue-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    AI-Powered Matching
-                  </h3>
-                  <p className="text-slate-300 leading-relaxed text-sm">
-                    Access candidates suited for CBSE, ICSE, and international schools with intelligent recommendations based on your specific requirements.
-                  </p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-1">
+                      AI-Powered Matching
+                    </h3>
+                    <p className="text-slate-300 text-xs leading-snug">
+                      Access candidates suited for CBSE, ICSE, and international schools with intelligent recommendations.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-4 lg:row-span-6 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 p-6 transition-all hover:bg-black/30 hover:border-white/20">
-                <div className="flex flex-col h-full">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-teal-500/20 mb-4">
-                    <UserCheck className="w-6 h-6 text-teal-400" />
+              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-teal-500/20 flex-shrink-0">
+                    <UserCheck className="w-5 h-5 text-teal-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    Pre-trained & Classroom-Ready Teachers
-                  </h3>
-                  <p className="text-slate-300 leading-relaxed text-sm">
-                    Every teacher has completed our mapped training, internships, and real classroom evaluations before joining your school.
-                  </p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-1">
+                      Pre-trained & Classroom-Ready Teachers
+                    </h3>
+                    <p className="text-slate-300 text-xs leading-snug">
+                      Every teacher has completed our mapped training, internships, and real classroom evaluations.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-4 lg:row-span-3 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 p-6 transition-all hover:bg-black/30 hover:border-white/20">
-                <div className="flex flex-col h-full">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-500/20 mb-4">
-                    <TrendingUp className="w-6 h-6 text-amber-400" />
+              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500/20 flex-shrink-0">
+                    <TrendingUp className="w-5 h-5 text-amber-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    Lower Hiring Risk
-                  </h3>
-                  <p className="text-slate-300 leading-relaxed text-sm">
-                    We focus on culture fit, classroom readiness, and long-term growth potential to dramatically reduce teacher churn.
-                  </p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-1">
+                      Lower Hiring Risk
+                    </h3>
+                    <p className="text-slate-300 text-xs leading-snug">
+                      We focus on culture fit, classroom readiness, and long-term growth potential to reduce teacher churn.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-4 lg:row-span-2 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 p-6 transition-all hover:bg-black/30 hover:border-white/20">
-                <div className="flex flex-col h-full">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-500/20 mb-4">
-                    <Globe className="w-6 h-6 text-blue-400" />
+              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/20 flex-shrink-0">
+                    <Globe className="w-5 h-5 text-blue-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    India & GCC Expertise
-                  </h3>
-                  <p className="text-slate-300 leading-relaxed text-sm">
-                    Access verified teacher profiles from across India and GCC countries, with cultural readiness training for international placements.
-                  </p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-1">
+                      India & GCC Expertise
+                    </h3>
+                    <p className="text-slate-300 text-xs leading-snug">
+                      Access verified teacher profiles from across India and GCC countries with cultural readiness training.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-4 lg:row-span-3 rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 p-6 transition-all hover:bg-black/30 hover:border-white/20">
-                <div className="flex flex-col h-full">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-purple-500/20 mb-4">
-                    <Target className="w-6 h-6 text-purple-400" />
+              <div className="rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 p-4 transition-all hover:bg-black/30 hover:border-white/20 lg:col-span-2">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-purple-500/20 flex-shrink-0">
+                    <Target className="w-5 h-5 text-purple-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    Custom In-House Programs
-                  </h3>
-                  <p className="text-slate-300 leading-relaxed text-sm">
-                    Design faculty development programs and long-term hiring pipelines tailored to your school's unique culture and needs.
-                  </p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-1">
+                      Custom In-House Programs
+                    </h3>
+                    <p className="text-slate-300 text-xs leading-snug">
+                      Design faculty development programs and long-term hiring pipelines tailored to your school's unique culture.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
