@@ -295,11 +295,7 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "Learn more",
       background: (
-        <img
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
-          src="https://images.pexels.com/photos/8422088/pexels-photo-8422088.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt="Teacher in classroom"
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-100 via-navy-50 to-white opacity-50" />
       ),
       className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
     },
@@ -310,11 +306,7 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "Explore",
       background: (
-        <img
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
-          src="https://images.pexels.com/photos/8867434/pexels-photo-8867434.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt="AI matching"
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-blue-50 to-white opacity-50" />
       ),
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
     },
@@ -325,11 +317,7 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "Get Started",
       background: (
-        <img
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
-          src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt="Training program"
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 via-emerald-50 to-white opacity-50" />
       ),
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
     },
@@ -340,11 +328,7 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "See Results",
       background: (
-        <img
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
-          src="https://images.pexels.com/photos/8423024/pexels-photo-8423024.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt="Success metrics"
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-amber-50 to-white opacity-50" />
       ),
       className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
     },
@@ -355,11 +339,7 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "View Database",
       background: (
-        <img
-          className="absolute inset-0 h-full w-full object-cover opacity-60"
-          src="https://images.pexels.com/photos/8363030/pexels-photo-8363030.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt="Global network"
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-white opacity-50" />
       ),
       className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
     },
