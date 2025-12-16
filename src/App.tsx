@@ -136,19 +136,9 @@ const TwoColumnEcosystem: React.FC = () => {
               <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
                 Career mapping from student to global educator
               </h3>
-              <ul className="space-y-3 text-slate-700">
-                {[
-                  "4-month hybrid foundation program with live + self-paced modules",
-                  "Structured internships in Kerala schools to build classroom experience",
-                  "Continued support to secure roles in Indian & GCC schools",
-                  "Ongoing upskilling through micro-courses & AI-assisted learning tools"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-lavender-800" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-slate-700 text-base mb-6">
+                Achieve professional and financial growth in teaching.
+              </p>
               <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-lavender-700 to-lavender-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
                 Start Your Journey
                 <ArrowRight size={18} />
@@ -166,19 +156,9 @@ const TwoColumnEcosystem: React.FC = () => {
               <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
                 Hire trained, culture-ready teachers with AI matching
               </h3>
-              <ul className="space-y-3 text-slate-700">
-                {[
-                  "Access verified teacher profiles from India & GCC with AI-powered matchmaking",
-                  "Filter by subject, board, language, and experience level",
-                  "Option to add in-house training projects for your existing faculty",
-                  "Save time, reduce churn, and improve classroom readiness"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-navy-800" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-slate-700 text-base mb-6">
+                Find and hire skill-verified teachers from Teacheristic.
+              </p>
               <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-navy-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:bg-navy-900 hover:shadow-xl hover:scale-105">
                 Partner With Us
                 <ArrowRight size={18} />
