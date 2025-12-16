@@ -5,6 +5,7 @@ import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
 import { GradientDots } from '@/components/ui/gradient-dots';
 import { MarqueeAnimation } from '@/components/ui/marquee-effect';
+import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -189,35 +190,103 @@ const TwoColumnEcosystem: React.FC = () => {
   );
 };
 
-const TeacherJourneySection: React.FC = () => {
-  const steps = [
+const CareerMappingSection: React.FC = () => {
+  const careerContent = [
     {
-      icon: BookOpen,
       title: "Foundation Program",
-      subtitle: "4-month hybrid training",
-      body: "Comprehensive pedagogy, classroom management, language, tech, and AI tools for modern teaching.",
-      color: "from-lavender-600 to-lavender-700"
+      description:
+        "For Teachers: Begin with comprehensive 4-month hybrid training in pedagogy, classroom management, language proficiency, technology integration, and AI tools. Build a strong foundation for modern teaching excellence.",
+      content: (
+        <div className="h-full w-full relative overflow-hidden rounded-md">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80"
+            className="h-full w-full object-cover"
+            alt="Teacher training and professional development"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/80 to-transparent flex items-end p-6">
+            <div className="text-white">
+              <div className="font-bold text-lg mb-2">Professional Training</div>
+              <div className="text-sm opacity-90">Building teaching excellence from day one</div>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      icon: GraduationCap,
-      title: "Kerala Internship",
-      subtitle: "Real classrooms, real mentoring",
-      body: "Guided internships in partner schools to build confidence and professional teaching habits.",
-      color: "from-lavender-700 to-lavender-800"
+      title: "Real Classroom Experience",
+      description:
+        "For Teachers: Gain hands-on experience through guided internships in Kerala partner schools. Work with real students under expert mentorship to build confidence, refine your teaching style, and develop professional habits that last a lifetime.",
+      content: (
+        <div className="h-full w-full relative overflow-hidden rounded-md">
+          <img
+            src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80"
+            className="h-full w-full object-cover"
+            alt="Teachers working in classrooms with students"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-pink-900/80 to-transparent flex items-end p-6">
+            <div className="text-white">
+              <div className="font-bold text-lg mb-2">Mentored Teaching</div>
+              <div className="text-sm opacity-90">Practice with guidance in real classrooms</div>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      icon: Building2,
-      title: "Indian Experience",
-      subtitle: "Professional grounding",
-      body: "Work in Indian schools to refine practice, understand culture, and grow as an educator.",
-      color: "from-navy-700 to-navy-800"
+      title: "Professional Growth Path",
+      description:
+        "For Teachers: Work in Indian schools to refine your practice, understand diverse educational cultures, and grow as an educator. Build a strong portfolio while gaining the experience needed for international opportunities.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center text-white p-8">
+          <div className="text-center">
+            <GraduationCap className="w-16 h-16 mx-auto mb-4" />
+            <div className="font-bold text-xl mb-2">Career Development</div>
+            <div className="text-sm opacity-90">Continuous professional growth</div>
+          </div>
+        </div>
+      ),
     },
     {
-      icon: Globe,
-      title: "GCC Career Path",
-      subtitle: "Global opportunities",
-      body: "Placement support, interview prep, and orientation for prestigious GCC schools.",
-      color: "from-navy-800 to-navy-900"
+      title: "Global Opportunities",
+      description:
+        "For Teachers: Progress to prestigious GCC schools with our comprehensive placement support, interview preparation, and cultural orientation. We help you make the leap to international teaching roles with confidence.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center text-white p-8">
+          <div className="text-center">
+            <Globe className="w-16 h-16 mx-auto mb-4" />
+            <div className="font-bold text-xl mb-2">GCC Placements</div>
+            <div className="text-sm opacity-90">International teaching careers</div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "AI-Powered Hiring",
+      description:
+        "For Schools: Access our curated database of trained, verified teachers with intelligent AI matching. Find classroom-ready educators who fit your school's culture, curriculum needs, and long-term vision with unprecedented accuracy.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white p-8">
+          <div className="text-center">
+            <Search className="w-16 h-16 mx-auto mb-4" />
+            <div className="font-bold text-xl mb-2">Smart Matching</div>
+            <div className="text-sm opacity-90">Find the perfect teacher fit</div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Reduced Hiring Risk",
+      description:
+        "For Schools: Every teacher in our network has completed intensive training, internships, and real classroom evaluations. We focus on culture fit and long-term growth potential to dramatically reduce teacher turnover and hiring challenges.",
+      content: (
+        <div className="h-full w-full bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center text-white p-8">
+          <div className="text-center">
+            <UserCheck className="w-16 h-16 mx-auto mb-4" />
+            <div className="font-bold text-xl mb-2">Verified Excellence</div>
+            <div className="text-sm opacity-90">Pre-trained, classroom-ready teachers</div>
+          </div>
+        </div>
+      ),
     },
   ];
 
@@ -228,13 +297,13 @@ const TeacherJourneySection: React.FC = () => {
           <div className="max-w-2xl space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
               <Rocket size={16} />
-              Career Mapping for Teachers
+              Career Mapping for Teachers & Schools
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
               A mapped journey, not a random career
             </h2>
             <p className="text-lg text-slate-600">
-              From your first foundation course to long-term progression into GCC roles, we help you design a clear, aspirational career path.
+              From your first foundation course to long-term progression into GCC roles, we help you design a clear, aspirational career path. Schools gain access to trained, verified teachers through intelligent matching.
             </p>
           </div>
           <button className="inline-flex items-center gap-2 self-start rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
@@ -243,43 +312,7 @@ const TeacherJourneySection: React.FC = () => {
           </button>
         </div>
 
-        <ul className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
-          {steps.map((step, idx) => (
-            <li key={idx} className="min-h-[20rem] list-none">
-              <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-slate-200 p-2 md:rounded-[1.5rem] md:p-3">
-                <GlowingEffect
-                  spread={40}
-                  glow={true}
-                  disabled={false}
-                  proximity={64}
-                  inactiveZone={0.01}
-                  borderWidth={3}
-                />
-                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-slate-100 bg-white p-6 shadow-sm">
-                  <div className="relative flex flex-1 flex-col justify-between gap-4">
-                    <div className={`w-fit rounded-lg border-[0.75px] border-slate-200 bg-gradient-to-br ${step.color} p-3 shadow-lg`}>
-                      <step.icon className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="space-y-3">
-                      <div className="text-xs font-bold text-lavender-800 uppercase tracking-wider">
-                        Step {idx + 1}
-                      </div>
-                      <h3 className="text-xl leading-tight font-bold font-sans tracking-tight text-navy-800">
-                        {step.title}
-                      </h3>
-                      <p className={`text-sm font-semibold bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
-                        {step.subtitle}
-                      </p>
-                      <p className="font-sans text-sm leading-relaxed text-slate-600">
-                        {step.body}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <StickyScroll content={careerContent} />
       </div>
     </section>
   );
@@ -820,7 +853,7 @@ function App() {
       <main>
         <HeroSection />
         <TwoColumnEcosystem />
-        <TeacherJourneySection />
+        <CareerMappingSection />
         <SchoolSection />
         <ProgramsSection />
         <InternshipsSection />
