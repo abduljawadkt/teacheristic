@@ -167,23 +167,23 @@ const TwoColumnEcosystem: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-16 space-y-6">
-          <MarqueeAnimation
-            direction="left"
-            baseVelocity={-2}
-            className="bg-gradient-to-r from-lavender-700 to-lavender-800 text-white py-4 text-3xl sm:text-4xl md:text-5xl"
-          >
-            Career Mapping • Foundation to GCC • Teacher Excellence • AI-Powered Hiring
-          </MarqueeAnimation>
-          <MarqueeAnimation
-            direction="right"
-            baseVelocity={-2}
-            className="bg-navy-800 text-white py-4 text-3xl sm:text-4xl md:text-5xl"
-          >
-            India & GCC Schools • Classroom-Ready Teachers • Professional Growth • Global Opportunities
-          </MarqueeAnimation>
-        </div>
+      <div className="mt-16 space-y-6 w-full">
+        <MarqueeAnimation
+          direction="left"
+          baseVelocity={-2}
+          className="bg-gradient-to-r from-lavender-700 to-lavender-800 text-white py-4 text-3xl sm:text-4xl md:text-5xl"
+        >
+          Career Mapping • Foundation to GCC • Teacher Excellence • AI-Powered Hiring
+        </MarqueeAnimation>
+        <MarqueeAnimation
+          direction="right"
+          baseVelocity={-2}
+          className="bg-navy-800 text-white py-4 text-3xl sm:text-4xl md:text-5xl"
+        >
+          India & GCC Schools • Classroom-Ready Teachers • Professional Growth • Global Opportunities
+        </MarqueeAnimation>
       </div>
     </section>
   );
