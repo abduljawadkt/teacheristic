@@ -109,33 +109,33 @@ const HeroSection: React.FC = () => {
 
 const TwoColumnEcosystem: React.FC = () => {
   return (
-    <section id="ecosystem" className="border-b border-navy-800 bg-gradient-to-b from-navy-950 to-navy-900">
+    <section id="ecosystem" className="border-b border-slate-100 bg-gradient-to-b from-white to-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="mb-12 max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-700/20 px-4 py-2 text-sm font-semibold text-lavender-400">
+          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
             <Users size={16} />
             The Teacheristic Ecosystem
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
             One platform. Two journeys. A shared goal.
           </h2>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-slate-600">
             Connecting future-ready teachers with schools across India & GCC through intensive training, internships, and AI-powered hiring.
           </p>
         </div>
 
         <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
-          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-lavender-700/30 bg-gradient-to-br from-lavender-900/30 to-navy-900/50 p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-lavender-600/50">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lavender-600/20 to-transparent rounded-full blur-3xl -z-0"></div>
+          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-lavender-400 bg-gradient-to-br from-lavender-100 to-white p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-lavender-500">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lavender-400/30 to-transparent rounded-full blur-3xl -z-0"></div>
             <div className="relative">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lavender-700 to-lavender-800 px-4 py-2 text-sm font-bold text-white shadow-lg">
                 <GraduationCap size={18} />
                 For Teachers
               </div>
-              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-white">
+              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
                 Career mapping from student to global educator
               </h3>
-              <ul className="space-y-3 text-slate-300">
+              <ul className="space-y-3 text-slate-700">
                 {[
                   "4-month hybrid foundation program with live + self-paced modules",
                   "Structured internships in Kerala schools to build classroom experience",
@@ -143,7 +143,7 @@ const TwoColumnEcosystem: React.FC = () => {
                   "Ongoing upskilling through micro-courses & AI-assisted learning tools"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-lavender-500" />
+                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-lavender-800" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -155,17 +155,17 @@ const TwoColumnEcosystem: React.FC = () => {
             </div>
           </div>
 
-          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-navy-700/30 bg-gradient-to-br from-navy-800/30 to-navy-900/50 p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-navy-600/50">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-navy-600/20 to-transparent rounded-full blur-3xl -z-0"></div>
+          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-navy-400 bg-gradient-to-br from-navy-100 to-white p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-navy-500">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-navy-400/30 to-transparent rounded-full blur-3xl -z-0"></div>
             <div className="relative">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-navy-800 px-4 py-2 text-sm font-bold text-white shadow-lg">
                 <Building2 size={18} />
                 For Schools
               </div>
-              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-white">
+              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
                 Hire trained, culture-ready teachers with AI matching
               </h3>
-              <ul className="space-y-3 text-slate-300">
+              <ul className="space-y-3 text-slate-700">
                 {[
                   "Access verified teacher profiles from India & GCC with AI-powered matchmaking",
                   "Filter by subject, board, language, and experience level",
@@ -173,7 +173,7 @@ const TwoColumnEcosystem: React.FC = () => {
                   "Save time, reduce churn, and improve classroom readiness"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-slate-400" />
+                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-navy-800" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -223,18 +223,18 @@ const TeacherJourneySection: React.FC = () => {
   ];
 
   return (
-    <section id="teachers" className="border-b border-navy-800 bg-navy-900">
+    <section id="teachers" className="border-b border-slate-100 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-700/20 px-4 py-2 text-sm font-semibold text-lavender-400">
+            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
               <Rocket size={16} />
               Career Mapping for Teachers
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
               A mapped journey, not a random career
             </h2>
-            <p className="text-lg text-slate-400">
+            <p className="text-lg text-slate-600">
               From your first foundation course to long-term progression into GCC roles, we help you design a clear, aspirational career path.
             </p>
           </div>
@@ -247,7 +247,7 @@ const TeacherJourneySection: React.FC = () => {
         <ul className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
           {steps.map((step, idx) => (
             <li key={idx} className="min-h-[20rem] list-none">
-              <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-navy-700 p-2 md:rounded-[1.5rem] md:p-3">
+              <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-slate-200 p-2 md:rounded-[1.5rem] md:p-3">
                 <GlowingEffect
                   spread={40}
                   glow={true}
@@ -256,22 +256,22 @@ const TeacherJourneySection: React.FC = () => {
                   inactiveZone={0.01}
                   borderWidth={3}
                 />
-                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-navy-700 bg-navy-800/50 p-6 shadow-sm">
+                <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-slate-100 bg-white p-6 shadow-sm">
                   <div className="relative flex flex-1 flex-col justify-between gap-4">
-                    <div className={`w-fit rounded-lg border-[0.75px] border-navy-600 bg-gradient-to-br ${step.color} p-3 shadow-lg`}>
+                    <div className={`w-fit rounded-lg border-[0.75px] border-slate-200 bg-gradient-to-br ${step.color} p-3 shadow-lg`}>
                       <step.icon className="h-5 w-5 text-white" />
                     </div>
                     <div className="space-y-3">
-                      <div className="text-xs font-bold text-lavender-500 uppercase tracking-wider">
+                      <div className="text-xs font-bold text-lavender-800 uppercase tracking-wider">
                         Step {idx + 1}
                       </div>
-                      <h3 className="text-xl leading-tight font-bold font-sans tracking-tight text-white">
+                      <h3 className="text-xl leading-tight font-bold font-sans tracking-tight text-navy-800">
                         {step.title}
                       </h3>
                       <p className={`text-sm font-semibold bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
                         {step.subtitle}
                       </p>
-                      <p className="font-sans text-sm leading-relaxed text-slate-400">
+                      <p className="font-sans text-sm leading-relaxed text-slate-600">
                         {step.body}
                       </p>
                     </div>
@@ -295,7 +295,7 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "Learn more",
       background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-700 via-navy-800 to-navy-900 opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-200 via-navy-100 to-white opacity-50" />
       ),
       className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
     },
@@ -306,7 +306,7 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "Explore",
       background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-navy-900 to-navy-950 opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-blue-50 to-white opacity-50" />
       ),
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
     },
@@ -317,7 +317,7 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "Get Started",
       background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-navy-900 to-navy-950 opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 via-emerald-50 to-white opacity-50" />
       ),
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
     },
@@ -328,7 +328,7 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "See Results",
       background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-900 via-navy-900 to-navy-950 opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-amber-50 to-white opacity-50" />
       ),
       className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
     },
@@ -339,25 +339,25 @@ const SchoolSection: React.FC = () => {
       href: "#",
       cta: "View Database",
       background: (
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-navy-900 to-navy-950 opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-white opacity-50" />
       ),
       className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
     },
   ];
 
   return (
-    <section id="schools" className="border-b border-navy-800 bg-gradient-to-b from-navy-900 to-navy-950">
+    <section id="schools" className="border-b border-slate-100 bg-gradient-to-b from-white to-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
         <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full bg-navy-700/30 border border-navy-600 px-5 py-2.5 text-sm font-semibold text-slate-300">
+            <div className="inline-flex items-center gap-2 rounded-full bg-navy-200 border border-navy-400 px-5 py-2.5 text-sm font-semibold text-navy-900">
               <Building2 size={16} />
               For Schools
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-navy-800 leading-tight">
               Hire the right teachers with AI-powered matching
             </h2>
-            <p className="text-lg sm:text-xl text-slate-400 leading-relaxed">
+            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed">
               Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
             </p>
           </div>
@@ -417,17 +417,17 @@ const ProgramsSection: React.FC = () => {
   };
 
   return (
-    <section id="programs" className="border-b border-navy-800 bg-navy-950">
+    <section id="programs" className="border-b border-slate-100 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="mb-12 max-w-2xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-700/20 px-4 py-2 text-sm font-semibold text-lavender-400">
+          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
             <BookOpen size={16} />
             Programs & Projects
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
             Core programs that anchor the ecosystem
           </h2>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-slate-600">
             Take these programs individually or combine them into a complete career mapping journey.
           </p>
         </div>
@@ -438,20 +438,20 @@ const ProgramsSection: React.FC = () => {
             return (
               <div
                 key={program.name}
-                className={`group relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-navy-700/30 bg-navy-800/50 p-6 sm:p-8 shadow-lg transition-all hover:shadow-2xl hover:scale-105`}
+                className={`group relative overflow-hidden rounded-xl sm:rounded-2xl border-2 ${colors.border} bg-white p-6 sm:p-8 shadow-lg transition-all hover:shadow-2xl hover:scale-105`}
               >
-                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${colors.gradient} opacity-10 rounded-full blur-3xl transition-opacity group-hover:opacity-20`}></div>
+                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${colors.gradient} opacity-5 rounded-full blur-3xl transition-opacity group-hover:opacity-10`}></div>
                 <div className="relative">
                   <div className={`mb-4 inline-flex items-center rounded-full ${colors.bg} px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-lg`}>
                     {program.tag}
                   </div>
-                  <h3 className="mb-3 text-lg sm:text-xl font-bold text-white">
+                  <h3 className="mb-3 text-lg sm:text-xl font-bold text-slate-900">
                     {program.name}
                   </h3>
-                  <p className="mb-4 leading-relaxed text-slate-400">
+                  <p className="mb-4 leading-relaxed text-slate-600">
                     {program.desc}
                   </p>
-                  <div className={`inline-flex items-center gap-2 text-sm font-semibold text-slate-400`}>
+                  <div className={`inline-flex items-center gap-2 text-sm font-semibold ${colors.text}`}>
                     <Users size={16} />
                     {program.audience}
                   </div>
@@ -467,38 +467,38 @@ const ProgramsSection: React.FC = () => {
 
 const InternshipsSection: React.FC = () => {
   return (
-    <section id="internships" className="border-b border-navy-800 bg-gradient-to-b from-navy-900 to-navy-950">
+    <section id="internships" className="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="grid gap-8 md:gap-10 lg:gap-12 lg:grid-cols-[1.5fr,1fr] lg:items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-700/20 px-4 py-2 text-sm font-semibold text-lavender-400">
+            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
               <GraduationCap size={16} />
               Internships & Work Experience
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
               Kerala internships bridge training and real classrooms
             </h2>
-            <p className="text-lg leading-relaxed text-slate-400">
+            <p className="text-lg leading-relaxed text-slate-600">
               Before moving into full-time roles or GCC schools, teachers gain hands-on experience through structured internships in Kerala-based partner schools, focusing on classroom management, lesson execution, and professional development.
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-slate-300">
-                <CheckCircle size={20} className="text-lavender-500" />
+              <div className="flex items-center gap-2 text-slate-700">
+                <CheckCircle size={20} className="text-lavender-800" />
                 <span>1-2 months duration</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <CheckCircle size={20} className="text-lavender-500" />
+              <div className="flex items-center gap-2 text-slate-700">
+                <CheckCircle size={20} className="text-lavender-800" />
                 <span>Mentored teaching</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <CheckCircle size={20} className="text-lavender-500" />
+              <div className="flex items-center gap-2 text-slate-700">
+                <CheckCircle size={20} className="text-lavender-800" />
                 <span>Portfolio building</span>
               </div>
             </div>
           </div>
 
-          <div className="rounded-2xl md:rounded-3xl border-2 border-lavender-700/30 bg-gradient-to-br from-lavender-900/30 to-navy-800/50 p-6 sm:p-8 shadow-xl">
-            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-bold text-white">
+          <div className="rounded-2xl md:rounded-3xl border-2 border-lavender-400 bg-gradient-to-br from-lavender-100 to-white p-6 sm:p-8 shadow-xl">
+            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-bold text-navy-800">
               Internship Highlights
             </h3>
             <ul className="space-y-4">
@@ -510,12 +510,12 @@ const InternshipsSection: React.FC = () => {
                 { label: "Pathway", value: "Indian or GCC roles" }
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-lavender-700 text-xs font-bold text-white">
+                  <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-lavender-800 text-xs font-bold text-white">
                     {idx + 1}
                   </div>
                   <div>
-                    <div className="font-semibold text-white">{item.label}</div>
-                    <div className="text-sm text-slate-400">{item.value}</div>
+                    <div className="font-semibold text-slate-900">{item.label}</div>
+                    <div className="text-sm text-slate-600">{item.value}</div>
                   </div>
                 </li>
               ))}
@@ -547,17 +547,17 @@ const StoriesSection: React.FC = () => {
   ];
 
   return (
-    <section id="stories" className="border-b border-navy-800 bg-navy-900">
+    <section id="stories" className="border-b border-slate-100 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="mb-12 max-w-2xl space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-700/20 px-4 py-2 text-sm font-semibold text-lavender-400">
+          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
             <Star size={16} />
             Success Stories & Insights
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
             Stories from teachers & schools growing with us
           </h2>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-slate-600">
             Real journeys, measurable outcomes, and transformative career growth through the Teacheristic ecosystem.
           </p>
         </div>
@@ -566,20 +566,20 @@ const StoriesSection: React.FC = () => {
           {stories.map((story, idx) => (
             <div
               key={idx}
-              className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-navy-700 bg-navy-800/50 p-5 sm:p-6 shadow-lg transition-all hover:shadow-2xl hover:scale-105"
+              className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-lg transition-all hover:shadow-2xl hover:scale-105"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-lavender-600/30 to-transparent rounded-full blur-2xl opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-lavender-400/30 to-transparent rounded-full blur-2xl opacity-0 transition-opacity group-hover:opacity-100"></div>
               <div className="relative">
                 <div className="mb-4 inline-flex items-center rounded-full bg-navy-900 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
                   {story.category}
                 </div>
-                <h3 className="mb-3 text-lg font-bold text-white">
+                <h3 className="mb-3 text-lg font-bold text-navy-800">
                   {story.title}
                 </h3>
-                <p className="mb-4 text-sm leading-relaxed text-slate-400">
+                <p className="mb-4 text-sm leading-relaxed text-slate-600">
                   {story.excerpt}
                 </p>
-                <button className="inline-flex items-center gap-2 text-sm font-semibold text-lavender-500 transition-all hover:gap-3">
+                <button className="inline-flex items-center gap-2 text-sm font-semibold text-lavender-800 transition-all hover:gap-3">
                   Read more
                   <ArrowRight size={16} />
                 </button>
@@ -594,42 +594,42 @@ const StoriesSection: React.FC = () => {
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="border-b border-navy-800 bg-gradient-to-b from-navy-950 to-navy-900">
+    <section id="about" className="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
         <div className="grid gap-8 md:gap-10 lg:gap-12 lg:grid-cols-[1.3fr,1fr] lg:items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-700/20 px-4 py-2 text-sm font-semibold text-lavender-400">
+            <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
               <Building2 size={16} />
               About Teacheristic
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
               A teacher-first ecosystem built from Kerala for India & GCC
             </h2>
-            <p className="text-lg leading-relaxed text-slate-400">
+            <p className="text-lg leading-relaxed text-slate-600">
               Founded with a vision to transform teacher careers, Teacheristic connects academic training, real-world internships, and international placements under one comprehensive platform, part of Progress Education.
             </p>
             <div className="grid gap-3 sm:gap-4 grid-cols-2">
-              <div className="rounded-xl border border-navy-700 bg-navy-800/50 p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-lavender-500">500+</div>
-                <div className="text-sm text-slate-400">Teachers Trained</div>
+              <div className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-lavender-800">500+</div>
+                <div className="text-sm text-slate-600">Teachers Trained</div>
               </div>
-              <div className="rounded-xl border border-navy-700 bg-navy-800/50 p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-slate-300">50+</div>
-                <div className="text-sm text-slate-400">Partner Schools</div>
+              <div className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-navy-800">50+</div>
+                <div className="text-sm text-slate-600">Partner Schools</div>
               </div>
-              <div className="rounded-xl border border-navy-700 bg-navy-800/50 p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-lavender-500">95%</div>
-                <div className="text-sm text-slate-400">Placement Rate</div>
+              <div className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-lavender-800">95%</div>
+                <div className="text-sm text-slate-600">Placement Rate</div>
               </div>
-              <div className="rounded-xl border border-navy-700 bg-navy-800/50 p-4">
-                <div className="text-2xl sm:text-3xl font-bold text-slate-300">10+</div>
-                <div className="text-sm text-slate-400">GCC Countries</div>
+              <div className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-navy-800">10+</div>
+                <div className="text-sm text-slate-600">GCC Countries</div>
               </div>
             </div>
           </div>
 
-          <div className="rounded-2xl md:rounded-3xl border-2 border-navy-700 bg-navy-800/50 p-6 sm:p-8 shadow-xl">
-            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-bold text-white">
+          <div className="rounded-2xl md:rounded-3xl border-2 border-slate-200 bg-white p-6 sm:p-8 shadow-xl">
+            <h3 className="mb-4 sm:mb-6 text-base sm:text-lg font-bold text-navy-800">
               Our Mission & Vision
             </h3>
             <ul className="space-y-4">
@@ -640,8 +640,8 @@ const AboutSection: React.FC = () => {
                 "Long-term vision of a comprehensive teacher growth ecosystem"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-lavender-500" />
-                  <span className="text-slate-300">{item}</span>
+                  <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-lavender-800" />
+                  <span className="text-slate-700">{item}</span>
                 </li>
               ))}
             </ul>
