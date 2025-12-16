@@ -109,8 +109,8 @@ const HeroSection: React.FC = () => {
     <section id="hero">
       <HeroGeometric
         badge="Career Mapping for Teachers"
-        title1="Future-Ready Teachers"
-        title2="Future-Ready Schools"
+        title1="Where Global-Ready Teachers"
+        title2="and Future-Ready Schools Meet."
         description="Teacheristic trains fresh graduates, maps their careers from foundation to GCC opportunities, and connects schools across India & GCC with classroom-ready teachers."
       />
     </section>
