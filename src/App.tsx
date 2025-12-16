@@ -110,45 +110,33 @@ const HeroSection: React.FC = () => {
 
 const TwoColumnEcosystem: React.FC = () => {
   return (
-    <section id="ecosystem" className="relative overflow-hidden bg-slate-950">
-      <GradientDots
-        dotSize={2}
-        spacing={20}
-        duration={40}
-        colorCycleDuration={8}
-        backgroundColor="#020617"
-        className="opacity-40"
-      />
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
-        <div className="mb-12 max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2.5 text-sm font-semibold text-slate-200">
+    <section id="ecosystem" className="border-b border-slate-100 bg-gradient-to-b from-white to-slate-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
+        <div className="mb-12 max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full bg-lavender-200 px-4 py-2 text-sm font-semibold text-lavender-900">
             <Users size={16} />
             The Teacheristic Ecosystem
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
             One platform. Two journeys. A shared goal.
           </h2>
-          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
+          <p className="text-lg text-slate-600">
             Connecting future-ready teachers with schools across India & GCC through intensive training, internships, and AI-powered hiring.
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-200 to-white p-8 sm:p-10 shadow-2xl transition-all hover:shadow-3xl hover:scale-[1.02]">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-lavender-400/20 to-transparent rounded-full blur-3xl"></div>
-
+        <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
+          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-lavender-400 bg-gradient-to-br from-lavender-100 to-white p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-lavender-500">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lavender-400/30 to-transparent rounded-full blur-3xl -z-0"></div>
             <div className="relative">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lavender-600 to-lavender-700 px-5 py-2.5 text-sm font-bold text-white shadow-lg">
-                <GraduationCap size={16} />
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-lavender-700 to-lavender-800 px-4 py-2 text-sm font-bold text-white shadow-lg">
+                <GraduationCap size={18} />
                 For Teachers
               </div>
-
-              <h3 className="mb-6 text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
+              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
                 Career mapping from student to global educator
               </h3>
-
-              <ul className="space-y-4 mb-8 text-slate-700">
+              <ul className="space-y-3 text-slate-700">
                 {[
                   "4-month hybrid foundation program with live + self-paced modules",
                   "Structured internships in Kerala schools to build classroom experience",
@@ -156,33 +144,29 @@ const TwoColumnEcosystem: React.FC = () => {
                   "Ongoing upskilling through micro-courses & AI-assisted learning tools"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-lavender-700" />
-                    <span className="leading-relaxed">{item}</span>
+                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-lavender-800" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
-
-              <button className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-lavender-600 to-lavender-700 px-7 py-3.5 font-bold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+              <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-lavender-700 to-lavender-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
                 Start Your Journey
                 <ArrowRight size={18} />
               </button>
             </div>
           </div>
 
-          <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-200 to-white p-8 sm:p-10 shadow-2xl transition-all hover:shadow-3xl hover:scale-[1.02]">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-navy-400/20 to-transparent rounded-full blur-3xl"></div>
-
+          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-navy-400 bg-gradient-to-br from-navy-100 to-white p-6 sm:p-8 shadow-xl transition-all hover:shadow-2xl hover:border-navy-500">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-navy-400/30 to-transparent rounded-full blur-3xl -z-0"></div>
             <div className="relative">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-navy-900 px-5 py-2.5 text-sm font-bold text-white shadow-lg">
-                <Building2 size={16} />
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-navy-800 px-4 py-2 text-sm font-bold text-white shadow-lg">
+                <Building2 size={18} />
                 For Schools
               </div>
-
-              <h3 className="mb-6 text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
+              <h3 className="mb-4 text-xl sm:text-2xl font-bold text-navy-800">
                 Hire trained, culture-ready teachers with AI matching
               </h3>
-
-              <ul className="space-y-4 mb-8 text-slate-700">
+              <ul className="space-y-3 text-slate-700">
                 {[
                   "Access verified teacher profiles from India & GCC with AI-powered matchmaking",
                   "Filter by subject, board, language, and experience level",
@@ -190,13 +174,12 @@ const TwoColumnEcosystem: React.FC = () => {
                   "Save time, reduce churn, and improve classroom readiness"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-navy-900" />
-                    <span className="leading-relaxed">{item}</span>
+                    <CheckCircle size={20} className="mt-0.5 flex-shrink-0 text-navy-800" />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
-
-              <button className="inline-flex items-center gap-2 rounded-xl bg-navy-900 px-7 py-3.5 font-bold text-white shadow-lg transition-all hover:bg-navy-800 hover:shadow-xl hover:scale-105">
+              <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-navy-800 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:bg-navy-900 hover:shadow-xl hover:scale-105">
                 Partner With Us
                 <ArrowRight size={18} />
               </button>
@@ -706,62 +689,57 @@ const AboutSection: React.FC = () => {
 
 const CTASection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-100 via-lavender-50/50 to-amber-50/30">
+    <section className="relative overflow-hidden bg-gradient-to-br from-navy-950 via-navy-800 to-navy-950">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8c7ebb12_1px,transparent_1px),linear-gradient(to_bottom,#8c7ebb12_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lavender-700/5 to-transparent"></div>
+
       <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
-        <div className="mb-12 space-y-3">
-          <p className="text-lg text-slate-500 font-medium">
-            Take The First Step Today
-          </p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900">
-            Contact Us
+        <div className="mb-12 max-w-2xl space-y-4 text-center mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full border border-lavender-600/30 bg-lavender-700/10 px-4 py-2 text-sm font-semibold text-lavender-500">
+            <Sparkles size={16} />
+            Join the Ecosystem
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
+            Ready to transform your teaching career or school hiring?
           </h2>
+          <p className="text-lg text-slate-300">
+            Connect with the Teacheristic ecosystem today and start your journey toward excellence.
+          </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="group relative overflow-hidden rounded-2xl bg-white p-8 sm:p-10 shadow-lg transition-all hover:shadow-xl">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-lavender-100">
-                <GraduationCap size={24} className="text-lavender-700" />
+        <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto">
+          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-lavender-600/30 bg-gradient-to-br from-navy-900/90 to-navy-950/90 p-6 sm:p-8 backdrop-blur-xl shadow-2xl transition-all hover:border-lavender-600/50 hover:scale-105">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lavender-700/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="relative">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-lavender-600 to-lavender-700 shadow-lg">
+                <GraduationCap size={24} className="text-white" />
               </div>
-            </div>
-
-            <h3 className="mb-3 text-xl font-bold text-slate-900">
-              <span className="font-bold">For Teachers.</span>{' '}
-              <span className="font-normal text-slate-600">
-                Achieve professional and financial growth in teaching.
-              </span>
-            </h3>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button className="rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-md transition-all hover:bg-slate-800 hover:shadow-lg">
-                Request a Callback
-              </button>
-              <button className="font-semibold text-slate-700 transition-all hover:text-slate-900">
-                Learn More
+              <h3 className="mb-3 text-xl font-bold text-white">
+                For Teachers
+              </h3>
+              <p className="mb-6 text-slate-300">
+                Start your mapped journey with our foundation program, internships, and global placement support.
+              </p>
+              <button className="w-full rounded-lg bg-gradient-to-r from-lavender-600 to-lavender-700 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+                Register as a Teacher
               </button>
             </div>
           </div>
 
-          <div className="group relative overflow-hidden rounded-2xl bg-white p-8 sm:p-10 shadow-lg transition-all hover:shadow-xl">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-100">
-                <Building2 size={24} className="text-slate-700" />
+          <div className="group relative overflow-hidden rounded-2xl md:rounded-3xl border-2 border-lavender-600/30 bg-gradient-to-br from-navy-900/90 to-navy-950/90 p-6 sm:p-8 backdrop-blur-xl shadow-2xl transition-all hover:border-lavender-600/50 hover:scale-105">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lavender-700/20 to-transparent rounded-full blur-3xl"></div>
+            <div className="relative">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 shadow-lg">
+                <Building2 size={24} className="text-white" />
               </div>
-            </div>
-
-            <h3 className="mb-3 text-xl font-bold text-slate-900">
-              <span className="font-bold">For Schools.</span>{' '}
-              <span className="font-normal text-slate-600">
-                Find and hire skill-verified teachers from Teacheristic.
-              </span>
-            </h3>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button className="rounded-xl border-2 border-slate-200 bg-white px-6 py-3 font-semibold text-slate-900 shadow-sm transition-all hover:border-slate-300 hover:shadow-md">
-                Book a Meeting
-              </button>
-              <button className="font-semibold text-slate-700 transition-all hover:text-slate-900">
-                Learn More
+              <h3 className="mb-3 text-xl font-bold text-white">
+                For Schools
+              </h3>
+              <p className="mb-6 text-slate-300">
+                Partner with us to access our curated database, AI-powered matching, and custom training programs.
+              </p>
+              <button className="w-full rounded-lg border-2 border-lavender-600/30 bg-navy-900/50 px-6 py-3 font-semibold text-lavender-400 transition-all hover:border-lavender-600/50 hover:bg-navy-900/70 hover:scale-105">
+                Register as a School
               </button>
             </div>
           </div>
