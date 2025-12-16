@@ -292,86 +292,102 @@ const SchoolSection: React.FC = () => {
       Icon: Search,
       name: "AI-Powered Matching",
       description: "Access candidates suited for CBSE, ICSE, and international schools with intelligent recommendations based on your specific requirements.",
-      bgColor: "bg-slate-700/50",
+      accentColor: "from-blue-500/20 to-cyan-500/20",
+      borderColor: "border-blue-500/30",
+      iconBg: "from-blue-600/20 to-cyan-600/20",
       className: "lg:col-span-1 lg:row-span-2",
     },
     {
       Icon: UserCheck,
       name: "Pre-trained & Classroom-Ready Teachers",
       description: "Every teacher has completed our mapped training, internships, and real classroom evaluations before joining your school.",
-      bgColor: "bg-slate-600/50",
+      accentColor: "from-emerald-500/20 to-teal-500/20",
+      borderColor: "border-emerald-500/30",
+      iconBg: "from-emerald-600/20 to-teal-600/20",
       className: "lg:col-span-1 lg:row-span-3",
     },
     {
       Icon: TrendingUp,
       name: "Lower Hiring Risk",
       description: "We focus on culture fit, classroom readiness, and long-term growth potential to dramatically reduce teacher churn.",
-      bgColor: "bg-amber-900/40",
+      accentColor: "from-amber-500/20 to-orange-500/20",
+      borderColor: "border-amber-500/30",
+      iconBg: "from-amber-600/20 to-orange-600/20",
       className: "lg:col-span-1 lg:row-span-1",
     },
     {
       Icon: Target,
       name: "Custom In-House Programs",
       description: "Design faculty development programs and long-term hiring pipelines tailored to your school's unique culture and needs.",
-      bgColor: "bg-emerald-900/40",
+      accentColor: "from-violet-500/20 to-purple-500/20",
+      borderColor: "border-violet-500/30",
+      iconBg: "from-violet-600/20 to-purple-600/20",
       className: "lg:col-span-1 lg:row-span-1",
     },
     {
       Icon: Globe,
       name: "India & GCC Expertise",
       description: "Access verified teacher profiles from across India and GCC countries, with cultural readiness training for international placements.",
-      bgColor: "bg-slate-600/50",
+      accentColor: "from-sky-500/20 to-indigo-500/20",
+      borderColor: "border-sky-500/30",
+      iconBg: "from-sky-600/20 to-indigo-600/20",
       className: "lg:col-span-1 lg:row-span-2",
     },
   ];
 
   return (
-    <section id="schools" className="relative overflow-hidden bg-slate-950">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b14_1px,transparent_1px),linear-gradient(to_bottom,#1e293b14_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-navy-900/10 to-transparent"></div>
+    <section id="schools" className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8b5cf620_1px,transparent_1px),linear-gradient(to_bottom,#8b5cf620_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)]"></div>
 
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-navy-800/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-lavender-900/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-r from-violet-600/15 to-purple-600/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '4s' }}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-[450px] h-[450px] bg-gradient-to-r from-emerald-600/15 to-teal-600/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s', animationDuration: '5s' }}></div>
+      </div>
 
-      <div className="relative rounded-t-[4rem] bg-gradient-to-b from-slate-900 to-slate-950 border-t-4 border-slate-800/50">
+      <div className="relative rounded-t-[4rem] bg-gradient-to-b from-slate-900/80 to-slate-950/80 border-t-4 border-slate-700/50 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-32">
           <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full bg-slate-800/80 border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-200">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 px-5 py-2.5 text-sm font-semibold text-slate-200 shadow-lg">
                 <Building2 size={16} />
                 For Schools
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-100 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
                 Hire the right teachers with AI-powered matching
               </h2>
-              <p className="text-lg sm:text-xl text-slate-400 leading-relaxed">
+              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
                 Access our curated database of trained, verified teachers across India & GCC, with intelligent matching for your specific needs.
               </p>
             </div>
-            <button className="inline-flex items-center gap-2 self-start rounded-2xl bg-navy-700 px-8 py-4 font-bold text-white shadow-xl transition-all hover:bg-navy-600 hover:shadow-2xl hover:scale-105 lg:self-center border border-navy-600/50">
+            <button className="inline-flex items-center gap-2 self-start rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-4 font-bold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105 lg:self-center border border-blue-500/50">
               Become a Partner
               <ArrowRight size={20} />
             </button>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3 lg:grid-rows-3">
-            {features.map((feature, idx) => (
+            {features.map((feature) => (
               <div
                 key={feature.name}
-                className={`group relative overflow-hidden rounded-3xl ${feature.bgColor} backdrop-blur-sm p-8 transition-all hover:scale-105 border border-slate-700/50 ${feature.className}`}
+                className={`group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl p-8 transition-all duration-500 hover:scale-[1.02] hover:bg-white/10 border ${feature.borderColor} hover:border-opacity-60 shadow-2xl ${feature.className}`}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative space-y-4">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-slate-800/80 border border-slate-700/50">
-                    <feature.Icon className="w-7 h-7 text-slate-300" />
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${feature.accentColor} rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
+
+                <div className="relative space-y-4 z-10">
+                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.iconBg} backdrop-blur-sm border ${feature.borderColor} shadow-lg`}>
+                    <feature.Icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-100">
+                  <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors">
                     {feature.name}
                   </h3>
-                  <p className="text-slate-400 leading-relaxed">
+                  <p className="text-slate-300 leading-relaxed group-hover:text-slate-200 transition-colors">
                     {feature.description}
                   </p>
                 </div>
+
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             ))}
           </div>
