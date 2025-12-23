@@ -42,7 +42,8 @@ const NavBar: React.FC = () => {
           <img
             src="/header logo.png"
             alt="Teacheristic"
-            className="h-6 sm:h-7 w-auto object-contain"
+            className="h-6 sm:h-7 w-auto object-contain mix-blend-multiply dark:mix-blend-screen"
+            style={{ filter: 'brightness(1.2) contrast(1.1)' }}
           />
         </a>
 
@@ -778,7 +779,8 @@ const Footer: React.FC = () => {
               <img
                 src="/header logo.png"
                 alt="Teacheristic"
-                className="h-6 w-auto object-contain"
+                className="h-6 w-auto object-contain mix-blend-multiply dark:mix-blend-screen"
+                style={{ filter: 'brightness(1.2) contrast(1.1)' }}
               />
             </a>
             <p className="text-sm">
