@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ArrowRight, BookOpen, CheckCircle, Rocket, Target, Loader2 } from 'lucide-react';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 import { supabase } from '@/lib/supabase';
@@ -45,6 +46,9 @@ const NavBar: React.FC = () => {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <Link to="/" className="rounded-lg border-2 border-lavender-600/30 px-5 py-2 text-sm font-semibold text-lavender-400 transition-all hover:border-lavender-600/50 hover:bg-lavender-700/10">
+            For Teachers
+          </Link>
           <button className="rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-700/30 transition-all hover:shadow-xl hover:shadow-blue-700/40 hover:scale-105">
             Contact
           </button>
@@ -72,6 +76,9 @@ const NavBar: React.FC = () => {
               </a>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-blue-600/20">
+              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="rounded-lg border-2 border-lavender-600/30 px-4 py-3 text-sm font-semibold text-lavender-400 text-center">
+                For Teachers
+              </Link>
               <button className="rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3 text-sm font-semibold text-white shadow-lg">
                 Contact
               </button>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ArrowRight, BookOpen, Users, Globe, Sparkles, CheckCircle, GraduationCap, Building2, Rocket, Star, UserCheck, Search, Target, TrendingUp } from 'lucide-react';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
@@ -60,6 +61,9 @@ const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <Link to="/students" className="rounded-lg border-2 border-blue-600/30 px-5 py-2 text-sm font-semibold text-blue-400 transition-all hover:border-blue-600/50 hover:bg-blue-700/10">
+            For Students
+          </Link>
           <button onClick={onLoginClick} className="rounded-lg border-2 border-lavender-600/30 px-5 py-2 text-sm font-semibold text-lavender-400 transition-all hover:border-lavender-600/50 hover:bg-lavender-700/10">
             Login
           </button>
@@ -90,6 +94,9 @@ const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
               </a>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-lavender-600/20">
+              <Link to="/students" onClick={() => setIsMobileMenuOpen(false)} className="rounded-lg border-2 border-blue-600/30 px-4 py-3 text-sm font-semibold text-blue-400 text-center">
+                For Students
+              </Link>
               <button onClick={() => { onLoginClick(); setIsMobileMenuOpen(false); }} className="rounded-lg border-2 border-lavender-600/30 px-4 py-3 text-sm font-semibold text-lavender-400">
                 Login
               </button>
