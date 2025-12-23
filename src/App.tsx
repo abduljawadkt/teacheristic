@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, BookOpen, Users, Globe, Sparkles, CheckCircle, GraduationCap, Building2, Rocket, Star, UserCheck, Search, Target, TrendingUp, Mail, Award, Loader2, User, MapPin, School, Phone, Upload, FileText } from 'lucide-react';
+import { Menu, X, ArrowRight, BookOpen, Users, Globe, Sparkles, CheckCircle, GraduationCap, Building2, Rocket, Star, UserCheck, Search, Target, TrendingUp, Mail, Award, Loader2, User, MapPin, School, Phone, Upload, FileText, Check } from 'lucide-react';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
@@ -7,6 +7,7 @@ import { GradientDots } from '@/components/ui/gradient-dots';
 import { MarqueeAnimation } from '@/components/ui/marquee-effect';
 import { EtheralShadow } from '@/components/ui/etheral-shadow';
 import { Feature } from '@/components/ui/feature-with-advantages';
+import { Badge } from '@/components/ui/badge';
 import { supabase } from '@/lib/supabase';
 
 const sections = [
@@ -146,70 +147,88 @@ const HeroSection: React.FC = () => {
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="relative bg-white py-16 sm:py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#469ad4]/10 px-4 py-2 text-sm font-semibold text-[#469ad4]">
-                <Target size={16} />
-                The Initiative
-              </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-                Most Students Are Talented.
-                <br />
-                <span className="text-[#469ad4]">But Not Opportunity-Positioned.</span>
-              </h2>
-            </div>
-
-            <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-              <p>
-                Teacheristic is building a <strong className="text-slate-900">Student Talent Intelligence Database</strong> to help students become visible, validated, and aligned for global academic opportunities.
-              </p>
-            </div>
-
-            <div className="relative rounded-2xl bg-gradient-to-br from-[#87ca92]/10 to-[#a5d7b5]/10 border-2 border-[#87ca92]/30 p-6 sm:p-8">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#87ca92]/20 to-transparent rounded-full blur-3xl"></div>
-              <div className="relative space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#87ca92] flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    This is not just another application
-                  </h3>
-                </div>
-                <p className="text-slate-700 text-base leading-relaxed font-medium">
-                  This is a <strong>career intelligence & opportunity discovery platform</strong>
-                </p>
-              </div>
-            </div>
+    <section id="about" className="w-full py-20 lg:py-40 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex gap-4 py-20 lg:py-40 flex-col items-start">
+          <div>
+            <Badge className="bg-gradient-to-r from-[#469ad4] to-[#31bbdb] text-white border-0">
+              The Initiative
+            </Badge>
           </div>
-
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="rounded-2xl bg-gradient-to-br from-[#469ad4]/10 to-[#469ad4]/5 p-6 shadow-lg border border-[#469ad4]/10 transform hover:scale-105 transition-transform">
-                  <Globe className="w-12 h-12 text-[#469ad4] mb-3" />
-                  <h4 className="font-bold text-slate-900 mb-2">Global Reach</h4>
-                  <p className="text-sm text-slate-600">Connect with institutions worldwide</p>
+          <div className="flex gap-2 flex-col">
+            <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular text-slate-900">
+              Most Students Are Talented. But Not Opportunity-Positioned.
+            </h2>
+            <p className="text-lg max-w-xl lg:max-w-xl leading-relaxed tracking-tight text-slate-600">
+              Teacheristic is building a Student Talent Intelligence Database to help students become visible, validated, and aligned for global academic opportunities.
+            </p>
+          </div>
+          <div className="flex gap-10 pt-12 flex-col w-full">
+            <div className="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div className="flex flex-row gap-6 w-full items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#469ad4] to-[#31bbdb] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
                 </div>
-                <div className="rounded-2xl bg-gradient-to-br from-[#31bbdb]/10 to-[#31bbdb]/5 p-6 shadow-lg border border-[#31bbdb]/10 transform hover:scale-105 transition-transform">
-                  <UserCheck className="w-12 h-12 text-[#31bbdb] mb-3" />
-                  <h4 className="font-bold text-slate-900 mb-2">Validated Profiles</h4>
-                  <p className="text-sm text-slate-600">Professional profile reviews</p>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Global Reach</p>
+                  <p className="text-slate-600 text-sm">
+                    Connect with institutions worldwide through our extensive network.
+                  </p>
                 </div>
               </div>
-              <div className="space-y-4 mt-8">
-                <div className="rounded-2xl bg-gradient-to-br from-[#87ca92]/10 to-[#87ca92]/5 p-6 shadow-lg border border-[#87ca92]/10 transform hover:scale-105 transition-transform">
-                  <TrendingUp className="w-12 h-12 text-[#87ca92] mb-3" />
-                  <h4 className="font-bold text-slate-900 mb-2">Career Insights</h4>
-                  <p className="text-sm text-slate-600">Intelligence-driven guidance</p>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#31bbdb] to-[#87ca92] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
                 </div>
-                <div className="rounded-2xl bg-gradient-to-br from-[#a5d7b5]/10 to-[#a5d7b5]/5 p-6 shadow-lg border border-[#a5d7b5]/10 transform hover:scale-105 transition-transform">
-                  <Rocket className="w-12 h-12 text-[#87ca92] mb-3" />
-                  <h4 className="font-bold text-slate-900 mb-2">Priority Access</h4>
-                  <p className="text-sm text-slate-600">Exclusive opportunities</p>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Validated Profiles</p>
+                  <p className="text-slate-600 text-sm">
+                    Professional profile reviews that stand out to universities and institutions.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#87ca92] to-[#469ad4] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Career Intelligence</p>
+                  <p className="text-slate-600 text-sm">
+                    Intelligence-driven guidance and opportunity discovery platform.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 w-full items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#469ad4] to-[#31bbdb] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Priority Access</p>
+                  <p className="text-slate-600 text-sm">
+                    Exclusive opportunities tailored to your academic and career goals.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#31bbdb] to-[#87ca92] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Structured Ecosystem</p>
+                  <p className="text-slate-600 text-sm">
+                    Your profile becomes part of a growing, structured education ecosystem.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#87ca92] to-[#469ad4] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Data Privacy</p>
+                  <p className="text-slate-600 text-sm">
+                    Your data is used only for career development and Teacheristic initiatives.
+                  </p>
                 </div>
               </div>
             </div>
@@ -221,80 +240,93 @@ const AboutSection: React.FC = () => {
 };
 
 const ValueSection: React.FC = () => {
-  const benefits = [
-    {
-      icon: Search,
-      title: "ATS & Human Intelligence Review",
-      description: "Your resume is reviewed through an ATS & human intelligence layer",
-    },
-    {
-      icon: Mail,
-      title: "Career-Oriented Insights",
-      description: "You receive career-oriented insights via email / WhatsApp",
-    },
-    {
-      icon: BookOpen,
-      title: "Exclusive Content Access",
-      description: "You get access to exclusive videos, sessions, and career guidance",
-    },
-    {
-      icon: Star,
-      title: "Priority Access to Programs",
-      description: "You may receive priority access to programs, audits, or leadership pathways",
-    },
-    {
-      icon: Users,
-      title: "Part of Growing Ecosystem",
-      description: "Your profile becomes part of a structured, growing teacher ecosystem",
-    },
-    {
-      icon: CheckCircle,
-      title: "Data Privacy & Purpose",
-      description: "Your data is used only for career development, guidance, and Teacheristic initiatives",
-    },
-  ];
-
   return (
-    <section id="value" className="relative bg-gradient-to-b from-slate-50/50 to-white py-16 sm:py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#31bbdb]/10 px-4 py-2 text-sm font-semibold text-[#31bbdb]">
-            <Sparkles size={16} />
-            Value Without Overpromising
+    <section id="value" className="w-full py-20 lg:py-40 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex gap-4 py-20 lg:py-40 flex-col items-start">
+          <div>
+            <Badge className="bg-gradient-to-r from-[#469ad4] to-[#31bbdb] text-white border-0">
+              Value Without Overpromising
+            </Badge>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-            What Happens After You Join
-          </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Once you submit your profile, here's what you can expect
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit, idx) => (
-            <div
-              key={idx}
-              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-lg transition-all hover:shadow-2xl hover:scale-105 hover:border-[#469ad4]/30"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#469ad4]/10 to-transparent rounded-full blur-3xl opacity-0 transition-opacity group-hover:opacity-100"></div>
-              <div className="relative space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#469ad4] to-[#31bbdb] flex items-center justify-center shadow-lg">
-                    <benefit.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#469ad4]/10 flex items-center justify-center">
-                    <span className="text-sm font-bold text-[#469ad4]">{idx + 1}</span>
-                  </div>
+          <div className="flex gap-2 flex-col">
+            <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular text-slate-900">
+              What Happens After You Join
+            </h2>
+            <p className="text-lg max-w-xl lg:max-w-xl leading-relaxed tracking-tight text-slate-600">
+              Once you submit your profile, here's what you can expect from our platform.
+            </p>
+          </div>
+          <div className="flex gap-10 pt-12 flex-col w-full">
+            <div className="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div className="flex flex-row gap-6 w-full items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#469ad4] to-[#31bbdb] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 leading-tight">
-                  {benefit.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {benefit.description}
-                </p>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">ATS & Human Intelligence Review</p>
+                  <p className="text-slate-600 text-sm">
+                    Your resume is reviewed through an ATS and human intelligence layer.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#31bbdb] to-[#87ca92] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Career-Oriented Insights</p>
+                  <p className="text-slate-600 text-sm">
+                    You receive career-oriented insights via email and WhatsApp.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#87ca92] to-[#469ad4] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Exclusive Content Access</p>
+                  <p className="text-slate-600 text-sm">
+                    You get access to exclusive videos, sessions, and career guidance.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 w-full items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#469ad4] to-[#31bbdb] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Priority Access to Programs</p>
+                  <p className="text-slate-600 text-sm">
+                    You may receive priority access to programs, audits, or leadership pathways.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#31bbdb] to-[#87ca92] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Part of Growing Ecosystem</p>
+                  <p className="text-slate-600 text-sm">
+                    Your profile becomes part of a structured, growing education ecosystem.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#87ca92] to-[#469ad4] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Data Privacy & Purpose</p>
+                  <p className="text-slate-600 text-sm">
+                    Your data is used only for career development and Teacheristic initiatives.
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
@@ -302,82 +334,93 @@ const ValueSection: React.FC = () => {
 };
 
 const QualificationSection: React.FC = () => {
-  const qualifications = [
-    {
-      icon: GraduationCap,
-      title: "High School Students",
-      description: "Students preparing for college admissions and looking for guidance on academic pathways",
-    },
-    {
-      icon: Award,
-      title: "Undergraduates",
-      description: "College students seeking career insights, internships, and global opportunities",
-    },
-    {
-      icon: BookOpen,
-      title: "Academic Achievers",
-      description: "Students with strong academic records looking to showcase their achievements",
-    },
-    {
-      icon: Globe,
-      title: "Aspiring Global Scholars",
-      description: "Students interested in study abroad programs and international educational opportunities",
-    },
-    {
-      icon: Rocket,
-      title: "Future Leaders",
-      description: "Students with leadership potential seeking mentorship and career development",
-    },
-  ];
-
   return (
-    <section id="qualification" className="relative bg-white py-16 sm:py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#87ca92]/10 px-4 py-2 text-sm font-semibold text-[#87ca92]">
-            <UserCheck size={16} />
-            Who Should Join
+    <section id="qualification" className="w-full py-20 lg:py-40 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex gap-4 py-20 lg:py-40 flex-col items-start">
+          <div>
+            <Badge className="bg-gradient-to-r from-[#469ad4] to-[#31bbdb] text-white border-0">
+              Who Should Join
+            </Badge>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
-            Who Should Join This Initiative?
-          </h2>
-          <p className="text-xl text-slate-600 leading-relaxed font-medium">
-            If you're serious about your academic and career growth, this is for you
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
-          {qualifications.map((qual, idx) => (
-            <div
-              key={idx}
-              className="group relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 sm:p-8 shadow-lg transition-all hover:shadow-2xl hover:scale-105 hover:border-[#87ca92]/30"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#87ca92]/10 to-transparent rounded-full blur-3xl opacity-0 transition-opacity group-hover:opacity-100"></div>
-              <div className="relative space-y-4">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#87ca92] to-[#a5d7b5] flex items-center justify-center shadow-lg">
-                  <qual.icon className="w-7 h-7 text-white" />
+          <div className="flex gap-2 flex-col">
+            <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular text-slate-900">
+              Who Should Join This Initiative?
+            </h2>
+            <p className="text-lg max-w-xl lg:max-w-xl leading-relaxed tracking-tight text-slate-600">
+              If you're serious about your academic and career growth, this is for you.
+            </p>
+          </div>
+          <div className="flex gap-10 pt-12 flex-col w-full">
+            <div className="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div className="flex flex-row gap-6 w-full items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#469ad4] to-[#31bbdb] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 leading-tight">
-                  {qual.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {qual.description}
-                </p>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">High School Students</p>
+                  <p className="text-slate-600 text-sm">
+                    Students preparing for college admissions and looking for guidance on academic pathways.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#31bbdb] to-[#87ca92] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Undergraduates</p>
+                  <p className="text-slate-600 text-sm">
+                    College students seeking career insights, internships, and global opportunities.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#87ca92] to-[#469ad4] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Academic Achievers</p>
+                  <p className="text-slate-600 text-sm">
+                    Students with strong academic records looking to showcase their achievements.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 w-full items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#469ad4] to-[#31bbdb] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Aspiring Global Scholars</p>
+                  <p className="text-slate-600 text-sm">
+                    Students interested in study abroad programs and international educational opportunities.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#31bbdb] to-[#87ca92] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Future Leaders</p>
+                  <p className="text-slate-600 text-sm">
+                    Students with leadership potential seeking mentorship and career development.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row gap-6 items-start">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 rounded-full bg-gradient-to-br from-[#87ca92] to-[#469ad4] flex items-center justify-center">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="font-semibold text-slate-900">Opportunity-Ready Students</p>
+                  <p className="text-slate-600 text-sm">
+                    Students who want to get visible, validated, and aligned for global opportunities.
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="max-w-4xl mx-auto rounded-2xl bg-gradient-to-br from-[#87ca92]/10 to-[#a5d7b5]/10 border-2 border-[#87ca92]/30 p-8 sm:p-10 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <CheckCircle className="w-8 h-8 text-[#87ca92]" />
-            <h3 className="text-2xl font-bold text-slate-900">
-              This is for you
-            </h3>
           </div>
-          <p className="text-lg text-slate-700 leading-relaxed">
-            Whether you're in high school, college, or planning your next academic step—if growth and global opportunities matter to you, this intelligence database will help you get visible, validated, and opportunity-ready.
-          </p>
         </div>
       </div>
     </section>
