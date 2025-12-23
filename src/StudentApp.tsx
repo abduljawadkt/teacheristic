@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, BookOpen, CheckCircle, Rocket, Target } from 'lucide-react';
+import { Menu, X, ArrowRight, BookOpen, CheckCircle, Rocket, Target, Loader2 } from 'lucide-react';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
-import { StudentRegistrationForm } from '@/components/StudentRegistrationForm';
+import { supabase } from '@/lib/supabase';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -157,26 +157,243 @@ const BenefitsSection: React.FC = () => {
 };
 
 interface JoinSectionProps {
-  onRegisterClick: () => void;
+  onSuccess: () => void;
 }
 
-const JoinSection: React.FC<JoinSectionProps> = ({ onRegisterClick }) => {
+const JoinSection: React.FC<JoinSectionProps> = ({ onSuccess }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    location: '',
+    schoolCollege: '',
+    gradeYear: '',
+    academicInterests: '',
+    achievementsSkills: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { error: insertError } = await supabase
+        .from('student_registrations')
+        .insert([
+          {
+            full_name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            location: formData.location,
+            school_college: formData.schoolCollege,
+            grade_year: formData.gradeYear,
+            academic_interests: formData.academicInterests,
+            achievements_skills: formData.achievementsSkills,
+          },
+        ]);
+
+      if (insertError) throw insertError;
+
+      onSuccess();
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        location: '',
+        schoolCollege: '',
+        gradeYear: '',
+        academicInterests: '',
+        achievementsSkills: '',
+      });
+    } catch (err: any) {
+      setError(err.message || 'An error occurred during registration');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <section id="join" className="border-b border-slate-100 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800">
+    <section id="join" className="bg-gradient-to-b from-slate-50 to-white">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-navy-800 mb-4">
             Ready to Get Discovered?
           </h2>
-
-          <button onClick={onRegisterClick} className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
-            Submit Your Profile
-            <ArrowRight size={20} />
-          </button>
-
-          <p className="text-sm text-slate-600">
-            Free | Confidential | No obligation
+          <p className="text-slate-600">
+            Submit your profile to unlock exclusive opportunities
           </p>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8">
+          {error && (
+            <div className="mb-6 rounded-lg bg-red-50 border border-red-200 p-4">
+              <p className="text-sm text-red-700">{error}</p>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-slate-700">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder="Enter your full name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="mb-2 block text-sm font-medium text-slate-700">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder="+91 1234567890"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="location" className="mb-2 block text-sm font-medium text-slate-700">
+                  Location *
+                </label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  required
+                  value={formData.location}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder="City, State"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="schoolCollege" className="mb-2 block text-sm font-medium text-slate-700">
+                  School/College *
+                </label>
+                <input
+                  type="text"
+                  id="schoolCollege"
+                  name="schoolCollege"
+                  required
+                  value={formData.schoolCollege}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder="Institution name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="gradeYear" className="mb-2 block text-sm font-medium text-slate-700">
+                  Grade/Year *
+                </label>
+                <input
+                  type="text"
+                  id="gradeYear"
+                  name="gradeYear"
+                  required
+                  value={formData.gradeYear}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  placeholder="e.g., Grade 11"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="academicInterests" className="mb-2 block text-sm font-medium text-slate-700">
+                Academic Interests *
+              </label>
+              <textarea
+                id="academicInterests"
+                name="academicInterests"
+                required
+                value={formData.academicInterests}
+                onChange={handleChange}
+                rows={3}
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                placeholder="What subjects or fields are you passionate about?"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="achievementsSkills" className="mb-2 block text-sm font-medium text-slate-700">
+                Achievements & Skills *
+              </label>
+              <textarea
+                id="achievementsSkills"
+                name="achievementsSkills"
+                required
+                value={formData.achievementsSkills}
+                onChange={handleChange}
+                rows={3}
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                placeholder="Share your achievements, awards, and special skills"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            >
+              {loading ? (
+                <>
+                  <Loader2 size={20} className="animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  Submit Your Profile
+                  <ArrowRight size={20} />
+                </>
+              )}
+            </button>
+
+            <p className="text-xs text-center text-slate-600">
+              Free | Confidential | No obligation
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -200,13 +417,12 @@ const Footer: React.FC = () => {
 };
 
 function StudentApp({ onSwitchToTeacher }: { onSwitchToTeacher: () => void }) {
-  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleRegistrationSuccess = () => {
-    setShowRegistrationForm(false);
     setShowSuccessMessage(true);
     setTimeout(() => setShowSuccessMessage(false), 5000);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -216,25 +432,18 @@ function StudentApp({ onSwitchToTeacher }: { onSwitchToTeacher: () => void }) {
         <HeroSection />
         <AboutSection />
         <BenefitsSection />
-        <JoinSection onRegisterClick={() => setShowRegistrationForm(true)} />
+        <JoinSection onSuccess={handleRegistrationSuccess} />
       </main>
       <Footer />
 
-      {showRegistrationForm && (
-        <StudentRegistrationForm
-          onClose={() => setShowRegistrationForm(false)}
-          onSuccess={handleRegistrationSuccess}
-        />
-      )}
-
       {showSuccessMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-green-600 text-white px-6 py-4 rounded-lg shadow-2xl animate-in fade-in slide-in-from-bottom-5">
+        <div className="fixed bottom-6 right-6 z-50 bg-green-600 text-white px-6 py-4 rounded-lg shadow-2xl">
           <div className="flex items-center gap-3">
             <CheckCircle size={24} />
             <div>
               <div className="font-bold">Registration Successful!</div>
               <div className="text-sm">
-                Thank you for joining! We'll be in touch with personalized guidance soon.
+                Thank you for joining! We'll be in touch soon.
               </div>
             </div>
           </div>
