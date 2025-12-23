@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ArrowRight, BookOpen, Users, Globe, Sparkles, CheckCircle, GraduationCap, Building2, Rocket, Star, UserCheck, Search, Target, TrendingUp, Mail } from 'lucide-react';
+import { Menu, X, ArrowRight, BookOpen, Users, Globe, Sparkles, CheckCircle, GraduationCap, Building2, Rocket, Star, UserCheck, Search, Target, TrendingUp, Mail, Award } from 'lucide-react';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
