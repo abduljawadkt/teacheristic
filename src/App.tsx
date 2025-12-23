@@ -6,6 +6,7 @@ import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
 import { GradientDots } from '@/components/ui/gradient-dots';
 import { MarqueeAnimation } from '@/components/ui/marquee-effect';
 import { EtheralShadow } from '@/components/ui/etheral-shadow';
+import { Feature } from '@/components/ui/feature-with-advantages';
 import { supabase } from '@/lib/supabase';
 
 const sections = [
@@ -805,6 +806,7 @@ function App() {
       <main>
         <HeroSection />
         <AboutSection />
+        <Feature />
         <ValueSection />
         <QualificationSection />
         <RegisterSection onSuccess={handleRegistrationSuccess} />
