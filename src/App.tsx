@@ -146,75 +146,70 @@ const HeroSection: React.FC = () => {
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16 sm:py-20 md:py-28">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px]"></div>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-start">
+    <section id="about" className="relative bg-white py-16 sm:py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-center">
           <div className="space-y-8">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#31bbdb]/20 border border-[#31bbdb]/30 px-4 py-2 text-sm font-semibold text-[#31bbdb]">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#469ad4]/10 px-4 py-2 text-sm font-semibold text-[#469ad4]">
                 <Target size={16} />
                 The Initiative
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-                <span className="text-slate-300">Most Students Are Talented.</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                Most Students Are Talented.
                 <br />
-                <span className="text-[#31bbdb]">But Not Opportunity-Positioned.</span>
+                <span className="text-[#469ad4]">But Not Opportunity-Positioned.</span>
               </h2>
             </div>
 
-            <div className="space-y-4 text-lg text-slate-400 leading-relaxed">
+            <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
               <p>
-                Teacheristic is building a <strong className="text-[#31bbdb]">Student Talent Intelligence Database</strong> to help students become visible, validated, and aligned for global academic opportunities.
+                Teacheristic is building a <strong className="text-slate-900">Student Talent Intelligence Database</strong> to help students become visible, validated, and aligned for global academic opportunities.
               </p>
             </div>
 
-            <div className="relative rounded-2xl bg-slate-800/50 border border-[#87ca92]/30 p-6 sm:p-8 backdrop-blur-sm">
-              <div className="relative flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#87ca92]/20 flex items-center justify-center border border-[#87ca92]/30">
-                  <Sparkles className="w-6 h-6 text-[#87ca92]" />
+            <div className="relative rounded-2xl bg-gradient-to-br from-[#87ca92]/10 to-[#a5d7b5]/10 border-2 border-[#87ca92]/30 p-6 sm:p-8">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#87ca92]/20 to-transparent rounded-full blur-3xl"></div>
+              <div className="relative space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#87ca92] flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">
+                    This is not just another application
+                  </h3>
                 </div>
-                <div className="space-y-2">
-                  <p className="text-slate-300 text-base leading-relaxed">
-                    This is a <strong className="text-[#87ca92]">career intelligence & opportunity discovery platform</strong>
-                  </p>
-                </div>
+                <p className="text-slate-700 text-base leading-relaxed font-medium">
+                  This is a <strong>career intelligence & opportunity discovery platform</strong>
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="relative lg:mt-8">
+          <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="rounded-2xl bg-slate-800/50 border border-[#469ad4]/20 p-6 backdrop-blur-sm hover:border-[#469ad4]/40 transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-[#469ad4]/20 flex items-center justify-center mb-4 border border-[#469ad4]/30">
-                    <Globe className="w-6 h-6 text-[#469ad4]" />
-                  </div>
-                  <h4 className="font-bold text-white mb-2 text-lg">Global Reach</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">Connect with institutions worldwide</p>
+                <div className="rounded-2xl bg-gradient-to-br from-[#469ad4]/10 to-[#469ad4]/5 p-6 shadow-lg border border-[#469ad4]/10 transform hover:scale-105 transition-transform">
+                  <Globe className="w-12 h-12 text-[#469ad4] mb-3" />
+                  <h4 className="font-bold text-slate-900 mb-2">Global Reach</h4>
+                  <p className="text-sm text-slate-600">Connect with institutions worldwide</p>
                 </div>
-                <div className="rounded-2xl bg-slate-800/50 border border-[#31bbdb]/20 p-6 backdrop-blur-sm hover:border-[#31bbdb]/40 transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-[#31bbdb]/20 flex items-center justify-center mb-4 border border-[#31bbdb]/30">
-                    <UserCheck className="w-6 h-6 text-[#31bbdb]" />
-                  </div>
-                  <h4 className="font-bold text-white mb-2 text-lg">Validated Profiles</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">Professional profile reviews</p>
+                <div className="rounded-2xl bg-gradient-to-br from-[#31bbdb]/10 to-[#31bbdb]/5 p-6 shadow-lg border border-[#31bbdb]/10 transform hover:scale-105 transition-transform">
+                  <UserCheck className="w-12 h-12 text-[#31bbdb] mb-3" />
+                  <h4 className="font-bold text-slate-900 mb-2">Validated Profiles</h4>
+                  <p className="text-sm text-slate-600">Professional profile reviews</p>
                 </div>
               </div>
-              <div className="space-y-4">
-                <div className="rounded-2xl bg-slate-800/50 border border-[#87ca92]/20 p-6 backdrop-blur-sm hover:border-[#87ca92]/40 transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-[#87ca92]/20 flex items-center justify-center mb-4 border border-[#87ca92]/30">
-                    <TrendingUp className="w-6 h-6 text-[#87ca92]" />
-                  </div>
-                  <h4 className="font-bold text-white mb-2 text-lg">Career Insights</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">Intelligence-driven guidance</p>
+              <div className="space-y-4 mt-8">
+                <div className="rounded-2xl bg-gradient-to-br from-[#87ca92]/10 to-[#87ca92]/5 p-6 shadow-lg border border-[#87ca92]/10 transform hover:scale-105 transition-transform">
+                  <TrendingUp className="w-12 h-12 text-[#87ca92] mb-3" />
+                  <h4 className="font-bold text-slate-900 mb-2">Career Insights</h4>
+                  <p className="text-sm text-slate-600">Intelligence-driven guidance</p>
                 </div>
-                <div className="rounded-2xl bg-slate-800/50 border border-[#87ca92]/20 p-6 backdrop-blur-sm hover:border-[#87ca92]/40 transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-[#87ca92]/20 flex items-center justify-center mb-4 border border-[#87ca92]/30">
-                    <Rocket className="w-6 h-6 text-[#87ca92]" />
-                  </div>
-                  <h4 className="font-bold text-white mb-2 text-lg">Priority Access</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">Exclusive opportunities</p>
+                <div className="rounded-2xl bg-gradient-to-br from-[#a5d7b5]/10 to-[#a5d7b5]/5 p-6 shadow-lg border border-[#a5d7b5]/10 transform hover:scale-105 transition-transform">
+                  <Rocket className="w-12 h-12 text-[#87ca92] mb-3" />
+                  <h4 className="font-bold text-slate-900 mb-2">Priority Access</h4>
+                  <p className="text-sm text-slate-600">Exclusive opportunities</p>
                 </div>
               </div>
             </div>
