@@ -5,6 +5,7 @@ import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { GradientDots } from '@/components/ui/gradient-dots';
 import { MarqueeAnimation } from '@/components/ui/marquee-effect';
 import { EtheralShadow } from '@/components/ui/etheral-shadow';
+import { StudentRegistrationForm } from '@/components/StudentRegistrationForm';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -350,7 +351,11 @@ const OpportunitiesSection: React.FC = () => {
   );
 };
 
-const ProcessSection: React.FC = () => {
+interface ProcessSectionProps {
+  onRegisterClick: () => void;
+}
+
+const ProcessSection: React.FC<ProcessSectionProps> = ({ onRegisterClick }) => {
   return (
     <section id="process" className="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
@@ -390,7 +395,7 @@ const ProcessSection: React.FC = () => {
           <p className="text-xl font-bold text-navy-800 mb-8">
             The Student Talent Intelligence Database is the first step.
           </p>
-          <button className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+          <button onClick={onRegisterClick} className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
             Submit Your Profile Now
             <ArrowRight size={20} />
           </button>
@@ -434,6 +439,15 @@ const Footer: React.FC = () => {
 };
 
 function StudentApp({ onSwitchToTeacher }: { onSwitchToTeacher: () => void }) {
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  const handleRegistrationSuccess = () => {
+    setShowRegistrationForm(false);
+    setShowSuccessMessage(true);
+    setTimeout(() => setShowSuccessMessage(false), 5000);
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <NavBar onSwitchToTeacher={onSwitchToTeacher} />
@@ -443,9 +457,30 @@ function StudentApp({ onSwitchToTeacher }: { onSwitchToTeacher: () => void }) {
         <TeacheristicRoleSection />
         <BenefitsSection />
         <OpportunitiesSection />
-        <ProcessSection />
+        <ProcessSection onRegisterClick={() => setShowRegistrationForm(true)} />
       </main>
       <Footer />
+
+      {showRegistrationForm && (
+        <StudentRegistrationForm
+          onClose={() => setShowRegistrationForm(false)}
+          onSuccess={handleRegistrationSuccess}
+        />
+      )}
+
+      {showSuccessMessage && (
+        <div className="fixed bottom-6 right-6 z-50 bg-green-600 text-white px-6 py-4 rounded-lg shadow-2xl animate-in fade-in slide-in-from-bottom-5">
+          <div className="flex items-center gap-3">
+            <CheckCircle size={24} />
+            <div>
+              <div className="font-bold">Registration Successful!</div>
+              <div className="text-sm">
+                Thank you for joining! We'll be in touch with personalized guidance soon.
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
