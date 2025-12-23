@@ -9,11 +9,7 @@ const sections = [
   { id: "join", label: "Join" },
 ];
 
-interface NavBarProps {
-  onSwitchToTeacher: () => void;
-}
-
-const NavBar: React.FC<NavBarProps> = ({ onSwitchToTeacher }) => {
+const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -49,9 +45,6 @@ const NavBar: React.FC<NavBarProps> = ({ onSwitchToTeacher }) => {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <button onClick={onSwitchToTeacher} className="rounded-lg border-2 border-blue-600/30 px-5 py-2 text-sm font-semibold text-blue-400 transition-all hover:border-blue-600/50 hover:bg-blue-700/10">
-            For Teachers
-          </button>
           <button className="rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-700/30 transition-all hover:shadow-xl hover:shadow-blue-700/40 hover:scale-105">
             Contact
           </button>
@@ -79,9 +72,6 @@ const NavBar: React.FC<NavBarProps> = ({ onSwitchToTeacher }) => {
               </a>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-blue-600/20">
-              <button onClick={() => { onSwitchToTeacher(); setIsMobileMenuOpen(false); }} className="rounded-lg border-2 border-blue-600/30 px-4 py-3 text-sm font-semibold text-blue-400">
-                For Teachers
-              </button>
               <button className="rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3 text-sm font-semibold text-white shadow-lg">
                 Contact
               </button>
@@ -416,7 +406,7 @@ const Footer: React.FC = () => {
   );
 };
 
-function StudentApp({ onSwitchToTeacher }: { onSwitchToTeacher: () => void }) {
+function StudentApp() {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleRegistrationSuccess = () => {
@@ -427,7 +417,7 @@ function StudentApp({ onSwitchToTeacher }: { onSwitchToTeacher: () => void }) {
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <NavBar onSwitchToTeacher={onSwitchToTeacher} />
+      <NavBar />
       <main>
         <HeroSection />
         <AboutSection />
