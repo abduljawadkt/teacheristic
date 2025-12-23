@@ -9,6 +9,7 @@ import { TeacherRegistrationForm } from '@/components/TeacherRegistrationForm';
 import { SchoolRegistrationForm } from '@/components/SchoolRegistrationForm';
 import { LoginForm } from '@/components/LoginForm';
 import { EtheralShadow } from '@/components/ui/etheral-shadow';
+import StudentApp from './StudentApp';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -22,9 +23,10 @@ const sections = [
 
 interface NavBarProps {
   onLoginClick: () => void;
+  onSwitchToStudent: () => void;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
+const NavBar: React.FC<NavBarProps> = ({ onLoginClick, onSwitchToStudent }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -60,6 +62,9 @@ const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <button onClick={onSwitchToStudent} className="rounded-lg border-2 border-blue-600/30 px-5 py-2 text-sm font-semibold text-blue-400 transition-all hover:border-blue-600/50 hover:bg-blue-700/10">
+            For Students
+          </button>
           <button onClick={onLoginClick} className="rounded-lg border-2 border-lavender-600/30 px-5 py-2 text-sm font-semibold text-lavender-400 transition-all hover:border-lavender-600/50 hover:bg-lavender-700/10">
             Login
           </button>
@@ -90,6 +95,9 @@ const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
               </a>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-lavender-600/20">
+              <button onClick={() => { onSwitchToStudent(); setIsMobileMenuOpen(false); }} className="rounded-lg border-2 border-blue-600/30 px-4 py-3 text-sm font-semibold text-blue-400">
+                For Students
+              </button>
               <button onClick={() => { onLoginClick(); setIsMobileMenuOpen(false); }} className="rounded-lg border-2 border-lavender-600/30 px-4 py-3 text-sm font-semibold text-lavender-400">
                 Login
               </button>
@@ -899,6 +907,7 @@ function App() {
   const [showSchoolForm, setShowSchoolForm] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState<string | null>(null);
+  const [pageType, setPageType] = useState<'teacher' | 'student'>('teacher');
 
   const handleTeacherSuccess = () => {
     setShowTeacherForm(false);
@@ -912,9 +921,13 @@ function App() {
     setTimeout(() => setShowSuccessMessage(null), 5000);
   };
 
+  if (pageType === 'student') {
+    return <StudentApp onSwitchToTeacher={() => setPageType('teacher')} />;
+  }
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <NavBar onLoginClick={() => setShowLoginForm(true)} />
+      <NavBar onLoginClick={() => setShowLoginForm(true)} onSwitchToStudent={() => setPageType('student')} />
       <main>
         <HeroSection />
         <TwoColumnEcosystem onTeacherClick={() => setShowTeacherForm(true)} onSchoolClick={() => setShowSchoolForm(true)} />
