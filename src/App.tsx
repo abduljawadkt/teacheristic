@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, ArrowRight, BookOpen, Users, Globe, Sparkles, CheckCircle, GraduationCap, Building2, Rocket, Star, UserCheck, Search, Target, TrendingUp, Mail, Award } from 'lucide-react';
+import { Menu, X, ArrowRight, BookOpen, Users, Globe, Sparkles, CheckCircle, GraduationCap, Building2, Rocket, Star, UserCheck, Search, Target, TrendingUp, Mail, Award, Loader2, User, MapPin, School, Phone, Upload, FileText } from 'lucide-react';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
 import { GradientDots } from '@/components/ui/gradient-dots';
 import { MarqueeAnimation } from '@/components/ui/marquee-effect';
-import { TeacherRegistrationForm } from '@/components/TeacherRegistrationForm';
-import { SchoolRegistrationForm } from '@/components/SchoolRegistrationForm';
-import { LoginForm } from '@/components/LoginForm';
 import { EtheralShadow } from '@/components/ui/etheral-shadow';
+import { supabase } from '@/lib/supabase';
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -19,11 +16,7 @@ const sections = [
   { id: "register", label: "Register Now" },
 ];
 
-interface NavBarProps {
-  onLoginClick: () => void;
-}
-
-const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
+const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -34,6 +27,11 @@ const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToRegister = () => {
+    document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg border-b border-slate-200' : 'bg-white/90 backdrop-blur border-b border-slate-200/50'}`}>
@@ -59,14 +57,8 @@ const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link to="/students" className="rounded-lg border-2 border-[#31bbdb]/30 px-5 py-2 text-sm font-semibold text-[#31bbdb] transition-all hover:border-[#31bbdb]/50 hover:bg-[#31bbdb]/10">
-            For Students
-          </Link>
-          <button onClick={onLoginClick} className="rounded-lg border-2 border-[#469ad4]/30 px-5 py-2 text-sm font-semibold text-[#469ad4] transition-all hover:border-[#469ad4]/50 hover:bg-[#469ad4]/10">
-            Login
-          </button>
-          <button className="rounded-lg bg-gradient-to-r from-[#469ad4] via-[#31bbdb] to-[#87ca92] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#469ad4]/30 transition-all hover:shadow-xl hover:shadow-[#31bbdb]/40 hover:scale-105">
-            Contact
+          <button onClick={scrollToRegister} className="rounded-lg bg-gradient-to-r from-[#469ad4] via-[#31bbdb] to-[#87ca92] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#469ad4]/30 transition-all hover:shadow-xl hover:shadow-[#31bbdb]/40 hover:scale-105">
+            Register Now
           </button>
         </div>
 
@@ -92,14 +84,8 @@ const NavBar: React.FC<NavBarProps> = ({ onLoginClick }) => {
               </a>
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-slate-200">
-              <Link to="/students" onClick={() => setIsMobileMenuOpen(false)} className="rounded-lg border-2 border-[#31bbdb]/30 px-4 py-3 text-sm font-semibold text-[#31bbdb] text-center">
-                For Students
-              </Link>
-              <button onClick={() => { onLoginClick(); setIsMobileMenuOpen(false); }} className="rounded-lg border-2 border-[#469ad4]/30 px-4 py-3 text-sm font-semibold text-[#469ad4]">
-                Login
-              </button>
-              <button className="rounded-lg bg-gradient-to-r from-[#469ad4] via-[#31bbdb] to-[#87ca92] px-4 py-3 text-sm font-semibold text-white shadow-lg">
-                Contact
+              <button onClick={scrollToRegister} className="rounded-lg bg-gradient-to-r from-[#469ad4] via-[#31bbdb] to-[#87ca92] px-4 py-3 text-sm font-semibold text-white shadow-lg">
+                Register Now
               </button>
             </div>
           </nav>
@@ -124,19 +110,19 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-[#469ad4]/30 bg-[#469ad4]/10 px-5 py-2.5 text-sm font-semibold text-[#469ad4] mb-8 backdrop-blur-sm">
           <Globe size={16} />
-          Teacher Talent Intelligence Database
+          Student Talent Intelligence Database
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1]">
-          The World Is Hiring Teachers.
+          The Future Is Looking for Leaders.
           <br />
           <span className="bg-gradient-to-r from-[#469ad4] via-[#31bbdb] to-[#87ca92] bg-clip-text text-transparent">
-            Are You Career-Ready to Be Selected?
+            Are You Ready to Be Discovered?
           </span>
         </h1>
 
         <p className="text-lg sm:text-xl text-slate-700 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Join a strategic career intelligence initiative that makes you visible, validated, and aligned for emerging teaching opportunities worldwide.
+          Join our intelligence database to unlock global opportunities, career guidance, and connect with leading institutions worldwide.
         </p>
 
         <button
@@ -169,13 +155,15 @@ const AboutSection: React.FC = () => {
                 The Initiative
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-                Global and GCC schools are actively looking for qualified, future-ready teachers and leaders
+                Most Students Are Talented.
+                <br />
+                <span className="text-[#469ad4]">But Not Opportunity-Positioned.</span>
               </h2>
             </div>
 
             <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
               <p>
-                Teacheristic is building a <strong className="text-slate-900">Teacher Talent Intelligence Database</strong> to help educators become visible, validated, and career-aligned for emerging opportunities.
+                Teacheristic is building a <strong className="text-slate-900">Student Talent Intelligence Database</strong> to help students become visible, validated, and aligned for global academic opportunities.
               </p>
             </div>
 
@@ -187,11 +175,11 @@ const AboutSection: React.FC = () => {
                     <Sparkles className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900">
-                    This is not a job application
+                    This is not just another application
                   </h3>
                 </div>
                 <p className="text-slate-700 text-base leading-relaxed font-medium">
-                  This is a <strong>career intelligence & readiness initiative</strong>
+                  This is a <strong>career intelligence & opportunity discovery platform</strong>
                 </p>
               </div>
             </div>
@@ -203,18 +191,18 @@ const AboutSection: React.FC = () => {
                 <div className="rounded-2xl bg-gradient-to-br from-[#469ad4]/10 to-[#469ad4]/5 p-6 shadow-lg border border-[#469ad4]/10 transform hover:scale-105 transition-transform">
                   <Globe className="w-12 h-12 text-[#469ad4] mb-3" />
                   <h4 className="font-bold text-slate-900 mb-2">Global Reach</h4>
-                  <p className="text-sm text-slate-600">Connect with schools worldwide</p>
+                  <p className="text-sm text-slate-600">Connect with institutions worldwide</p>
                 </div>
                 <div className="rounded-2xl bg-gradient-to-br from-[#31bbdb]/10 to-[#31bbdb]/5 p-6 shadow-lg border border-[#31bbdb]/10 transform hover:scale-105 transition-transform">
                   <UserCheck className="w-12 h-12 text-[#31bbdb] mb-3" />
                   <h4 className="font-bold text-slate-900 mb-2">Validated Profiles</h4>
-                  <p className="text-sm text-slate-600">ATS-reviewed resumes and profiles</p>
+                  <p className="text-sm text-slate-600">Professional profile reviews</p>
                 </div>
               </div>
               <div className="space-y-4 mt-8">
                 <div className="rounded-2xl bg-gradient-to-br from-[#87ca92]/10 to-[#87ca92]/5 p-6 shadow-lg border border-[#87ca92]/10 transform hover:scale-105 transition-transform">
                   <TrendingUp className="w-12 h-12 text-[#87ca92] mb-3" />
-                  <h4 className="font-bold text-slate-900 mb-2">Career Growth</h4>
+                  <h4 className="font-bold text-slate-900 mb-2">Career Insights</h4>
                   <p className="text-sm text-slate-600">Intelligence-driven guidance</p>
                 </div>
                 <div className="rounded-2xl bg-gradient-to-br from-[#a5d7b5]/10 to-[#a5d7b5]/5 p-6 shadow-lg border border-[#a5d7b5]/10 transform hover:scale-105 transition-transform">
@@ -316,28 +304,28 @@ const QualificationSection: React.FC = () => {
   const qualifications = [
     {
       icon: GraduationCap,
-      title: "Currently Working Teachers",
-      description: "Teachers of all subjects across primary, secondary, and higher secondary levels",
+      title: "High School Students",
+      description: "Students preparing for college admissions and looking for guidance on academic pathways",
     },
     {
       icon: Award,
-      title: "Senior & Experienced Educators",
-      description: "Experienced teachers with proven track records in their respective fields",
-    },
-    {
-      icon: Building2,
-      title: "School Leadership",
-      description: "Principals, vice principals, academic coordinators, and department heads",
+      title: "Undergraduates",
+      description: "College students seeking career insights, internships, and global opportunities",
     },
     {
       icon: BookOpen,
-      title: "Qualified Non-Working Teachers",
-      description: "Qualified teachers not currently working but seeking opportunities",
+      title: "Academic Achievers",
+      description: "Students with strong academic records looking to showcase their achievements",
     },
     {
       icon: Globe,
-      title: "Aspiring Leaders",
-      description: "Teachers aspiring for leadership roles or international teaching positions",
+      title: "Aspiring Global Scholars",
+      description: "Students interested in study abroad programs and international educational opportunities",
+    },
+    {
+      icon: Rocket,
+      title: "Future Leaders",
+      description: "Students with leadership potential seeking mentorship and career development",
     },
   ];
 
@@ -347,13 +335,13 @@ const QualificationSection: React.FC = () => {
         <div className="mb-16 max-w-3xl mx-auto text-center space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full bg-[#87ca92]/10 px-4 py-2 text-sm font-semibold text-[#87ca92]">
             <UserCheck size={16} />
-            Qualification Section
+            Who Should Join
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
             Who Should Join This Initiative?
           </h2>
           <p className="text-xl text-slate-600 leading-relaxed font-medium">
-            If you're serious about career growth in education, this is for you
+            If you're serious about your academic and career growth, this is for you
           </p>
         </div>
 
@@ -387,7 +375,7 @@ const QualificationSection: React.FC = () => {
             </h3>
           </div>
           <p className="text-lg text-slate-700 leading-relaxed">
-            Whether you're actively teaching, in a leadership role, or seeking your next opportunity—if career growth in education matters to you, this intelligence database will help you get visible, validated, and career-ready.
+            Whether you're in high school, college, or planning your next academic step—if growth and global opportunities matter to you, this intelligence database will help you get visible, validated, and opportunity-ready.
           </p>
         </div>
       </div>
@@ -395,101 +383,341 @@ const QualificationSection: React.FC = () => {
   );
 };
 
-interface RegisterSectionProps {
-  onTeacherClick: () => void;
-  onSchoolClick: () => void;
-}
+const RegisterSection: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    location: '',
+    schoolCollege: '',
+    gradeYear: '',
+    academicInterests: '',
+    achievementsSkills: '',
+  });
 
-const RegisterSection: React.FC<RegisterSectionProps> = ({ onTeacherClick, onSchoolClick }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      const maxSize = 5 * 1024 * 1024;
+
+      if (!allowedTypes.includes(file.type)) {
+        setError('Please upload a PDF or Word document');
+        return;
+      }
+
+      if (file.size > maxSize) {
+        setError('File size must be less than 5MB');
+        return;
+      }
+
+      setResumeFile(file);
+      setError(null);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      let resumeUrl = null;
+
+      if (resumeFile) {
+        const fileExt = resumeFile.name.split('.').pop();
+        const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+        const filePath = `${formData.email}/${fileName}`;
+
+        const { error: uploadError } = await supabase.storage
+          .from('student_resumes')
+          .upload(filePath, resumeFile, {
+            cacheControl: '3600',
+            upsert: false,
+          });
+
+        if (uploadError) throw uploadError;
+
+        const { data: urlData } = supabase.storage
+          .from('student_resumes')
+          .getPublicUrl(filePath);
+
+        resumeUrl = urlData.publicUrl;
+      }
+
+      const { error: insertError } = await supabase
+        .from('student_registrations')
+        .insert([
+          {
+            full_name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            location: formData.location,
+            school_college: formData.schoolCollege,
+            grade_year: formData.gradeYear,
+            academic_interests: formData.academicInterests,
+            achievements_skills: formData.achievementsSkills,
+            resume_url: resumeUrl,
+          },
+        ]);
+
+      if (insertError) throw insertError;
+
+      onSuccess();
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        location: '',
+        schoolCollege: '',
+        gradeYear: '',
+        academicInterests: '',
+        achievementsSkills: '',
+      });
+      setResumeFile(null);
+    } catch (err: any) {
+      setError(err.message || 'An error occurred during registration');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="register" className="relative overflow-hidden bg-gradient-to-br from-[#469ad4]/5 via-[#31bbdb]/5 to-[#87ca92]/5 py-20 sm:py-24 md:py-32">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#469ad412_1px,transparent_1px),linear-gradient(to_bottom,#469ad412_1px,transparent_1px)] bg-[size:32px_32px]"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#87ca92]/5 to-transparent"></div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 max-w-3xl mx-auto text-center space-y-4">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center space-y-4">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-            Take the First Step Toward a <span className="bg-gradient-to-r from-[#469ad4] via-[#31bbdb] to-[#87ca92] bg-clip-text text-transparent">Stronger Teaching Career</span>
+            Ready to <span className="bg-gradient-to-r from-[#469ad4] via-[#31bbdb] to-[#87ca92] bg-clip-text text-transparent">Get Discovered?</span>
           </h2>
           <p className="text-xl text-slate-700 leading-relaxed">
-            Join the Teacher Talent Intelligence Database today and become visible to opportunities worldwide
+            Submit your profile to unlock exclusive opportunities and career guidance
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
-          <div className="group relative overflow-hidden rounded-3xl border-2 border-[#469ad4]/20 bg-white p-8 sm:p-10 shadow-2xl transition-all hover:border-[#469ad4]/40 hover:scale-105">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#469ad4]/10 to-transparent rounded-full blur-3xl"></div>
-            <div className="relative space-y-6">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#469ad4] to-[#31bbdb] shadow-lg">
-                <GraduationCap size={28} className="text-white" />
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-slate-900">
-                  For Teachers
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Register your profile and become part of an intelligence-driven career ecosystem designed for educators like you
-                </p>
-              </div>
-              <ul className="space-y-3">
-                {[
-                  "Get your resume ATS-reviewed",
-                  "Receive career insights & guidance",
-                  "Access exclusive opportunities",
-                  "Build your validated teacher profile",
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-slate-600">
-                    <CheckCircle size={18} className="text-[#87ca92] flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <button
-                onClick={onTeacherClick}
-                className="group w-full rounded-xl bg-gradient-to-r from-[#469ad4] via-[#31bbdb] to-[#87ca92] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
-              >
-                Register as a Teacher
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+        <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 md:p-8">
+          {error && (
+            <div className="mb-6 rounded-lg bg-red-50 border border-red-200 p-4">
+              <p className="text-sm text-red-700">{error}</p>
             </div>
-          </div>
+          )}
 
-          <div className="group relative overflow-hidden rounded-3xl border-2 border-[#31bbdb]/20 bg-white p-8 sm:p-10 shadow-2xl transition-all hover:border-[#31bbdb]/40 hover:scale-105">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#31bbdb]/10 to-transparent rounded-full blur-3xl"></div>
-            <div className="relative space-y-6">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#31bbdb] shadow-lg">
-                <Building2 size={28} className="text-white" />
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <label htmlFor="fullName" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                  <User size={16} className="text-[#469ad4]" />
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-[#469ad4] focus:outline-none focus:ring-2 focus:ring-[#469ad4]/20"
+                  placeholder="Enter your full name"
+                />
               </div>
-              <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-slate-900">
-                  For Schools
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Partner with us to access verified, career-ready teachers through intelligent matching
-                </p>
+
+              <div>
+                <label htmlFor="email" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                  <Mail size={16} className="text-[#469ad4]" />
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-[#469ad4] focus:outline-none focus:ring-2 focus:ring-[#469ad4]/20"
+                  placeholder="your.email@example.com"
+                />
               </div>
-              <ul className="space-y-3">
-                {[
-                  "Access validated teacher profiles",
-                  "AI-powered candidate matching",
-                  "Reduce hiring risk & time",
-                  "Connect with qualified educators",
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-slate-600">
-                    <CheckCircle size={18} className="text-[#469ad4] flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <button
-                onClick={onSchoolClick}
-                className="group w-full rounded-xl border-2 border-[#31bbdb] bg-white px-8 py-4 text-lg font-semibold text-[#31bbdb] transition-all hover:bg-[#31bbdb] hover:text-white hover:scale-105 flex items-center justify-center gap-2"
-              >
-                Register as a School
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+
+              <div>
+                <label htmlFor="phone" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                  <Phone size={16} className="text-[#469ad4]" />
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-[#469ad4] focus:outline-none focus:ring-2 focus:ring-[#469ad4]/20"
+                  placeholder="+91 1234567890"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="location" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                  <MapPin size={16} className="text-[#469ad4]" />
+                  Location *
+                </label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  required
+                  value={formData.location}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-[#469ad4] focus:outline-none focus:ring-2 focus:ring-[#469ad4]/20"
+                  placeholder="City, State"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="schoolCollege" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                  <School size={16} className="text-[#469ad4]" />
+                  School/College *
+                </label>
+                <input
+                  type="text"
+                  id="schoolCollege"
+                  name="schoolCollege"
+                  required
+                  value={formData.schoolCollege}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-[#469ad4] focus:outline-none focus:ring-2 focus:ring-[#469ad4]/20"
+                  placeholder="Institution name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="gradeYear" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                  <GraduationCap size={16} className="text-[#469ad4]" />
+                  Grade/Year *
+                </label>
+                <input
+                  type="text"
+                  id="gradeYear"
+                  name="gradeYear"
+                  required
+                  value={formData.gradeYear}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-[#469ad4] focus:outline-none focus:ring-2 focus:ring-[#469ad4]/20"
+                  placeholder="e.g., Grade 11"
+                />
+              </div>
             </div>
-          </div>
+
+            <div>
+              <label htmlFor="academicInterests" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                <BookOpen size={16} className="text-[#469ad4]" />
+                Academic Interests *
+              </label>
+              <textarea
+                id="academicInterests"
+                name="academicInterests"
+                required
+                value={formData.academicInterests}
+                onChange={handleChange}
+                rows={3}
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-[#469ad4] focus:outline-none focus:ring-2 focus:ring-[#469ad4]/20"
+                placeholder="What subjects or fields are you passionate about?"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="achievementsSkills" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                <Award size={16} className="text-[#469ad4]" />
+                Achievements & Skills *
+              </label>
+              <textarea
+                id="achievementsSkills"
+                name="achievementsSkills"
+                required
+                value={formData.achievementsSkills}
+                onChange={handleChange}
+                rows={4}
+                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 transition-colors focus:border-[#469ad4] focus:outline-none focus:ring-2 focus:ring-[#469ad4]/20"
+                placeholder="Share your achievements, awards, and special skills"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="resume" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                <Upload size={16} className="text-[#469ad4]" />
+                Upload Resume (Optional)
+              </label>
+              <div className="relative">
+                <input
+                  type="file"
+                  id="resume"
+                  name="resume"
+                  accept=".pdf,.doc,.docx"
+                  onChange={handleFileChange}
+                  className="hidden"
+                />
+                <label
+                  htmlFor="resume"
+                  className="flex items-center justify-center gap-2 w-full rounded-lg border-2 border-dashed border-slate-300 px-4 py-6 text-slate-600 transition-all hover:border-[#469ad4] hover:bg-[#469ad4]/5 cursor-pointer"
+                >
+                  {resumeFile ? (
+                    <>
+                      <FileText size={20} className="text-[#469ad4]" />
+                      <span className="text-sm font-medium text-[#469ad4]">{resumeFile.name}</span>
+                      <span className="text-xs text-slate-500">({(resumeFile.size / 1024).toFixed(1)} KB)</span>
+                    </>
+                  ) : (
+                    <>
+                      <Upload size={20} className="text-slate-400" />
+                      <span className="text-sm">Click to upload or drag and drop</span>
+                    </>
+                  )}
+                </label>
+              </div>
+              <p className="mt-2 text-xs text-slate-500">
+                Supported formats: PDF, DOC, DOCX (Max 5MB)
+              </p>
+            </div>
+
+            <div className="rounded-lg bg-[#469ad4]/5 border border-[#469ad4]/20 p-4">
+              <p className="text-xs text-slate-600 leading-relaxed">
+                This information helps us understand your profile and guide you toward the right opportunities. Your data is secure and confidential, used only for Teacheristic's talent development initiatives.
+              </p>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full rounded-lg bg-gradient-to-r from-[#469ad4] via-[#31bbdb] to-[#87ca92] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            >
+              {loading ? (
+                <>
+                  <Loader2 size={20} className="animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  Submit Your Profile
+                  <ArrowRight size={20} />
+                </>
+              )}
+            </button>
+
+            <p className="text-xs text-center text-slate-600">
+              Free | Confidential | No obligation
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -510,7 +738,7 @@ const Footer: React.FC = () => {
               />
             </a>
             <p className="text-sm">
-              A career-mapping ecosystem connecting teachers and schools across India & GCC.
+              A career-mapping ecosystem connecting students with global opportunities.
             </p>
           </div>
 
@@ -528,13 +756,13 @@ const Footer: React.FC = () => {
 
           <div>
             <div className="mb-4 text-sm font-bold text-slate-900">
-              For Educators
+              For Students
             </div>
             <ul className="space-y-2 text-sm">
-              <li><a href="#register" className="hover:text-[#469ad4] transition-colors">Teacher Registration</a></li>
-              <li><a href="#register" className="hover:text-[#469ad4] transition-colors">School Partnership</a></li>
-              <li><Link to="/students" className="hover:text-[#469ad4] transition-colors">Student Database</Link></li>
+              <li><a href="#register" className="hover:text-[#469ad4] transition-colors">Student Registration</a></li>
               <li><a href="#value" className="hover:text-[#469ad4] transition-colors">Career Intelligence</a></li>
+              <li><a href="#value" className="hover:text-[#469ad4] transition-colors">Exclusive Content</a></li>
+              <li><a href="#qualification" className="hover:text-[#469ad4] transition-colors">Eligibility</a></li>
             </ul>
           </div>
 
@@ -544,7 +772,7 @@ const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2 text-sm">
               <li>India</li>
-              <li>GCC Partnerships</li>
+              <li>Global Partnerships</li>
               <li><a href="mailto:hello@teacheristic.com" className="hover:text-[#469ad4] transition-colors">hello@teacheristic.com</a></li>
             </ul>
           </div>
@@ -563,63 +791,34 @@ const Footer: React.FC = () => {
 };
 
 function App() {
-  const [showTeacherForm, setShowTeacherForm] = useState(false);
-  const [showSchoolForm, setShowSchoolForm] = useState(false);
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState<string | null>(null);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const handleTeacherSuccess = () => {
-    setShowTeacherForm(false);
-    setShowSuccessMessage('teacher');
-    setTimeout(() => setShowSuccessMessage(null), 5000);
-  };
-
-  const handleSchoolSuccess = () => {
-    setShowSchoolForm(false);
-    setShowSuccessMessage('school');
-    setTimeout(() => setShowSuccessMessage(null), 5000);
+  const handleRegistrationSuccess = () => {
+    setShowSuccessMessage(true);
+    setTimeout(() => setShowSuccessMessage(false), 5000);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <NavBar onLoginClick={() => setShowLoginForm(true)} />
+      <NavBar />
       <main>
         <HeroSection />
         <AboutSection />
         <ValueSection />
         <QualificationSection />
-        <RegisterSection onTeacherClick={() => setShowTeacherForm(true)} onSchoolClick={() => setShowSchoolForm(true)} />
+        <RegisterSection onSuccess={handleRegistrationSuccess} />
       </main>
       <Footer />
 
-      {showTeacherForm && (
-        <TeacherRegistrationForm
-          onClose={() => setShowTeacherForm(false)}
-          onSuccess={handleTeacherSuccess}
-        />
-      )}
-
-      {showSchoolForm && (
-        <SchoolRegistrationForm
-          onClose={() => setShowSchoolForm(false)}
-          onSuccess={handleSchoolSuccess}
-        />
-      )}
-
-      {showLoginForm && (
-        <LoginForm onClose={() => setShowLoginForm(false)} />
-      )}
-
       {showSuccessMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-green-600 text-white px-6 py-4 rounded-lg shadow-2xl animate-in fade-in slide-in-from-bottom-5">
+        <div className="fixed bottom-6 right-6 z-50 bg-green-600 text-white px-6 py-4 rounded-lg shadow-2xl">
           <div className="flex items-center gap-3">
             <CheckCircle size={24} />
             <div>
               <div className="font-bold">Registration Successful!</div>
               <div className="text-sm">
-                {showSuccessMessage === 'teacher'
-                  ? 'Thank you for registering. We will contact you soon!'
-                  : 'Thank you for your interest. Our team will reach out shortly!'}
+                Thank you for joining! We'll be in touch soon.
               </div>
             </div>
           </div>
