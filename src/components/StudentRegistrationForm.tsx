@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Loader2, User, MapPin, School, BookOpen, Award, Phone, Mail, GraduationCap } from 'lucide-react';
+import { X, Loader2, User, MapPin, School, BookOpen, Award, Phone, Mail, GraduationCap, Upload, FileText } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 interface StudentRegistrationFormProps {
@@ -13,6 +13,7 @@ export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = (
 }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -31,12 +32,56 @@ export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = (
     });
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      const maxSize = 5 * 1024 * 1024;
+
+      if (!allowedTypes.includes(file.type)) {
+        setError('Please upload a PDF or Word document');
+        return;
+      }
+
+      if (file.size > maxSize) {
+        setError('File size must be less than 5MB');
+        return;
+      }
+
+      setResumeFile(file);
+      setError(null);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
     try {
+      let resumeUrl = null;
+
+      if (resumeFile) {
+        const fileExt = resumeFile.name.split('.').pop();
+        const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+        const filePath = `${formData.email}/${fileName}`;
+
+        const { error: uploadError } = await supabase.storage
+          .from('student_resumes')
+          .upload(filePath, resumeFile, {
+            cacheControl: '3600',
+            upsert: false,
+          });
+
+        if (uploadError) throw uploadError;
+
+        const { data: urlData } = supabase.storage
+          .from('student_resumes')
+          .getPublicUrl(filePath);
+
+        resumeUrl = urlData.publicUrl;
+      }
+
       const { error: insertError } = await supabase
         .from('student_registrations')
         .insert([
@@ -49,6 +94,7 @@ export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = (
             grade_year: formData.gradeYear,
             academic_interests: formData.academicInterests,
             achievements_skills: formData.achievementsSkills,
+            resume_url: resumeUrl,
           },
         ]);
 
@@ -225,6 +271,43 @@ export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = (
                 className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
                 placeholder="Share your achievements, awards, competitions, leadership roles, extracurricular activities, and special skills"
               />
+            </div>
+
+            <div>
+              <label htmlFor="resume" className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700">
+                <Upload size={16} className="text-blue-600" />
+                Upload Resume (Optional)
+              </label>
+              <div className="relative">
+                <input
+                  type="file"
+                  id="resume"
+                  name="resume"
+                  accept=".pdf,.doc,.docx"
+                  onChange={handleFileChange}
+                  className="hidden"
+                />
+                <label
+                  htmlFor="resume"
+                  className="flex items-center justify-center gap-2 w-full rounded-lg border-2 border-dashed border-slate-300 px-4 py-6 text-slate-600 transition-all hover:border-blue-500 hover:bg-blue-50 cursor-pointer"
+                >
+                  {resumeFile ? (
+                    <>
+                      <FileText size={20} className="text-blue-600" />
+                      <span className="text-sm font-medium text-blue-700">{resumeFile.name}</span>
+                      <span className="text-xs text-slate-500">({(resumeFile.size / 1024).toFixed(1)} KB)</span>
+                    </>
+                  ) : (
+                    <>
+                      <Upload size={20} className="text-slate-400" />
+                      <span className="text-sm">Click to upload or drag and drop</span>
+                    </>
+                  )}
+                </label>
+              </div>
+              <p className="mt-2 text-xs text-slate-500">
+                Supported formats: PDF, DOC, DOCX (Max 5MB)
+              </p>
             </div>
 
             <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
