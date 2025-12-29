@@ -84,7 +84,7 @@ export default function GTFPPage() {
               </p>
             </div>
 
-            <div className="rounded-3xl border-2 border-slate-200 bg-gradient-to-br from-slate-50 to-white p-4 sm:p-8 shadow-xl">
+            <div>
               <iframe
                 data-tally-src="https://tally.so/embed/7Rb8LR?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
                 loading="lazy"
