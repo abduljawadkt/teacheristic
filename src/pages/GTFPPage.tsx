@@ -6,14 +6,25 @@ export default function GTFPPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const script = document.createElement('script');
-    script.src = 'https://tally.so/widgets/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
+    const loadTally = () => {
+      if (typeof (window as any).Tally !== 'undefined') {
+        (window as any).Tally.loadEmbeds();
+      } else {
+        document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach((iframe: any) => {
+          iframe.src = iframe.dataset.tallySrc;
+        });
+      }
     };
+
+    if (typeof (window as any).Tally !== 'undefined') {
+      loadTally();
+    } else if (document.querySelector('script[src="https://tally.so/widgets/embed.js"]') === null) {
+      const script = document.createElement('script');
+      script.src = 'https://tally.so/widgets/embed.js';
+      script.onload = loadTally;
+      script.onerror = loadTally;
+      document.body.appendChild(script);
+    }
   }, []);
 
   return (
@@ -188,18 +199,16 @@ export default function GTFPPage() {
             </div>
 
             <div className="rounded-3xl border-2 border-slate-200 bg-gradient-to-br from-slate-50 to-white p-4 sm:p-8 shadow-xl">
-              <div className="relative w-full" style={{ minHeight: '600px' }}>
-                <iframe
-                  data-tally-src="https://tally.so/r/7Rb8LR?transparentBackground=1&formEventsForwarding=1"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                  title="GTFP – Global Teacher Finishing Program Application"
-                  style={{ minHeight: '600px' }}
-                ></iframe>
-              </div>
+              <iframe
+                data-tally-src="https://tally.so/embed/7Rb8LR?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
+                loading="lazy"
+                width="100%"
+                height="1441"
+                frameBorder={0}
+                marginHeight={0}
+                marginWidth={0}
+                title="GTFP – Global Teacher Finishing Program Application."
+              ></iframe>
             </div>
           </div>
         </section>
