@@ -5,26 +5,6 @@ import { ArrowLeft, UserCircle } from 'lucide-react';
 export default function MLTeacherProfilePage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    const loadTally = () => {
-      if (typeof (window as any).Tally !== 'undefined') {
-        (window as any).Tally.loadEmbeds();
-      } else {
-        document.querySelectorAll('iframe[data-tally-src]:not([src])').forEach((iframe: any) => {
-          iframe.src = iframe.dataset.tallySrc;
-        });
-      }
-    };
-
-    if (typeof (window as any).Tally !== 'undefined') {
-      loadTally();
-    } else if (document.querySelector('script[src="https://tally.so/widgets/embed.js"]') === null) {
-      const script = document.createElement('script');
-      script.src = 'https://tally.so/widgets/embed.js';
-      script.onload = loadTally;
-      script.onerror = loadTally;
-      document.body.appendChild(script);
-    }
   }, []);
 
   return (
@@ -86,7 +66,7 @@ export default function MLTeacherProfilePage() {
 
             <div>
               <iframe
-                data-tally-src="https://tally.so/embed/1Adx2L?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1"
+                src="https://tally.so/embed/1Adx2L?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"
                 width="100%"
                 height="544"
